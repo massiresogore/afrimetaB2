@@ -1,0 +1,13 @@
+.nav__logo{
+    font-size: var(--font-size);
+    text-transform: uppercase;
+    color: white;
+}
+.nav__link:link,.nav__link:visited{
+    font-size: var(--font-size);
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    cursor: pointer;
+}
+
