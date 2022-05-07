@@ -1,13 +1,6 @@
 <?php
 
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
-
-//Load Composer's autoloader
-require 'vendor/autoload.php';
-
 
 class RegisterModele extends AbstractModele
 {
@@ -36,39 +29,11 @@ class RegisterModele extends AbstractModele
                 } else {
 
                     $token = $this->token_random_string(20);
-
                     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-                    /*************************************************** */
+                    //applel de la function denvoie demail
+                    Parent::sendMail($token, $email);
 
-                    //Create an instance; passing `true` enables exceptions
-                    $mail = new PHPMailer(true);
-                    //Server settings
-                    $mail->SMTPDebug = SMTP::DEBUG_SERVER;
-                    $mail->isSMTP();
-                    $mail->Host       = 'smtp.gmail.com';
-                    $mail->SMTPAuth   = true;
-                    $mail->Username   = 'afrimetanetwork@gmail.com';
-                    $mail->Password   = 'massire123456';
-                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;            //Enable implicit TLS encryption
-                    $mail->Port       = 587;                                    /*TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`*/
-
-                    //Recipients
-                    $mail->setFrom('afrimetanetwork@gmail.com', 'Afrimeta');
-                    $mail->addAddress($email);     //Add a recipient
-
-                    //Content
-                    $mail->isHTML(true);
-                    $mail->Subject = 'Confirmation';
-                    $mail->Body = 'Afin de valider votre adresse email, merci de cliquer sur le lien suivant:
-
-                        <a href="http://localhost/socialNetwork/index.php?page=validation&token=' . $token . '&email=' . $email . ' ">Cliquez ici pour confirmer votre compte</a>';
-
-                    if (!$mail->send()) {
-                        return true;
-                    }
-
-                    /*************************************************** */
 
                     // on verification de l'unicite de Pseudo
                     $reqPseudo  = $this->getBd()->prepare("SELECT * FROM users WHERE pseudo = :pseudo ");
