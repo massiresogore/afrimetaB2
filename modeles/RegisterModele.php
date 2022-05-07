@@ -31,8 +31,9 @@ class RegisterModele extends AbstractModele
                     $token = $this->token_random_string(20);
                     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-                    //applel de la function denvoie demail
-                    Parent::sendMail($token, $email);
+
+
+
 
 
                     // on verification de l'unicite de Pseudo
@@ -62,7 +63,15 @@ class RegisterModele extends AbstractModele
                         $requete->bindvalue(':token', $token);
                         $stm =  $requete->execute();
                         if ($stm) {
+
+                            //applel de la function denvoie demail
+
                             throw new Exception("Un mail de confirmation vous a été envoyé, merci de consulter et de cliquer sur confirmer afin de vous connecter");
+                            $ma = Parent::sendMail($token, $email);
+                            if ($ma == null) {
+                                header('location:index.php?page=register');
+                                exit;
+                            }
                         } else {
 
                             throw new Exception("Inscription échoué Veuiller");
