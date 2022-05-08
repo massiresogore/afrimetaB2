@@ -1,10 +1,11 @@
-
+<?php session_start() ?>
 <?php
 
 /********** Controllers links **********/
 require "controllers/UrlAccueil.php";
 require "controllers/register.php";
 require "controllers/UrlValidateMail.php";
+require "controllers/UrlMessage.php";
 require "controllers/UrlConnexion.php";
 
 
@@ -12,6 +13,7 @@ require "controllers/UrlConnexion.php";
 require "modeles/AbstractModele.php";
 require "modeles/RegisterModele.php";
 require "modeles/ValidateMailModele.php";
+require "modeles/ConnexionModele.php";
 
 
 
@@ -24,6 +26,9 @@ $UrlRegister->getUrlRegister();
 
 $UrlValidateMail = new UrlValidateMail;
 $UrlValidateMail->getUrlValidateMail();
+
+$UrlMessage = new UrlMessage;
+$UrlMessage->getUrlMessage();
 
 $UrlConnexion = new UrlConnexion;
 $UrlConnexion->getUrlConnexion();

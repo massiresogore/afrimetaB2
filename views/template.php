@@ -23,7 +23,7 @@
         <div class="nav__block">
             <ul class="nav__list">
                 <li class="nav__item"><a href="index.php" class="nav__link">Accueil </a></li>
-                <li class="nav__item"><a href="index.php?page=connnexion" class="nav__link">Connexion </a></li>
+                <li class="nav__item"><a href="index.php?page=connexion" class="nav__link">Connexion </a></li>
                 <li class="nav__item"><a href="index.php?page=register" class="nav__link">Inscription </a></li>
             </ul>
         </div>

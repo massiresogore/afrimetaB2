@@ -5,8 +5,6 @@ class UrlValidateMail
 
     public function getUrlValidateMail()
     {
-
-
         if (isset($_GET['page'])) {
             if ($_GET['page']  == 'validation') {
 

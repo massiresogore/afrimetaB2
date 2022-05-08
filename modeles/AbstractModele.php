@@ -13,6 +13,7 @@ abstract class AbstractModele
 {
 
 
+
     public function getBd()
     {
 
@@ -42,6 +43,7 @@ abstract class AbstractModele
     public static function sendMail($token, $email)
     {
 
+
         $mail = new PHPMailer(true);
         //Server settings
         $mail->SMTPDebug = SMTP::DEBUG_SERVER;
@@ -64,7 +66,14 @@ abstract class AbstractModele
 
             <a href="http://localhost/socialNetwork/index.php?page=validation&token=' . $token . '&email=' . $email . ' ">Cliquez ici pour confirmer votre compte</a>';
 
-        // $mail->send(); faire vard_dump de ça si email not send
+        // $mail->send(); faire vard_dump de ça si email not send   
         $mail->send();
+    }
+
+    public function getUser($table, $nameWhere, $value)
+    {
+        $req = $this->getBd()->prepare("SELECT * FROM $table WHERE $nameWhere = ?");
+        $req->execute([$value]);
+        return $req;
     }
 }

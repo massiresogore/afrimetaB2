@@ -28,13 +28,12 @@ class RegisterModele extends AbstractModele
                     throw new Exception("Les deux mot de passe se sont pas identiques");
                 } else {
 
+
                     $token = $this->token_random_string(20);
+
+
+
                     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-
-
-
-
-
 
                     // on verification de l'unicite de Pseudo
                     $reqPseudo  = $this->getBd()->prepare("SELECT * FROM users WHERE pseudo = :pseudo ");
@@ -61,15 +60,15 @@ class RegisterModele extends AbstractModele
                         $requete->bindvalue(':email', $email);
                         $requete->bindvalue(':password', $password);
                         $requete->bindvalue(':token', $token);
-                        $stm =  $requete->execute();
+                        $stm = $requete->execute();
+
                         if ($stm) {
 
                             //applel de la function denvoie demail
 
-                            throw new Exception("Un mail de confirmation vous a été envoyé, merci de consulter et de cliquer sur confirmer afin de vous connecter");
                             $ma = Parent::sendMail($token, $email);
                             if ($ma == null) {
-                                header('location:index.php?page=register');
+                                header('location:index.php?page=message');
                                 exit;
                             }
                         } else {

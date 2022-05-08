@@ -8,7 +8,6 @@
     </p>
     <form action="" method="post" class="form">
 
-
         <!-- Name field -->
         <div class="form__group">
             <label for="name" class="form__label">Nom</label>
@@ -39,7 +38,7 @@
             <input type="password" name="password_confirm" id="password_confirm" required>
         </div>
 
-        <!-- password Confirmation -->
+        <!-- submit  -->
         <div class="form__group">
             <input type="submit" value="Inscription" name="register" class="fom__submit">
         </div>

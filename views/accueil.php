@@ -1,5 +1,15 @@
 <?php ob_start(); ?>
+<?php
 
+
+echo "<pre>";
+print_r($_SESSION);
+echo "</pre>";
+die;
+
+
+
+?>
 <main id="main">
     <header id="header">
         <h1 class="header__title">Afrimeta Network</h1>
