@@ -21,7 +21,9 @@ class ConnexionModele extends AbstractModele
             if (!$stm) {
                 throw new Exception("Veuillez inserer une adresse email valide s'il vous plait");
             } elseif (isset($stm["active"])) {
+
                 if ($stm["active"] == 0) {
+
                     $token = $this->token_random_string(20);
                     $req = $this->getBd()->prepare("UPDATE users SET token = ? WHERE email= ?");
                     $req->execute([$token, $email]);
@@ -53,14 +55,10 @@ class ConnexionModele extends AbstractModele
                             }
                         }
 
-
-
-
-
                         header('location:index.php');
                         exit;
                     } else {
-                        throw new Exception("Veuillez s'il vous plait inserer un mot de passe valide ");
+                        throw new Exception("Mot de passe incorrect. Réessayez ou cliquez sur Mot de passe oublié pour le réinitialiser. ");
                     }
                 }
             }

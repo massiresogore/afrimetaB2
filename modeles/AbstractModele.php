@@ -7,11 +7,9 @@ use PHPMailer\PHPMailer\Exception;
 //Load Composer's autoloader
 require 'vendor/autoload.php';
 
-
-
 abstract class AbstractModele
 {
-   
+
 
 
     public function getBd()

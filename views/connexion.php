@@ -32,7 +32,7 @@
 
         <!-- Submit -->
         <div class="form__group">
-            <input type="submit" value="Inscription" name="connexion" class="fom__submit">
+            <input type="submit" value="connexion" name="connexion" class="form__submit">
         </div>
     </form>
 

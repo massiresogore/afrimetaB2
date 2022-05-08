@@ -15,6 +15,7 @@ require "modeles/AbstractModele.php";
 require "modeles/RegisterModele.php";
 require "modeles/ValidateMailModele.php";
 require "modeles/ConnexionModele.php";
+require "modeles/ResetPasswordModele.php";
 
 
 

@@ -32,7 +32,6 @@ class RegisterModele extends AbstractModele
                     $token = $this->token_random_string(20);
 
 
-
                     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
                     // on verification de l'unicite de Pseudo
