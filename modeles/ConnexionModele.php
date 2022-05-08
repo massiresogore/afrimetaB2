@@ -37,6 +37,28 @@ class ConnexionModele extends AbstractModele
                         $_SESSION["name"] =  $stm["name"];
                         $_SESSION["pseudo"] = $stm["pseudo"];
                         $_SESSION["email"] = $stm["email"];
+
+                        // gestion cookies
+                        if (isset($_POST["checkbox"])) {
+                            setcookie("email", $_POST["email"]);
+                            setcookie('password', $_POST["password"]);
+                            var_dump($_POST["checkbox"]);
+                            die;
+                        } else {
+
+                            if (isset($_COOKIE["emai"])) {
+                                setcookie($_COOKIE["email"], "");
+                            }
+
+                            if (isset($_COOKIE["password"])) {
+                                setcookie($_COOKIE["password"], "");
+                            }
+                        }
+
+
+
+
+
                         header('location:index.php');
                         exit;
                     } else {

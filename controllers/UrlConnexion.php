@@ -19,6 +19,8 @@ class UrlConnexion
                     session_destroy();
                     header('location:.');
                     exit;
+                } else {
+                    header('location:.');
                 }
             }
         }

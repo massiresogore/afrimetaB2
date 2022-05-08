@@ -40,7 +40,8 @@
     </nav>
 
 
-
+    </ /?php var_dump($_SESSION["id"]) ?>
+    </ /?php var_dump($_COOKIE["email"]) ?>
 
     <?= $content ?>
 
