@@ -37,10 +37,8 @@ class ConnexionModele extends AbstractModele
                         $_SESSION["name"] =  $stm["name"];
                         $_SESSION["pseudo"] = $stm["pseudo"];
                         $_SESSION["email"] = $stm["email"];
-
-                        // header('location:index.php');
-                        // exit;
-
+                        header('location:index.php');
+                        exit;
                     } else {
                         throw new Exception("Veuillez s'il vous plait inserer un mot de passe valide ");
                     }

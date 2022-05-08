@@ -14,10 +14,12 @@ class UrlConnexion
                 }
                 require "views/connexion.php";
             } elseif ($_GET['page']  == 'deconnexion') {
-                session_destroy();
-                session_unset();
-                header('location:.');
-                exit;
+                if ($_SESSION["id"]) {
+                    session_unset();
+                    session_destroy();
+                    header('location:.');
+                    exit;
+                }
             }
         }
     }
