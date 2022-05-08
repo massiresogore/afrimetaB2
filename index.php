@@ -7,6 +7,7 @@ require "controllers/register.php";
 require "controllers/UrlValidateMail.php";
 require "controllers/UrlMessage.php";
 require "controllers/UrlConnexion.php";
+require "controllers/UrlResetPassword.php";
 
 
 /********** Modeles  **********/
@@ -32,3 +33,6 @@ $UrlMessage->getUrlMessage();
 
 $UrlConnexion = new UrlConnexion;
 $UrlConnexion->getUrlConnexion();
+
+$UrlResetPassword = new UrlResetPassword;
+$UrlResetPassword->getUrlResetPassword();

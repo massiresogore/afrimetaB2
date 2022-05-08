@@ -26,6 +26,7 @@
             <label for="checkbox" class="form__label">Se souvenir de moi
                 <input type="checkbox" name="checkbox" id="checkbox">
             </label>
+            <a href="index.php?page=resetpassword">Mot de passe oublié</a>
         </div>
 
 

@@ -42,8 +42,6 @@ class ConnexionModele extends AbstractModele
                         if (isset($_POST["checkbox"])) {
                             setcookie("email", $_POST["email"]);
                             setcookie('password', $_POST["password"]);
-                            var_dump($_POST["checkbox"]);
-                            die;
                         } else {
 
                             if (isset($_COOKIE["emai"])) {
