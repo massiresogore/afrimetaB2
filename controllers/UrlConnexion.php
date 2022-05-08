@@ -13,6 +13,11 @@ class UrlConnexion
                     $ConnexionModele->setConnexion($_POST);
                 }
                 require "views/connexion.php";
+            } elseif ($_GET['page']  == 'deconnexion') {
+                session_destroy();
+                session_unset();
+                header('location:.');
+                exit;
             }
         }
     }

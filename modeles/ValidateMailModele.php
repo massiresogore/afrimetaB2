@@ -1,7 +1,5 @@
 <?php
 
-
-
 class ValidateMailModele extends AbstractModele
 {
 

@@ -11,7 +11,7 @@ require 'vendor/autoload.php';
 
 abstract class AbstractModele
 {
-
+    public static $session;
 
 
     public function getBd()

@@ -1,6 +1,6 @@
 <?php ob_start(); ?>
 
-<h1>Votre adresse Email n'est pas encore activé, un mail de confirmation vous a été envoyé, merci de le consulter et de cliquer sur confirmer afin de vous connecter </h1>
+<h1>Votre adresse Email n'est pas encore activé,nous vous avons envoyé par courrier des instructions pour confirmer votre adresse email, merci de le consulter et de cliquer sur confirmer afin de vous connecter </h1>
 
 
 
