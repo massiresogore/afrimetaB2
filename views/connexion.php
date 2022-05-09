@@ -8,6 +8,7 @@
     <p class="erreurs">
         <?= isset(ConnexionModele::$message) ? ConnexionModele::$message : "" ?>
     </p>
+
     <form action="" method="POST" class="form">
         <!-- email field -->
         <div class="form__group">

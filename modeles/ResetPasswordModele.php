@@ -3,6 +3,7 @@
 class ResetPasswordModele extends AbstractModele
 {
     public static $errormail;
+    public static $errorpassword;
 
     public function resetPassword($email)
     {
@@ -73,6 +74,64 @@ class ResetPasswordModele extends AbstractModele
             }
         } catch (Exception $e) {
             static::$errormail = $e->getMessage();
+        }
+    }
+
+
+
+    public function saveNewPassword($data = [], string $email, $token)
+    {
+        try {
+            if (!empty($data["password"]) && !empty($data["password_confirm"])) {
+
+                //verif ident psw
+                if ($data["password"] == $data["password_confirm"]) {
+                } else {
+                    throw new Exception("Les deux mot de passe ne sont pas identiques");
+                }
+
+                $password = password_hash($data['password'], PASSWORD_DEFAULT);
+                //verif email 
+
+                $req1 = Parent::getUser('resetPassword', 'email', $email);
+                $req1->fetch();
+                $stmReq1 = $req1->rowCount();
+
+                // si faux
+                if ($stmReq1 != 1) {
+                    throw new Exception("Email non valide");
+                }
+
+                //verif token 
+                $req2 = Parent::getUser('resetPassword', 'token', $token);
+                $req2->fetch();
+                $stmReq2 = $req2->rowCount();
+
+                // si faux
+                if ($stmReq2 != 1) {
+                    throw new Exception("Token non valide");
+                }
+
+                if ($stmReq2 == 1 && $stmReq2 == 1) {
+                    //mis a jour de psw dans table users
+                    $majPsw = Parent::getBd()->prepare("UPDATE users SET password=:password WHERE email=:email");
+                    $majPsw->bindValue(":password", $password);
+                    $majPsw->bindValue(":email", $email);
+                    $result = $majPsw->execute();
+
+                    if ($result) {
+
+                        header('location:index.php?page=connexion&message=Mot de passe reinitialisé avec succès veuillez cliquez sur connexion pour vous connecter');
+                        exit;
+                    } else {
+                        throw new Exception("Mis à jour de mot de passe à échoué");
+                    }
+                }
+            } else {
+                throw new Exception("Tous les champs doivent etre rempli");
+            }
+        } catch (Exception $e) {
+            self::$errorpassword = $e->getMessage();
         }
     }
 }

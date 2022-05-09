@@ -23,16 +23,16 @@
         <div class="nav__block">
             <ul class="nav__list">
                 <li class="nav__item"><a href="index.php" class="nav__link">Accueil </a></li>
-                <!-- session non active -->
-
-
 
                 <?php if (isset($_SESSION["id"])) { ?>
+                    <li class="nav__item"><a href="" class="nav__link">Blog </a></li>
                     <li class="nav__item"><a href="index.php?page=deconnexion" class="nav__link">Donnexion </a></li>
                 <?php } else { ?>
                     <li class="nav__item"><a href="index.php?page=connexion" class="nav__link">Connexion </a></li>
                     <li class="nav__item"><a href="index.php?page=register" class="nav__link">Inscription </a></li>
                 <?php } ?>
+                <li class="nav__item"><a href="" class="nav__link">A propos </a></li>
+                <li class="nav__item"><a href="" class="nav__link">Contact </a></li>
 
 
             </ul>
