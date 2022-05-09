@@ -10,8 +10,6 @@ require 'vendor/autoload.php';
 abstract class AbstractModele
 {
 
-
-
     public function getBd()
     {
 
@@ -73,5 +71,48 @@ abstract class AbstractModele
         $req = $this->getBd()->prepare("SELECT * FROM $table WHERE $nameWhere = ?");
         $req->execute([$value]);
         return $req;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public static function sendMail2($token, $email, $objet, $lien)
+    {
+
+
+        $mail = new PHPMailer(true);
+        //Server settings
+        $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+        $mail->isSMTP();
+        $mail->Host       = 'smtp.gmail.com';
+        $mail->SMTPAuth   = true;
+        $mail->Username   = 'afrimetanetwork@gmail.com';
+        $mail->Password   = 'massire123456';
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;            //Enable implicit TLS encryption
+        $mail->Port       = 587;                                    /*TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`*/
+
+        //Recipients
+        $mail->setFrom('afrimetanetwork@gmail.com', 'Afrimeta');
+        $mail->addAddress($email);     //Add a recipient
+
+        //Content
+        $mail->isHTML(true);
+        $mail->Subject = $objet;
+        $mail->Body = 'Afin de ' . $objet . ', merci de cliquer sur le lien suivant:
+
+            <a href="http://localhost/socialNetwork/index.php?page=' . $lien . '&message=' . $objet . '&token=' . $token . '&email=' . $email . ' ">Cliquez ici pour ' . $objet . ' votre compte</a>';
+
+        // $mail->send(); faire vard_dump de ça si email not send   
+        $mail->send();
     }
 }

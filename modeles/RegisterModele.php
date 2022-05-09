@@ -67,7 +67,7 @@ class RegisterModele extends AbstractModele
 
                             $ma = Parent::sendMail($token, $email);
                             if ($ma == null) {
-                                header('location:index.php?page=message');
+                                header('location:index.php?page=message&message=email');
                                 exit;
                             }
                         } else {

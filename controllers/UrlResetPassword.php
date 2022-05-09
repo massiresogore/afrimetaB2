@@ -15,6 +15,10 @@ class UrlResetPassword
                 }
 
                 require "views/resetpassword.php";
+            } elseif ($_GET['page'] == 'newPassword') {
+
+
+                require "views/newPassword.php";
             }
         }
     }
