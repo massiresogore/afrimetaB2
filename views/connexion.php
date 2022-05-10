@@ -4,12 +4,11 @@
 
 <main id="main">
 
-
     <p class="erreurs">
         <?= isset(ConnexionModele::$message) ? ConnexionModele::$message : "" ?>
     </p>
 
-    <form action="" method="POST" class="form">
+    <form action="" method="POST" class="form" id="contactForm" novalidate>
         <!-- email field -->
         <div class="form__group">
             <label for="email" class="form__label">Email</label>

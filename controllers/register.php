@@ -6,15 +6,12 @@ class UrlRegister
 
     public function getUrlRegister()
     {
+        $modeleRegister = new RegisterModele;
+
 
         if (isset($_GET['page'])) {
             if ($_GET['page']  == 'register') {
-
-                $dataRegistred = $_POST;
-                if (isset($_POST["register"])) {
-                    $modeleRegister = new RegisterModele;
-                    $modeleRegister->Register($dataRegistred);
-                }
+                $modeleRegister->Register($_POST);
                 require "views/register.php";
             }
         }

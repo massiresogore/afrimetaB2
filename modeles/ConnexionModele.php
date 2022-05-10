@@ -15,6 +15,7 @@ class ConnexionModele extends AbstractModele
             extract($data);
 
             //get user Email
+
             $req = $this->getUser('users', 'email', $email);
             $stm = $req->fetch();
 

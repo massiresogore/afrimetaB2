@@ -10,8 +10,6 @@ class UrlConnexion
         if (isset($_GET['page'])) {
             if ($_GET['page']  == 'connexion') {
                 if (isset($_POST["connexion"])) {
-                    if (isset($_GET["message"])) {
-                    }
                     $ConnexionModele = new ConnexionModele;
                     $ConnexionModele->setConnexion($_POST);
                 }

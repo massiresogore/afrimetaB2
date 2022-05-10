@@ -1,6 +1,12 @@
 <?php session_start() ?>
 <?php
 
+/********** Classes links **********/
+require "classes/users.php";
+
+
+
+
 /********** Controllers links **********/
 require "controllers/UrlAccueil.php";
 require "controllers/register.php";
@@ -8,6 +14,7 @@ require "controllers/UrlValidateMail.php";
 require "controllers/UrlMessage.php";
 require "controllers/UrlConnexion.php";
 require "controllers/UrlResetPassword.php";
+
 
 
 /********** Modeles  **********/

@@ -86,6 +86,8 @@ abstract class AbstractModele
 
 
 
+
+
     public static function sendMail2($token, $email, $objet, $lien)
     {
 

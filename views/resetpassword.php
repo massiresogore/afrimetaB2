@@ -4,7 +4,7 @@
     <h1>Réinisialisation de Mot de passe</h1>
     <h6>merci d'entrer votre adresse email , nous vous enverons un mail pour réinitialiser votre mot de passe</h6>
 
-    <form action="" method="post" class="form">
+    <form action="" method="post" class="form" id="contactForm" novalidate>
         <p class="erreurs">
             <?= isset(ResetPasswordModele::$errormail) ? ResetPasswordModele::$errormail : "" ?>
         </p>

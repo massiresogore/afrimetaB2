@@ -10,9 +10,14 @@
     <title>
         Afrimeta
     </title>
+
+    <script src=" http://localhost/socialNetwork/asset/js/validateForm.js" defer></script>
+    <link rel="stylesheet" href="http://localhost/socialNetwork/asset/css/main.css">
     <script src="https://kit.fontawesome.com/a5cf1be0cd.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="http://localhost/projetEcole/reseauSocial/asset/css/main.css">
 </head>
+
+
+
 
 <body>
 

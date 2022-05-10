@@ -7,7 +7,7 @@
     <h1>Nouveau Mot de passe</h1>
 
 
-    <form action="" method="post" class="form">
+    <form action="" method="post" class="form" id="contactForm" novalidate>
         <p class="erreurs">
             <?= isset(ResetPasswordModele::$errorpassword) ? ResetPasswordModele::$errorpassword : "" ?>
         </p>
