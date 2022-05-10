@@ -1,10 +1,10 @@
-<?php
 
+<?php
 
 class ConnexionModele extends AbstractModele
 {
     public static $message;
-    public static $session = [];
+
 
 
     public function setConnexion(array $data)
@@ -15,9 +15,11 @@ class ConnexionModele extends AbstractModele
             extract($data);
 
             //get user Email
-
             $req = $this->getUser('users', 'email', $email);
             $stm = $req->fetch();
+
+
+
 
             if (!$stm) {
                 throw new Exception("Veuillez inserer une adresse email valide s'il vous plait");
@@ -35,11 +37,8 @@ class ConnexionModele extends AbstractModele
                     $passwordVerif = password_verify($password, $stm["password"]);
 
                     if ($passwordVerif) {
-                        session_start();
-                        $_SESSION["id"] =  $stm["id"];
-                        $_SESSION["name"] =  $stm["name"];
-                        $_SESSION["pseudo"] = $stm["pseudo"];
-                        $_SESSION["email"] = $stm["email"];
+                        $user = new User($stm);
+                        $_SESSION["user"] = $user;
 
                         // gestion cookies
                         if (isset($_POST["checkbox"])) {

@@ -1,0 +1,11 @@
+.profile {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    &__row-1 {
+        border: 1px solid rgb(11, 45, 169);
+    }
+    &__row-2 {
+        border: 1px solid red;
+    }
+}

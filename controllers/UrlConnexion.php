@@ -1,6 +1,5 @@
 <?php
 
-
 class UrlConnexion
 {
 
@@ -15,7 +14,7 @@ class UrlConnexion
                 }
                 require "views/connexion.php";
             } elseif ($_GET['page']  == 'deconnexion') {
-                if ($_SESSION["id"]) {
+                if ($_SESSION["user"]) {
                     session_unset();
                     session_destroy();
                     header('location:.');

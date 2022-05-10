@@ -10,6 +10,7 @@ require 'vendor/autoload.php';
 abstract class AbstractModele
 {
 
+
     public function getBd()
     {
 
@@ -72,21 +73,6 @@ abstract class AbstractModele
         $req->execute([$value]);
         return $req;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     public static function sendMail2($token, $email, $objet, $lien)
     {

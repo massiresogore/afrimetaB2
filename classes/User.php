@@ -1,12 +1,12 @@
 <?php
 
-class users
+class User
 {
+    public $id;
     public $name;
     public $pseudo;
     public $email;
     public $password;
-
     public $token;
     public $active;
     public $date;
@@ -24,6 +24,10 @@ class users
     }
 
     // setters
+    public function setId($id)
+    {
+        return $this->id = $id;
+    }
     public function setName($name)
     {
         return $this->name = $name;
@@ -50,12 +54,16 @@ class users
     {
         return $this->active = $active;
     }
-    public function setdate($date)
+    public function setDate($date)
     {
         return $this->date = $date;
     }
 
     //getters
+    public function getId()
+    {
+        return $this->id;
+    }
     public function getName()
     {
         return $this->name;
@@ -72,7 +80,7 @@ class users
     {
         return $this->password;
     }
-    public function geTtoken()
+    public function getToken()
     {
         return $this->token;
     }

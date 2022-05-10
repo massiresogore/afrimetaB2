@@ -83,7 +83,7 @@ class RegisterModele extends AbstractModele
                 }
             }
         } catch (Exception $e) {
-            self::$message = $e->getMessage();
+            self::$message =  $e->getMessage();
         }
     }
 }

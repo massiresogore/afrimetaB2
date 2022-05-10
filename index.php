@@ -1,19 +1,21 @@
-<?php session_start() ?>
+
 <?php
 
 /********** Classes links **********/
-require "classes/users.php";
-
+require "classes/User.php";
+session_start();
 
 
 
 /********** Controllers links **********/
 require "controllers/UrlAccueil.php";
-require "controllers/register.php";
+require "controllers/UrlRegister.php";
 require "controllers/UrlValidateMail.php";
 require "controllers/UrlMessage.php";
 require "controllers/UrlConnexion.php";
+require "controllers/UrlProfile.php";
 require "controllers/UrlResetPassword.php";
+
 
 
 
@@ -24,14 +26,14 @@ require "modeles/ValidateMailModele.php";
 require "modeles/ConnexionModele.php";
 require "modeles/ResetPasswordModele.php";
 
-
-
-
 $UrlAccueil = new UrlAccueil;
 $UrlAccueil->getUrlAccueil();
 
 $UrlRegister = new UrlRegister;
 $UrlRegister->getUrlRegister();
+
+$UrlProfile = new UrlProfile;
+$UrlProfile->getUrlProfile();
 
 $UrlValidateMail = new UrlValidateMail;
 $UrlValidateMail->getUrlValidateMail();

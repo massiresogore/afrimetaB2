@@ -7,8 +7,6 @@
 // echo "</pre>";
 // die;
 
-
-
 ?>
 <main id="main">
     <header id="header">

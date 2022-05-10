@@ -2,25 +2,14 @@
 @import "abstracts/variables";
 @import "abstracts/mixins";
 @import "abstracts/functions";
-
 // Import base
 @import "base/base";
 @import "base/typography";
 @import "base/utilities";
-
 //import components
-
-
-
 //layout
 @import "layout/nav";
 @import "layout/header";
 @import "layout/main";
-
-
-
+@import "layout/profile";
 //import pages
-
-
-
-
