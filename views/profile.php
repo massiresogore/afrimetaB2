@@ -11,7 +11,8 @@
             </div>
             <div class="profile__row-1-block">
                 <div class="profile__info">
-                    <div class="img"><img src="" alt="">image</div>
+                    <div class="img"><img src="http://localhost/socialNetwork/asset/images/noprofile/noprofile.jpg" alt=""></div>
+
                     <p class="pseudo"><?= (isset($_SESSION["user"])) ? $_SESSION["user"]->getPseudo() : "" ?></p>
                     <p class="email"><?= (isset($_SESSION["user"])) ? $_SESSION["user"]->getEmail() : "" ?></p>
                 </div>
@@ -24,7 +25,13 @@
         </div>
         <div class="profile__row-2">
             <h3>Completez mon profile </h3>
-            <form action="" method="post" class="form" id="contactForm">
+            <form action="" method="post" class="form" id="contactForm" enctype="multipart/form-data">
+
+                <!-- Image field -->
+                <div class="form__group">
+                    <label for="image">Modifier votre image de profil</label>
+                    <input type="file" name="image">
+                </div>
 
                 <!-- Name field -->
                 <div class="form__group">
@@ -84,6 +91,12 @@
     </div>
 
 </main>
+
+<?php
+
+
+
+?>
 
 <?php $content =  ob_get_clean();
 require "template.php"; ?>

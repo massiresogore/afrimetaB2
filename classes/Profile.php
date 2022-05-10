@@ -4,6 +4,7 @@ class Porfile
 {
     public $id;
     public $id_user;
+    public $image;
     public $ville;
     public $pays;
     public $sexe;
@@ -31,6 +32,10 @@ class Porfile
     public function setId_user($id_user)
     {
         return $this->id_user = $id_user;
+    }
+    public function setImage($image)
+    {
+        return $this->image = $image;
     }
     public function setVille($ville)
     {
@@ -62,6 +67,10 @@ class Porfile
     public function getId_user()
     {
         return $this->id_user;
+    }
+    public function getImage()
+    {
+        return $this->image;
     }
     public function getville()
     {

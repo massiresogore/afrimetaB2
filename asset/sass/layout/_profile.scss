@@ -9,3 +9,14 @@
         border: 1px solid red;
     }
 }
+
+.profile__info {
+    .img {
+        height: 100px;
+        width: 150px;
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
