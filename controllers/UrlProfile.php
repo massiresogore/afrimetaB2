@@ -5,14 +5,22 @@ class UrlProfile
 
     public function getUrlProfile()
     {
-        $profileModele = new ProfileModele;
-        if (isset($_SESSION["user"]) && isset($_GET["page"])) {
+        if (isset($_GET["page"])) {
+            $profileModele = new ProfileModele;
+
             if ($_GET['page']  == 'profile') {
-                $id = $_GET["id"];
-
-                $user = $profileModele->getUserInfo($id);
-
-                require "views/profile.php";
+                if (!isset($_SESSION["user"])) {
+                    header("location:index.php");
+                    exit;
+                } else {
+                    if (isset($_GET["id"])) {
+                        $id = $_GET["id"];
+                        $user = $profileModele->getUserInfo($id);
+                        require "views/profile.php";
+                    } else {
+                        header("location:index.php?page=profile&id=" . $_SESSION["user"]->getId());
+                    }
+                }
             }
         }
     }

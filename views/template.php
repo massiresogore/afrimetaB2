@@ -32,9 +32,13 @@
                 <?php if (isset($_SESSION["user"])) { ?>
                     <li class="nav__item">
                         <a href="index.php?page=profile&id=<?= (isset($_SESSION["user"])) ? $_SESSION["user"]->getId() : "" ?> " class="nav__link">Profile </a>
+
+                        <?php ?>
+
+
                     </li>
                     <li class="nav__item">
-                        <a href="index.php?page=deconnexion" class="nav__link">Donnexion </a>
+                        <a href="index.php?page=deconnexion" class="nav__link">Deconnexion </a>
                     </li>
                 <?php } else { ?>
                     <li class="nav__item"><a href="index.php?page=connexion" class="nav__link">Connexion </a></li>

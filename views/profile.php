@@ -36,7 +36,12 @@
                 <!-- Name field -->
                 <div class="form__group">
                     <label for="name" class="form__label ">Nom</label>
-                    <input type="text" value="" name="name" id="name" required>
+                    <input type="text" value="<?= (isset($user)) ? $user->getName() : "" ?>" name="name" id="name" required>
+                </div>
+                <!-- pseudo field -->
+                <div class="form__group">
+                    <label for="pseudo" class="form__label">pseudo</label>
+                    <input type="text" value="<?= (isset($user)) ? $user->getPseudo() : "" ?>" name="pseudo" id="pseudo" required>
                 </div>
 
                 <!-- ville field -->
