@@ -67,10 +67,21 @@ abstract class AbstractModele
         $mail->send();
     }
 
-    public function getUser($table, $nameWhere, $value)
+    // public function getUser($table, $nameWhere, $value)
+    // {
+    //     $req = $this->getBd()->prepare("SELECT * FROM $table WHERE $nameWhere = ?");
+    //     $req->execute([$value]);
+    //     return $req;
+    // }
+    public function executeRequete($query, array $data = [])
     {
-        $req = $this->getBd()->prepare("SELECT * FROM $table WHERE $nameWhere = ?");
-        $req->execute([$value]);
+        $req = $this->getBd()->prepare($query);
+        if (isset($data) && !empty($data)) {
+            foreach ($data as $key => $value) {
+                $data[$key] = htmlentities($value);
+            }
+        }
+        $req->execute($data);
         return $req;
     }
 

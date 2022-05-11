@@ -25,6 +25,7 @@ require "modeles/RegisterModele.php";
 require "modeles/ValidateMailModele.php";
 require "modeles/ConnexionModele.php";
 require "modeles/ResetPasswordModele.php";
+require "modeles/ProfileModele.php";
 
 $UrlAccueil = new UrlAccueil;
 $UrlAccueil->getUrlAccueil();

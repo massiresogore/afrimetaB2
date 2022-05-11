@@ -15,7 +15,7 @@ class ConnexionModele extends AbstractModele
             extract($data);
 
             //get user Email
-            $req = $this->getUser('users', 'email', $email);
+            $req = $this->executeRequete("SELECT * FROM users WHERE email =?", [$email]);
             $stm = $req->fetch();
 
 

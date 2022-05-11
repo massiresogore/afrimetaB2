@@ -7,14 +7,14 @@
     <div class="profile">
         <div class="profile__row-1">
             <div class="profile__row-1-block">
-                <h3>Bienvenu sur ton profile <span><?= (isset($_SESSION["user"])) ? $_SESSION["user"]->getName() : "" ?></span></h3>
+                <h3>Bienvenu sur votre profile <span><?= (isset($user)) ? $user->getName() : "" ?></span></h3>
             </div>
             <div class="profile__row-1-block">
                 <div class="profile__info">
                     <div class="img"><img src="http://localhost/socialNetwork/asset/images/noprofile/noprofile.jpg" alt=""></div>
 
-                    <p class="pseudo"><?= (isset($_SESSION["user"])) ? $_SESSION["user"]->getPseudo() : "" ?></p>
-                    <p class="email"><?= (isset($_SESSION["user"])) ? $_SESSION["user"]->getEmail() : "" ?></p>
+                    <p class="pseudo"><?= (isset($user)) ? $user->getPseudo() : "" ?></p>
+                    <a href="mailto:<?= (isset($user)) ? $user->getEmail() : "" ?>" class="email"><?= (isset($user)) ? $user->getEmail() : "" ?></a>
                 </div>
                 <p class="dispo"> disponible oui et non</p>
             </div>

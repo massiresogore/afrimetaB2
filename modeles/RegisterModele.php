@@ -36,15 +36,11 @@ class RegisterModele extends AbstractModele
 
 
                         // on verification de l'unicite de Pseudo
-                        $reqPseudo  = $this->getBd()->prepare("SELECT * FROM users WHERE pseudo = :pseudo ");
-                        $reqPseudo->bindValue(":pseudo", $pseudo);
-                        $reqPseudo->execute();
+                        $reqPseudo = $this->executeRequete("SELECT * FROM users WHERE pseudo =?", [$pseudo]);
                         $resultPseudo = $reqPseudo->fetch();
 
                         // on verification de l'unicite de Email
-                        $reqEmail  = $this->getBd()->prepare("SELECT * FROM users WHERE email = :email ");
-                        $reqEmail->bindValue(":email", $email);
-                        $reqEmail->execute();
+                        $reqEmail = $this->executeRequete("SELECT * FROM users WHERE email =?", [$email]);
                         $resultEmail = $reqEmail->fetch();
 
                         if ($resultPseudo) {
@@ -53,23 +49,26 @@ class RegisterModele extends AbstractModele
                             throw new Exception("Le mail que vous avez choisi existe déjà");
                         } else {
 
-                            $users = new Users($_POST);
-                            $users->setToken($token);
-                            $users->setPassword($password);
+                            $user = new User($_POST);
+                            $user->setToken($token);
+                            $user->setPassword($password);
 
-                            $requete = $this->getBd()->prepare('INSERT INTO `users`( `name`, `pseudo`, `email`, `password`, `token`) VALUES (:name, :pseudo, :email, :password, :token)');
+                            // $requete = $this->getBd()->prepare('INSERT INTO `users`( `name`, `pseudo`, `email`, `password`, `token`) VALUES (:name, :pseudo, :email, :password, :token)');
+                            $requete = $this->executeRequete("INSERT INTO users(name,pseudo,email,password,token) VALUES(?,?,?,?,?)", [
+                                $user->getName(), $user->getPseudo(),  $user->getEmail(), $user->getPassword(), $user->geTtoken()
+                            ]);
 
-                            $requete->bindvalue(':name', $users->getName());
-                            $requete->bindvalue(':pseudo', $users->getPseudo());
-                            $requete->bindvalue(':email', $users->getEmail());
-                            $requete->bindvalue(':password', $users->getPassword());
-                            $requete->bindvalue(':token', $users->geTtoken());
-                            $stm = $requete->execute();
+                            // $requete->bindvalue(':name', $users->getName());
+                            // $requete->bindvalue(':pseudo', $users->getPseudo());
+                            // $requete->bindvalue(':email', $users->getEmail());
+                            // $requete->bindvalue(':password', $users->getPassword());
+                            // $requete->bindvalue(':token', $users->geTtoken());
+                            // $stm = $requete->execute();
 
-                            if ($stm) {
+                            if ($requete) {
 
                                 //applel de la function denvoie demail
-                                $ma = Parent::sendMail($users->geTtoken(), $users->getEmail());
+                                $ma = Parent::sendMail($user->geTtoken(), $user->getEmail());
                                 if ($ma == null) {
                                     header('location:index.php?page=message&message=email');
                                     exit;

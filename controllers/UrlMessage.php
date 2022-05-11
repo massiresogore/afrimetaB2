@@ -7,7 +7,10 @@ class UrlMessage
     {
         if (isset($_GET['page'])) {
             if ($_GET['page']  == 'message') {
-                $message = $_GET["message"];
+                if (isset($_GET["mesage"])) {
+
+                    $message = $_GET["message"];
+                }
 
                 require "views/message.php";
             }
