@@ -29,7 +29,7 @@
 
                 <!-- Image field -->
                 <div class="form__group">
-                    <label for="image">Modifier votre image de profil</label>
+                    <label for="image">Modifier votre image de profil, 300Ko max</label>
                     <input type="file" name="image">
                 </div>
 
@@ -71,23 +71,29 @@
                     <input type="text" name="facebook" id="facebook" required>
                 </div>
 
-                <!-- disponibilite Confirmation -->
+                <!-- disponibilite  -->
                 <div class="form__group">
-                    <label for="disponibilite" class="form__label">Disponibilite </label>
-                    <input type="checkbox" name="disponibilite" id="disponibilite">
+                    <label for="disponibilite" class="form__label">disponibilite</label>
+
+                    <div class="radio">
+                        <span class="ouidisponible">oui<input type="radio" name="disponibilite" value="1" id="disponibilite"></span>
+                        <span class="disponible">non<input type="radio" name="disponibilite" value="0" id="disponibilite" checked></span>
+                    </div>
+
+
 
                 </div>
 
                 <!-- biographie Confirmation -->
                 <div class="form__group">
-                    <label for="biographie" class="form__label">Facebook</label>
+                    <label for="biographie" class="form__label">Biographie</label>
                     <textarea name="biographie" id="biographie" cols="30" rows="10" style="resize:none;"></textarea>
 
                 </div>
 
                 <!-- submit  -->
                 <div class="form__group">
-                    <input type="submit" value="enregistrer" name="register" class="fom__submit">
+                    <input type="submit" value="enregistrer" name="enregistrer" class="fom__submit">
                 </div>
 
             </form>

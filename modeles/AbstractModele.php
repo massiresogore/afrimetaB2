@@ -114,4 +114,79 @@ abstract class AbstractModele
         // $mail->send(); faire vard_dump de ça si email not send   
         $mail->send();
     }
+
+
+    public function is_rep_exist($chemin)
+    {
+        if (!file_exists($chemin) && !is_dir($chemin)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public function is_file_existe($chemin)
+    {
+        if (file_exists($chemin)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function addImage($img, $id_user)
+    {
+        try {
+
+            //recuperation info img
+            $imgInfo = pathinfo($img["image"]["name"]);
+            $imgName =  $imgInfo["basename"];
+            $imgExtension = $imgInfo["extension"];
+            $imgSaveTemporaire = $img["image"]["tmp_name"];
+            $imgSize =  $img["image"]["size"];
+            $imgError = $img["image"]["error"];
+            $extenValide = ["jpg", "jpeg", "png"];
+
+            if ($imgSize > 300000) {
+                throw new Exception("image trop grande");
+            } elseif ($imgError != 0) {
+                throw new Exception("image incorrect");
+            } elseif (!in_array($imgExtension, $extenValide)) {
+                throw new Exception("extetion non valide");
+            } else {
+
+                //On test si le repertoire existe 
+                $cheminImg = "asset/images/profile" . $id_user;
+                $verifReper = $this->is_rep_exist($cheminImg);
+
+                // si oui 
+                if ($verifReper) {
+                    //On test si le fichier existe 
+                    $filepath = $cheminImg . '/' . $imgName;
+                    $verifFile = $this->is_file_existe($filepath);
+
+                    if ($verifFile) {
+                        //fichier existe
+                        throw new Exception("nom image deja utilisé");
+                    } else {
+                        //fichier no existe
+                        move_uploaded_file($imgSaveTemporaire, $filepath);
+                    }
+
+                    // On test si le repertoire n'existe pas
+                } else {
+
+                    //create folder
+                    $filepath = $cheminImg . '/' . $imgName;
+                    $cheminImg = "asset/images/profile" . $id_user;
+                    mkdir($cheminImg, 0777, true);
+
+                    // move folder
+                    move_uploaded_file($imgSaveTemporaire, $filepath);
+                }
+            }
+        } catch (Exception $e) {
+            $messgeImg = $e->getMessage();
+        }
+    }
 }
