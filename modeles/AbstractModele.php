@@ -146,6 +146,12 @@ abstract class AbstractModele
         }
     }
 
+    public function redirect($page)
+    {
+        header('location:index.php?page=' . $page);
+        exit;
+    }
+
     public function addImage($img, $id_user)
     {
         try {

@@ -38,6 +38,9 @@ class ProfileModele extends AbstractModele
                         //on envoi des données dans la base de donnée
                         $requete = $this->executeRequete("INSERT INTO `profile`(`id_user`, `image`, `ville`, `pays`, `sexe`, `facebook`, `biographie`, `disponibilite`) VALUES (?,?,?,?,?,?,?,?);", [$id_user, $photo, $profile->getVille(), $profile->getPays(), $profile->getSexe(), $profile->getFacebook(), $profile->getBiographie(), $profile->getDisponibilite()]);
                         $requete->closeCursor();
+
+                        //on rafraichi la page
+                        Parent::redirect('profile');
                     }
                 }
             }
