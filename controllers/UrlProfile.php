@@ -19,7 +19,6 @@ class UrlProfile
                         if ($_GET["id"] == $_SESSION["user"]->getId()) {
                             $id_user = $_GET["id"];
                             $user = $profileModele->getUserCon($id_user);
-                            $profile = $profileModele->getUserProfile($id_user);
                             require "views/profile.php";
                         } else {
                             header("location:index.php?page=profile&id=" . $_SESSION["user"]->getId());

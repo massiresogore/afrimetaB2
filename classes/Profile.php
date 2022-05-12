@@ -8,7 +8,6 @@ class Profile
     public $ville;
     public $pays;
     public $sexe;
-    public $github;
     public $facebook;
     public $biographie;
     public $disponibilite;
@@ -51,11 +50,6 @@ class Profile
     {
         return $this->sexe = $sexe;
     }
-
-    public function setGithub($github)
-    {
-        return $this->github = $github;
-    }
     public function setFacebook($facebook)
     {
         return $this->facebook = $facebook;
@@ -93,10 +87,6 @@ class Profile
     public function getSexe()
     {
         return $this->sexe;
-    }
-    public function getGithub()
-    {
-        return $this->github;
     }
     public function getFacebook()
     {
