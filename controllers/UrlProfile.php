@@ -14,15 +14,18 @@ class UrlProfile
                     exit;
                 } else {
                     if (isset($_GET["id"])) {
-                        $id_user = $_GET["id"];
-                        $user = $profileModele->getUserCon($id_user);
+                        if ($_GET["id"] == $_SESSION["user"]->getId()) {
 
-                        if (isset($_POST["enregistrer"])) {
-                            $profileModele->updateProfile($_POST, $id_user);
+                            $id_user = $_GET["id"];
+                            if (isset($_POST["enregistrer"])) {
+                                $profileModele->updateProfile($_POST, $id_user);
+                            }
+
+                            $user = $profileModele->getUserCon($id_user);
+                            require "views/profile.php";
+                        } else {
+                            header("location:index.php?page=profile&id=" . $_SESSION["user"]->getId());
                         }
-
-
-                        require "views/profile.php";
                     } else {
                         header("location:index.php?page=profile&id=" . $_SESSION["user"]->getId());
                     }

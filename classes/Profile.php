@@ -1,6 +1,6 @@
 <?php
 
-class Porfile
+class Profile
 {
     public $id;
     public $id_user;
@@ -54,6 +54,10 @@ class Porfile
     {
         return $this->facebook = $facebook;
     }
+    public function setBiographie($biographie)
+    {
+        return $this->biographie = $biographie;
+    }
     public function setDisponibilite($disponibilite)
     {
         return $this->disponibilite = $disponibilite;
@@ -87,6 +91,10 @@ class Porfile
     public function getFacebook()
     {
         return $this->facebook;
+    }
+    public function getBiographie()
+    {
+        return $this->biographie;
     }
     public function getDisponibilite()
     {

@@ -9,6 +9,7 @@ require 'vendor/autoload.php';
 
 abstract class AbstractModele
 {
+    public static $errorProfil2;
 
 
     public function getBd()
@@ -73,16 +74,18 @@ abstract class AbstractModele
     //     $req->execute([$value]);
     //     return $req;
     // }
+
+
     public function executeRequete($query, array $data = [])
     {
-        $req = $this->getBd()->prepare($query);
+        $requet = $this->getBd()->prepare($query);
         if (isset($data) && !empty($data)) {
             foreach ($data as $key => $value) {
                 $data[$key] = htmlentities($value);
             }
         }
-        $req->execute($data);
-        return $req;
+        $requet->execute($data);
+        return $requet;
     }
 
     public static function sendMail2($token, $email, $objet, $lien)
@@ -133,6 +136,15 @@ abstract class AbstractModele
             return false;
         }
     }
+    public function verifExtension($extension)
+    {
+        $extenValide = ["jpg", "jpeg", "png"];
+        if (in_array($extension, $extenValide)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     public function addImage($img, $id_user)
     {
@@ -145,48 +157,47 @@ abstract class AbstractModele
             $imgSaveTemporaire = $img["image"]["tmp_name"];
             $imgSize =  $img["image"]["size"];
             $imgError = $img["image"]["error"];
-            $extenValide = ["jpg", "jpeg", "png"];
-
             if ($imgSize > 300000) {
                 throw new Exception("image trop grande");
-            } elseif ($imgError != 0) {
-                throw new Exception("image incorrect");
-            } elseif (!in_array($imgExtension, $extenValide)) {
-                throw new Exception("extetion non valide");
             } else {
+                $verifExten = $this->verifExtension($imgExtension);
+                if ($verifExten) {
+                    //On test si le repertoire existe 
+                    $cheminImg = "asset/images/profile" . $id_user;
+                    $verifReper = $this->is_rep_exist($cheminImg);
 
-                //On test si le repertoire existe 
-                $cheminImg = "asset/images/profile" . $id_user;
-                $verifReper = $this->is_rep_exist($cheminImg);
+                    // si le rep existe  
+                    if ($verifReper) {
 
-                // si oui 
-                if ($verifReper) {
-                    //On test si le fichier existe 
-                    $filepath = $cheminImg . '/' . $imgName;
-                    $verifFile = $this->is_file_existe($filepath);
+                        //On test si le fichier existe 
+                        $filepath = $cheminImg . '/' . $imgName;
+                        $verifFile = $this->is_file_existe($filepath);
 
-                    if ($verifFile) {
-                        //fichier existe
-                        throw new Exception("nom image deja utilisé");
+                        if ($verifFile) {
+
+                            //fichier existe
+                            throw new Exception("nom image deja utilisé");
+                        } else {
+
+                            //fichier  n'existe pas
+                            move_uploaded_file($imgSaveTemporaire, $filepath);
+                        }
+
+                        //  si le repertoire n'existe pas
                     } else {
-                        //fichier no existe
+
+                        //creation de rep
+                        $filepath = $cheminImg . '/' . $imgName;
+                        $cheminImg = "asset/images/profile" . $id_user;
+                        mkdir($cheminImg, 0777, true);
+
+                        // depla de rep vers 
                         move_uploaded_file($imgSaveTemporaire, $filepath);
                     }
-
-                    // On test si le repertoire n'existe pas
-                } else {
-
-                    //create folder
-                    $filepath = $cheminImg . '/' . $imgName;
-                    $cheminImg = "asset/images/profile" . $id_user;
-                    mkdir($cheminImg, 0777, true);
-
-                    // move folder
-                    move_uploaded_file($imgSaveTemporaire, $filepath);
                 }
             }
         } catch (Exception $e) {
-            $messgeImg = $e->getMessage();
+            static::$errorProfil2 = $e->getMessage();
         }
     }
 }

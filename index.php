@@ -4,6 +4,7 @@
 /********** Classes links **********/
 require "classes/User.php";
 session_start();
+require "classes/Profile.php";
 
 
 

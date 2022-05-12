@@ -1,8 +1,7 @@
 <?php ob_start(); ?>
+
 <main id="main">
-    <p class="erreurs">
-        </ /?=isset(RegisterModele::$message) ? RegisterModele::$message : "" ?>
-    </p>
+
 
     <div class="profile">
         <div class="profile__row-1">
@@ -26,22 +25,16 @@
         <div class="profile__row-2">
             <h3>Completez mon profile </h3>
             <form action="" method="post" class="form" id="contactForm" enctype="multipart/form-data">
-
+                <p class="erreurs">
+                    <?= isset(ProfileModele::$errorProfile) ? ProfileModele::$errorProfile : "" ?>
+                </p>
+                <p class="erreurs">
+                    <?= isset(ProfileModele::$errorProfil2) ? ProfileModele::$errorProfil2 : "" ?>
+                </p>
                 <!-- Image field -->
                 <div class="form__group">
                     <label for="image">Modifier votre image de profil, 300Ko max</label>
                     <input type="file" name="image">
-                </div>
-
-                <!-- Name field -->
-                <div class="form__group">
-                    <label for="name" class="form__label ">Nom</label>
-                    <input type="text" value="<?= (isset($user)) ? $user->getName() : "" ?>" name="name" id="name" required>
-                </div>
-                <!-- pseudo field -->
-                <div class="form__group">
-                    <label for="pseudo" class="form__label">pseudo</label>
-                    <input type="text" value="<?= (isset($user)) ? $user->getPseudo() : "" ?>" name="pseudo" id="pseudo" required>
                 </div>
 
                 <!-- ville field -->
