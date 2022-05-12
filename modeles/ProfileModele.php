@@ -14,6 +14,24 @@ class ProfileModele extends AbstractModele
         $stm = $req->closeCursor();
     }
 
+    public function getUserProfile($id_user)
+    {
+        $req = $this->executeRequete("SELECT * FROM profile WHERE id_user = ?", [$id_user]);
+        $stm = $req->fetch();
+        $profile = new Profile($stm);
+        return $profile;
+        $stm = $req->closeCursor();
+    }
+
+    public function disponible($data)
+    {
+        if ($data == 0) {
+            return "non disponible";
+        } else {
+            return "disponible";
+        }
+    }
+
     public function updateProfile($data = [], int $id_user)
     {
         try {
@@ -36,25 +54,18 @@ class ProfileModele extends AbstractModele
 
 
                         //on envoi des données dans la base de donnée
-                        $requete = $this->executeRequete("INSERT INTO `profile`(`id_user`, `image`, `ville`, `pays`, `sexe`, `facebook`, `biographie`, `disponibilite`) VALUES (?,?,?,?,?,?,?,?);", [$id_user, $photo, $profile->getVille(), $profile->getPays(), $profile->getSexe(), $profile->getFacebook(), $profile->getBiographie(), $profile->getDisponibilite()]);
+                        $requete = $this->executeRequete("INSERT INTO `profile`(`id_user`, `image`, `ville`, `pays`, `sexe`, `github`, `facebook`, `biographie`, `disponibilite`) VALUES (?,?,?,?,?,?,?,?,?);", [$id_user, $photo, $profile->getVille(), $profile->getPays(), $profile->getSexe(), $profile->getGithub(), $profile->getFacebook(), $profile->getBiographie(), $profile->getDisponibilite()]);
                         $requete->closeCursor();
 
                         //on rafraichi la page
+
+                        echo "profile mis a jours";
                         Parent::redirect('profile');
                     }
                 }
             }
-
-            // elseif (!isset($_FILES) && isset($_POST)) {
-            //     //mis ajour
-            //     echo "sans image on met à jour quand même";
-            // }
         } catch (Exception $e) {
             static::$errorProfile = $e->getMessage();
         }
     }
-
-    //On recupere les infos de User Connecté;
-
-
 }
