@@ -146,6 +146,15 @@ abstract class AbstractModele
         }
     }
 
+    public function isTrue(string $data)
+    {
+        if ($data == 0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
     public function redirect($page)
     {
         header('location:index.php?page=' . $page);
