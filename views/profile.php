@@ -1,7 +1,7 @@
 <?php ob_start(); ?>
 
 
-<h1>profile</h1>
+
 
 <main id="main">
 
@@ -63,6 +63,27 @@
                 <h3>Qui est <?= (isset($user)) ?  $user->getPseudo() : "" ?></h3>
                 <div class="biogragphie"><?= (isset($profile)) ?  $profile->getFacebook() : "" ?></div>
             </div>
+        </div>
+        <div class="profile__row-2">
+
+            <form action="" method="post" class="form" id="contactForm" novalidate>
+                <p class="erreurs">
+                    <?= isset(ResetPasswordModele::$errorpassword) ? ResetPasswordModele::$errorpassword : "" ?>
+                </p>
+
+
+                <!-- password Confirmation -->
+                <div class="form__group">
+                    <label for="status" class="form__label">Status:</label>
+                    <textarea name="post" id="" cols="30" rows="10" placeholder="Alors quoi de neuf ?"></textarea>
+                </div>
+
+                <!-- submit  -->
+                <div class="form__group">
+                    <input type="submit" value="publier" name="enregistrer" class="fom__submit">
+                </div>
+
+            </form>
 
         </div>
     </div>

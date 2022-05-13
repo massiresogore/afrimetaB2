@@ -41,8 +41,6 @@
 
                         <?php ?>
 
-
-
                     </li>
                     <li class="nav__item">
                         <a href="index.php?page=deconnexion" class="nav__link">Deconnexion </a>
