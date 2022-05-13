@@ -22,6 +22,15 @@ class ProfileModele extends AbstractModele
         return $profile;
     }
 
+    public function getProfiles()
+    {
+        $req = $this->executeRequete("SELECT * FROM profile");
+        $stm = $req->fetchAll();
+        $profiles = new Profile($stm);
+        return $profiles;
+    }
+
+
     public function addProfile($data = [], int $id_user)
     {
         try {

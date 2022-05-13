@@ -28,12 +28,13 @@
         <div class="nav__block">
             <ul class="nav__list">
                 <li class="nav__item"><a href="index.php" class="nav__link">Accueil </a></li>
+                <li class="nav__item"><a href="index.php?page=listesMembres" class="nav__link">Listes des Membres </a></li>
+                <li class="nav__item">
+                    <a href="index.php?page=profile" class="nav__link">Profile </a>
+                </li>
 
                 <?php if (isset($_SESSION["user"])) { ?>
-                    <li class="nav__item">
-                        <a href="index.php?page=profile" class="nav__link">Profile </a>
 
-                    </li>
                     <li class="nav__item">
                         <a href="index.php?page=modifierProfile" class="nav__link">Modifier mon Profile </a>
 
@@ -51,9 +52,6 @@
             </ul>
         </div>
     </nav>
-
-
-
 
 
 

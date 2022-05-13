@@ -6,6 +6,7 @@ class RegisterModele extends AbstractModele
 {
     public static $message;
 
+
     // Si le formulaire a ete soumis
     public function Register($dataRegistred)
     {
@@ -58,13 +59,6 @@ class RegisterModele extends AbstractModele
                                 $user->getName(), $user->getPseudo(),  $user->getEmail(), $user->getPassword(), $user->geTtoken()
                             ]);
 
-                            // $requete->bindvalue(':name', $users->getName());
-                            // $requete->bindvalue(':pseudo', $users->getPseudo());
-                            // $requete->bindvalue(':email', $users->getEmail());
-                            // $requete->bindvalue(':password', $users->getPassword());
-                            // $requete->bindvalue(':token', $users->geTtoken());
-                            // $stm = $requete->execute();
-
                             if ($requete) {
 
                                 //applel de la function denvoie demail
@@ -84,5 +78,15 @@ class RegisterModele extends AbstractModele
         } catch (Exception $e) {
             self::$message =  $e->getMessage();
         }
+    }
+
+    public function getMembreActif(string $active = "1")
+    {
+        $req = $this->executeRequete("SELECT * FROM users WHERE active =?", [$active]);
+        while ($stm = $req->fetch()) {
+            $usersObject = new User($stm);
+            $users[] = $usersObject;
+        }
+        return $users;
     }
 }

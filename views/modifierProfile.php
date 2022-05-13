@@ -6,6 +6,7 @@
     <h1><?php  ?></h1>
 
     <div class="profile">
+
         <div class="profile__row-1">
             <div class="profile__row-1-block">
                 <h3>Bienvenu sur votre profile <span><?= (isset($user)) ? $user->getName() : "" ?></span></h3>
