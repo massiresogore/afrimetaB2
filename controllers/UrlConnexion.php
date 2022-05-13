@@ -21,6 +21,7 @@ class UrlConnexion
                     exit;
                 } else {
                     header('location:.');
+                    exit;
                 }
             }
         }

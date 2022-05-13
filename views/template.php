@@ -16,9 +16,6 @@
     <script src="https://kit.fontawesome.com/a5cf1be0cd.js" crossorigin="anonymous"></script>
 </head>
 
-
-
-
 <body>
 
     <nav class="nav">
@@ -30,14 +27,13 @@
                 <li class="nav__item"><a href="index.php" class="nav__link">Accueil </a></li>
                 <li class="nav__item"><a href="index.php?page=listesMembres" class="nav__link">Listes des Membres </a></li>
                 <li class="nav__item">
-                    <a href="index.php?page=profile" class="nav__link">Profile </a>
+                    <a href="index.php?page=profile&id=<?= $_SESSION["user"]->getId() ?>" class="nav__link">Profile </a>
                 </li>
 
                 <?php if (isset($_SESSION["user"])) { ?>
-
                     <li class="nav__item">
-                        <a href="index.php?page=modifierProfile" class="nav__link">Modifier mon Profile </a>
-
+                        <a href="index.php?page=modifierProfile&id=<?= $_SESSION["user"]->getId() ?>" class="nav__link">Modifier mon Profile </a>
+                        <?php ?>
                     </li>
                     <li class="nav__item">
                         <a href="index.php?page=deconnexion" class="nav__link">Deconnexion </a>
@@ -49,11 +45,10 @@
                 <li class="nav__item"><a href="" class="nav__link">A propos </a></li>
                 <li class="nav__item"><a href="" class="nav__link">Contact </a></li>
 
+
             </ul>
         </div>
     </nav>
-
-
 
 
 

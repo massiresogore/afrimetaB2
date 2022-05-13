@@ -7,7 +7,7 @@
             <div class="img">
 
                 <?php if ($profileModele->getProfileUser($user->getId())->getImage()) { ?>
-                    <a href="index.php?page=profile&id=" <?= $user->getId() ?>>
+                    <a href="index.php?page=profile&id=<?= $user->getId() ?>">
                         <img src="http://localhost/socialNetwork/asset/images/profile<?= $user->getId() . '/' . $profileModele->getProfileUser($user->getId())->getImage() ?>" height="100px">
                     </a>
 
@@ -16,7 +16,7 @@
                     <img src="http://localhost/socialNetwork/asset/images/noprofile/noprofile.jpg" alt="" height="100px">
                 <?php } ?>
             </div>
-            <a href="index.php?page=profile&id=" <?= $user->getId() ?>>
+            <a href="index.php?page=profile&id=<?= $user->getId() ?>">
                 <p class="pseudo"><?= $user->getPseudo() ?></p>
             </a>
             <p class="id"><?= $user->getId() ?></p>
@@ -26,13 +26,6 @@
 
 
 </main>
-
-
-
-
-
-
-
 
 
 
