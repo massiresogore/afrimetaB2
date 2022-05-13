@@ -103,4 +103,12 @@ class ProfileModele extends AbstractModele
             static::$errorProfile = $e->getMessage();
         }
     }
+
+
+    public function addPost($data = [])
+    {
+        $publication = new Publication($data);
+        var_dump($publication);
+        //$req = $this->executeRequete("INSERT INTO publications(id_user, posts)", []);
+    }
 }

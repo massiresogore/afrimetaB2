@@ -71,16 +71,16 @@
                     <?= isset(ResetPasswordModele::$errorpassword) ? ResetPasswordModele::$errorpassword : "" ?>
                 </p>
 
-
+                <input type="hidden" value="<?= (isset($user)) ? $user->getId() : "" ?> " name="id_user">
                 <!-- password Confirmation -->
                 <div class="form__group">
                     <label for="status" class="form__label">Status:</label>
-                    <textarea name="post" id="" cols="30" rows="10" placeholder="Alors quoi de neuf ?"></textarea>
+                    <textarea name="posts" id="" cols="30" rows="10" placeholder="Alors quoi de neuf ?"></textarea>
                 </div>
 
                 <!-- submit  -->
                 <div class="form__group">
-                    <input type="submit" value="publier" name="enregistrer" class="fom__submit">
+                    <input type="submit" value="publier" name="publication" class="fom__submit">
                 </div>
 
             </form>

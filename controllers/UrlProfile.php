@@ -50,6 +50,10 @@ class UrlProfile
                         $id_user = $_GET["id"];
                         $user = $profileModele->getUserCon($id_user);
                         $profile = $profileModele->getProfileUser($id_user);
+
+                        if (isset($_POST)) {
+                            $profileModele->addPost($_POST);
+                        }
                         require "views/profile.php";
                     } else {
 
