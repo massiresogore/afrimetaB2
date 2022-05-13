@@ -36,7 +36,7 @@ class ProfileModele extends AbstractModele
                     $requete = $this->executeRequete("INSERT INTO `profile`(`id_user`,`ville`, `pays`, `sexe`, `github`, `facebook`, `biographie`, `disponibilite`) VALUES (?,?,?,?,?,?,?,?,?);", [$id_user, $profile->getVille(), $profile->getPays(), $profile->getSexe(), $profile->getGithub(), $profile->getFacebook(), $profile->getBiographie(), $profile->getDisponibilite()]);
                     $requete->closeCursor();
                     //on rafraichi la page
-                    Parent::redirect('profile');
+                    Parent::redirect('modifierProfile');
                 } else {
                     // image existe =>  on insert les données
                     $img = $_FILES;
@@ -50,7 +50,7 @@ class ProfileModele extends AbstractModele
                         $requete->closeCursor();
 
                         //on rafraichi la page
-                        Parent::redirect('profile');
+                        Parent::redirect('modifierProfile');
                     }
                 }
             }
@@ -73,7 +73,7 @@ class ProfileModele extends AbstractModele
                     $requete = $this->executeRequete("UPDATE `profile` SET `id_user`= ?,`ville`=?, `pays`=?, `sexe`=?, `github`=?, `facebook`=?, `biographie`=?, `disponibilite`=?", [$id_user, $profile->getVille(), $profile->getPays(), $profile->getSexe(), $profile->getGithub(), $profile->getFacebook(), $profile->getBiographie(), $profile->getDisponibilite()]);
                     $requete->closeCursor();
                     //on rafraichi la page
-                    Parent::redirect('profile');
+                    Parent::redirect('modifierProfile');
                 } else {
                     // image existe => on met à jours
                     $img = $_FILES;
@@ -86,7 +86,7 @@ class ProfileModele extends AbstractModele
                         $requete = $this->executeRequete("INSERT INTO `profile` SET `id_user`=?, `image`=?, `ville`?, `pays`?, `sexe`=?, `github`=?, `facebook`=?, `biographie`=?, `disponibilite`=?", [$id_user, $photo, $profile->getVille(), $profile->getPays(), $profile->getSexe(), $profile->getGithub(), $profile->getFacebook(), $profile->getBiographie(), $profile->getDisponibilite()]);
                         $requete->closeCursor();
                         //on rafraichi la page
-                        Parent::redirect('profile');
+                        Parent::redirect('modifierProfile');
                     }
                 }
             }

@@ -8,7 +8,7 @@ class UrlProfile
         if (isset($_GET["page"])) {
             $profileModele = new ProfileModele;
 
-            if ($_GET['page']  == 'profile') {
+            if ($_GET['page']  == 'modifierProfile') {
 
                 if (!isset($_SESSION["user"])) {
                     header("location:index.php");
@@ -31,6 +31,24 @@ class UrlProfile
                                     $profileModele->addProfile($_POST, $id_user);
                                 }
                             }
+                            require "views/modifierProfile.php";
+                        } else {
+                            header("location:index.php?page=modifierProfile&id=" . $_SESSION["user"]->getId());
+                        }
+                    } else {
+                        header("location:index.php?page=modifierProfile&id=" . $_SESSION["user"]->getId());
+                    }
+                }
+            } elseif ($_GET["page"] == "profile") {
+                if (!isset($_SESSION["user"])) {
+                    header("location:index.php");
+                    exit;
+                } else {
+                    if (isset($_GET["id"])) {
+                        if ($_GET["id"] == $_SESSION["user"]->getId()) {
+                            $id_user = $_GET["id"];
+
+
                             require "views/profile.php";
                         } else {
                             header("location:index.php?page=profile&id=" . $_SESSION["user"]->getId());

@@ -33,8 +33,9 @@
                     <li class="nav__item">
                         <a href="index.php?page=profile" class="nav__link">Profile </a>
 
-                        <?php ?>
-
+                    </li>
+                    <li class="nav__item">
+                        <a href="index.php?page=modifierProfile" class="nav__link">Modifier mon Profile </a>
 
                     </li>
                     <li class="nav__item">
@@ -46,7 +47,6 @@
                 <?php } ?>
                 <li class="nav__item"><a href="" class="nav__link">A propos </a></li>
                 <li class="nav__item"><a href="" class="nav__link">Contact </a></li>
-
 
             </ul>
         </div>
