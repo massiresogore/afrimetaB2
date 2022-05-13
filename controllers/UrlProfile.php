@@ -7,6 +7,7 @@ class UrlProfile
     {
         if (isset($_GET["page"])) {
             $profileModele = new ProfileModele;
+
             if ($_GET['page']  == 'modifierProfile') {
 
                 if (!isset($_SESSION["user"])) {
@@ -31,6 +32,7 @@ class UrlProfile
                                     $profileModele->addProfile($_POST, $id_user);
                                 }
                             }
+
                             require "views/modifierProfile.php";
                         } else {
                             header("location:index.php?page=modifierProfile&id=" . $_SESSION["user"]->getId());
@@ -41,22 +43,44 @@ class UrlProfile
                     }
                 }
             } elseif ($_GET['page']  == 'profile') {
-
                 if (isset($_SESSION["user"])) {
-                    if ($_GET["id"] == $_SESSION["user"]->getId()) {
 
+
+                    if ($_GET["id"] || $_SESSION["user"]->getId()) {
                         $id_user = $_GET["id"];
                         $user = $profileModele->getUserCon($id_user);
                         $profile = $profileModele->getProfileUser($id_user);
                         require "views/profile.php";
                     } else {
-                        header("location:index.php?page=profile&id=" . $_SESSION["user"]->getId());
+
+                        header("location:index.php");
+                        exit;
                     }
                 } else {
-                    header("location:.");
+                    header("location:index.php");
                     exit;
                 }
             }
+
+            // elseif ($_GET['page']  == 'profile') {
+
+            //     if (isset($_SESSION["user"])) {
+            //         if ($_GET["id"] == $_SESSION["user"]->getId()) {
+
+            //             $id_user = $_GET["id"];
+            //             $user = $profileModele->getUserCon($id_user);
+            //             $profile = $profileModele->getProfileUser($id_user);
+            //             require "views/profile.php";
+            //         } else {
+            //             header("location:index.php?page=profile&id=" . $_SESSION["user"]->getId());
+            //         }
+            //     } else {
+            //         header("location:index.php?page=profile&id=" . $_SESSION["user"]->getId());
+            //     }
+            // } else {
+            //     header("location:.");
+            //     exit;
+            // }
         }
     }
 }

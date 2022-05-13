@@ -15,7 +15,6 @@ class UrlRegister
                 require "views/register.php";
             } elseif ($_GET['page']  == 'listesMembres') {
                 $users = $modeleRegister->getMembreActif('1');
-
                 require "views/listesMembres.php";
             }
         }

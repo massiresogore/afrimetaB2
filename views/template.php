@@ -26,14 +26,23 @@
             <ul class="nav__list">
                 <li class="nav__item"><a href="index.php" class="nav__link">Accueil </a></li>
                 <li class="nav__item"><a href="index.php?page=listesMembres" class="nav__link">Listes des Membres </a></li>
-                <li class="nav__item">
-                    <a href="index.php?page=profile&id=<?= $_SESSION["user"]->getId() ?>" class="nav__link">Profile </a>
-                </li>
+
 
                 <?php if (isset($_SESSION["user"])) { ?>
                     <li class="nav__item">
+                        <a href="index.php?page=profile&id=<?= $_SESSION["user"]->getId()  ?>" class="nav__link">Profile </a>
+                    </li>
+                    <li class="nav__item">
+
                         <a href="index.php?page=modifierProfile&id=<?= $_SESSION["user"]->getId() ?>" class="nav__link">Modifier mon Profile </a>
                         <?php ?>
+
+                        <a href="index.php?page=profile" class="nav__link">Profile </a>
+
+                        <?php ?>
+
+
+
                     </li>
                     <li class="nav__item">
                         <a href="index.php?page=deconnexion" class="nav__link">Deconnexion </a>

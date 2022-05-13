@@ -66,6 +66,7 @@
 
             <a href="index.php?page=modifierProfile&id=<//?= $_SESSION['user']->getId() ?>">Completer Mon profile</a>
         </div>
+
         <div class="profile__row-2">
             <h3>Completez mon profile </h3>
             <form action="" method="post" class="form" id="contactForm" enctype="multipart/form-data">
