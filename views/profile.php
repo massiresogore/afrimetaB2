@@ -85,17 +85,17 @@
 
             </form>
 
-            <?php if (isset($posts)) : ?>
+            <?php if (isset($posts) && $posts != false) : ?>
                 <?php foreach ($posts as $post) : ?>
 
                     <div class="post">
                         <p><?= $post->getCreate_at() ?></p>
                         <h5><?= $post->getPosts() ?></h5>
                         <p></p>
-
                     </div>
-
                 <?php endforeach; ?>
+            <?php else : ?>
+                <p>Cet utilisateur n'apa encore publier </p>
             <?php endif ?>
         </div>
     </div>

@@ -108,6 +108,7 @@ class ProfileModele extends AbstractModele
     public function addPost($data = [])
     {
 
+
         $publication = new Publication($data);
         $req = $this->executeRequete("INSERT INTO publications(id_user, posts) VALUES (:id_user,:posts)", [
             ":id_user" => $_SESSION["user"]->getId(),
@@ -117,13 +118,18 @@ class ProfileModele extends AbstractModele
     public function getPosts($id_user)
     {
 
-        $req = $this->executeRequete("SELECT * FROM publications WHERE id_user=? ", [$id_user]);
+        $req = $this->executeRequete("SELECT * FROM publications WHERE id_user=? ORDER BY create_at DESC ", [$id_user]);
 
 
         while ($stm = $req->fetch()) {
             $objet = new Publication($stm);
             $tab[] = $objet;
         }
-        return $tab;
+
+        if (isset($tab)) {
+            return $tab;
+        } else {
+            return false;
+        }
     }
 }

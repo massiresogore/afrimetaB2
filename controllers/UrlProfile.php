@@ -53,7 +53,13 @@ class UrlProfile
 
                         if (isset($_POST["publication"])) {
 
-                            $profileModele->addPost($_POST);
+                            $p = $profileModele->addPost($_POST);
+                            if ($p == null) {
+                                header("location:index.php?page=profile&id=" . $_SESSION["user"]->getId());
+                                exit;
+                            } else {
+                                $message = "Publication non envoyé";
+                            }
                         }
 
                         $posts = $profileModele->getPosts($id_user);
