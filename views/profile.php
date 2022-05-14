@@ -75,7 +75,7 @@
                 <!-- password Confirmation -->
                 <div class="form__group">
                     <label for="status" class="form__label">Status:</label>
-                    <textarea name="posts" id="" cols="30" rows="10" placeholder="Alors quoi de neuf ?"></textarea>
+                    <textarea name="posts" id="" cols="30" rows="10" placeholder="Alors quoi de neuf ?" required></textarea>
                 </div>
 
                 <!-- submit  -->
@@ -85,6 +85,18 @@
 
             </form>
 
+            <?php if (isset($posts)) : ?>
+                <?php foreach ($posts as $post) : ?>
+
+                    <div class="post">
+                        <p><?= $post->getCreate_at() ?></p>
+                        <h5><?= $post->getPosts() ?></h5>
+                        <p></p>
+
+                    </div>
+
+                <?php endforeach; ?>
+            <?php endif ?>
         </div>
     </div>
 </main>

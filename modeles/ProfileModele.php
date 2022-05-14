@@ -92,7 +92,7 @@ class ProfileModele extends AbstractModele
                     } else {
                         $photo = $_FILES["image"]["name"];
                         //on envoi des données dans la base de donnée
-                        $requete = $this->executeRequete("INSERT INTO `profile` SET `id_user`=?, `image`=?, `ville`?, `pays`?, `sexe`=?, `github`=?, `facebook`=?, `biographie`=?, `disponibilite`=?", [$id_user, $photo, $profile->getVille(), $profile->getPays(), $profile->getSexe(), $profile->getGithub(), $profile->getFacebook(), $profile->getBiographie(), $profile->getDisponibilite()]);
+                        $requete = $this->executeRequete("UPDATE  `profile` SET `id_user`=?, `image`=?, `ville`?, `pays`?, `sexe`=?, `github`=?, `facebook`=?, `biographie`=?, `disponibilite`=?", [$id_user, $photo, $profile->getVille(), $profile->getPays(), $profile->getSexe(), $profile->getGithub(), $profile->getFacebook(), $profile->getBiographie(), $profile->getDisponibilite()]);
                         $requete->closeCursor();
                         //on rafraichi la page
                         Parent::redirect('modifierProfile');
@@ -107,8 +107,23 @@ class ProfileModele extends AbstractModele
 
     public function addPost($data = [])
     {
+
         $publication = new Publication($data);
-        var_dump($publication);
-        //$req = $this->executeRequete("INSERT INTO publications(id_user, posts)", []);
+        $req = $this->executeRequete("INSERT INTO publications(id_user, posts) VALUES (:id_user,:posts)", [
+            ":id_user" => $_SESSION["user"]->getId(),
+            ":posts" => $publication->getPosts()
+        ]);
+    }
+    public function getPosts($id_user)
+    {
+
+        $req = $this->executeRequete("SELECT * FROM publications WHERE id_user=? ", [$id_user]);
+
+
+        while ($stm = $req->fetch()) {
+            $objet = new Publication($stm);
+            $tab[] = $objet;
+        }
+        return $tab;
     }
 }
