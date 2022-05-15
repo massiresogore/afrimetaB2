@@ -18,9 +18,6 @@ class ConnexionModele extends AbstractModele
             $req = $this->executeRequete("SELECT * FROM users WHERE email =?", [$email]);
             $stm = $req->fetch();
 
-
-
-
             if (!$stm) {
                 throw new Exception("Veuillez inserer une adresse email valide s'il vous plait");
             } elseif (isset($stm["active"])) {
@@ -34,16 +31,20 @@ class ConnexionModele extends AbstractModele
                     header('location:index.php?page=message');
                     exit;
                 } else {
-                    $passwordVerif = password_verify($password, $stm["password"]);
+                    // if ($stm["token"] == 'valide') {
+                    //     $req = $this->getBd('INSERT INTO `user_relations`(`user_id1`, `user_id2`, `status`, `create_at`) VALUES (?,?,?,?)');
+                    //     $req->execute([]);
+                    // }
 
+                    $passwordVerif = password_verify($password, $stm["password"]);
+                    //on active une auto relation des quon est connecté
                     if ($passwordVerif) {
                         $user = new User($stm);
                         $_SESSION["user"] = $user;
-
                         // gestion cookies
                         if (isset($_POST["checkbox"])) {
-                            setcookie("email", $_POST["email"]);
-                            setcookie('password', $_POST["password"]);
+                            setcookie("email", $_POST["email"], time() * 3600 * 24 * 2, null, null, false, true);
+                            setcookie("password", $_POST["password"], time() * 3600 * 24 * 2, null, null, false, true);
                         } else {
 
                             if (isset($_COOKIE["emai"])) {
@@ -54,7 +55,6 @@ class ConnexionModele extends AbstractModele
                                 setcookie($_COOKIE["password"], "");
                             }
                         }
-
                         header('location:index.php');
                         exit;
                     } else {

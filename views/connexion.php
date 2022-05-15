@@ -18,7 +18,7 @@
         <!-- password field -->
         <div class="form__group">
             <label for="password" class="form__label">Mot de passe </label>
-            <input type="password" name="password" value="123456" id="password" required>
+            <input type="password" name="password" value="azerty" id="password" required>
         </div>
 
         <!-- Se souvenir de moi  -->

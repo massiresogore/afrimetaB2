@@ -13,7 +13,7 @@
 
     <script src=" http://localhost/socialNetwork/asset/js/validateForm.js" defer></script>
     <link rel="stylesheet" href="http://localhost/socialNetwork/asset/css/main.css">
-    <script src="https://kit.fontawesome.com/a5cf1be0cd.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a5cf1be0cd.js" crossorigin="anonymous" defer></script>
 </head>
 
 <body>
@@ -51,8 +51,6 @@
                 <?php } ?>
                 <li class="nav__item"><a href="" class="nav__link">A propos </a></li>
                 <li class="nav__item"><a href="" class="nav__link">Contact </a></li>
-
-
             </ul>
         </div>
     </nav>

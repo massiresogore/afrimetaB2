@@ -87,6 +87,10 @@ class RegisterModele extends AbstractModele
             $usersObject = new User($stm);
             $users[] = $usersObject;
         }
-        return $users;
+        if (isset($users)) {
+            return $users;
+        } else {
+            return false;
+        }
     }
 }

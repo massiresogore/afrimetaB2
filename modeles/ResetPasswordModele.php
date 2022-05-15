@@ -14,12 +14,20 @@ class ResetPasswordModele extends AbstractModele
 
                 //Recup email pour verif
                 $req = Parent::getUser('users', 'email', $email);
+
                 $result = $req->fetch();
+
                 $nombre = $req->rowCount();
+
 
                 if ($nombre != '1') {
                     throw new Exception("Votre adresse email ne correspond a aucun utilisateur de notre reseau blog");
                 } else {
+
+                    // if ($result["token"] == "valide") {
+                    //     var_dump($result["id"]);
+                    //     die;
+                    // }
 
                     //verif si email n'est pas active
                     if ($result["active"] != "1") {
@@ -46,6 +54,7 @@ class ResetPasswordModele extends AbstractModele
                             $reUpdte = Parent::getBd()->prepare("UPDATE  afrimeta.resetPassword SET email=?, token=?");
                             $stmUpdte = $reUpdte->execute([$email, $token]);
                             if ($stmUpdte) {
+                                // je dois changer cette fonction sendmail afin de rediriger lutilisateur
                                 $mailSend = Parent::sendMail2($token, $email, 'Reinisialiser votre mot de passe', 'newPassword');
                                 if ($mailSend == null) {
                                     header('location:index.php?page=message&message=reinitialisation');
@@ -58,12 +67,15 @@ class ResetPasswordModele extends AbstractModele
                             }
                         } else {
                             // si non on fait une  insertion
-                            $req2 = Parent::getBd()->prepare("INSERT INTO afrimeta.resetPassword(email,token) VALUES(:email,:token)");
+
+                            $req2 = Parent::getBd()->prepare("INSERT INTO afrimeta.resetPassword(id_user,email,token) VALUES(:id_user,:email,:token)");
+                            $req2->bindValue(":id_user", $result["id"]);
                             $req2->bindValue(":email", $email);
                             $req2->bindValue(":token", $token);
                             $req2->execute();
                             $stm2 = $req2->rowCount();
                             if ($stm2) {
+                                $mailSend = Parent::sendMail2($token, $email, 'Reinisialiser votre mot de passe', 'newPassword');
                                 throw new Exception("un mail vous est envoye");
                             } else {
                                 throw new Exception(" mail non envoye");
@@ -76,7 +88,6 @@ class ResetPasswordModele extends AbstractModele
             static::$errormail = $e->getMessage();
         }
     }
-
 
 
     public function saveNewPassword($data = [], string $email, $token)
@@ -92,6 +103,7 @@ class ResetPasswordModele extends AbstractModele
 
                 $password = password_hash($data['password'], PASSWORD_DEFAULT);
                 //verif email 
+
 
                 $req1 = Parent::getUser('resetPassword', 'email', $email);
                 $req1->fetch();

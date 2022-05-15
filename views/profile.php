@@ -84,22 +84,19 @@
                 </div>
 
             </form>
-
             <?php if (isset($posts) && $posts != false) : ?>
                 <?php foreach ($posts as $post) : ?>
-
                     <div class="post">
                         <p><?= $post->getCreate_at() ?></p>
-                        <h5><?= $post->getPosts() ?></h5>
+                        <div style="word-wrap:break-all ;"><?= nl2br($profileModele->textToMail($post->getPosts())) ?></div>
                         <p></p>
                     </div>
                 <?php endforeach; ?>
             <?php else : ?>
-                <p>Cet utilisateur n'apa encore publier </p>
+                <p>Cet utilisateur n'apa encore publié </p>
             <?php endif ?>
         </div>
     </div>
 </main>
-
 <?php $content =  ob_get_clean();
 require "template.php"; ?>

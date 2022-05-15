@@ -26,6 +26,15 @@ abstract class AbstractModele
         }
     }
 
+    public function getUser($table, $name_where, $value)
+    {
+        $req = $this->getBd()->prepare("SELECT * FROM $table WHERE $name_where=?");
+        $req->execute([$value]);
+
+
+        return $req;
+    }
+
 
     function token_random_string($leng = 20)
     {
@@ -87,6 +96,14 @@ abstract class AbstractModele
         $requet->execute($data);
         return $requet;
     }
+    public function textToMail($text)
+    {
+        $regex_url = "/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\:[0-9]+)?(\/\S*)?/";
+        return preg_replace($regex_url, "<a href=\"$0\" target=\"_blank\">$0</a>", $text);
+    }
+
+
+
 
     public static function sendMail2($token, $email, $objet, $lien)
     {

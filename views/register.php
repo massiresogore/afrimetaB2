@@ -6,7 +6,7 @@
     <p class="erreurs">
         <?= isset(RegisterModele::$message) ?  RegisterModele::$message : "" ?>
     </p>
-    <form action="" method="post" class="form" id="contactForm" novalidate>
+    <form action="" method="post" class="form" id="contactForm">
 
         <!-- Name field -->
         <div class="form__group">
