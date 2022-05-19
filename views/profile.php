@@ -24,8 +24,35 @@
 
                             <img src="http://localhost/socialNetwork/asset/images/noprofile/noprofile.jpg" alt="">
                         <?php } ?>
-
                     </div>
+
+
+
+
+                    <?php if ($verifInvitation == 'annuler ou rejeter une demande') : ?>
+                        <div class="relation">
+                            <p>Une demande d'amitier à été envoyé <a href="index.php?page=annuler_ami&id=<//?= $user->getId() ?>">Annuler la demande ?</a></p>
+                        </div>
+                    <?php elseif ($verifInvitation == 'ajouter ou rejeter une demande') : ?>
+                        ajouter ou rejeter une demande
+                    <?php elseif ($verifInvitation == 'supprimer demande') : ?>
+                        vous etes deja ami
+                        supprimer demande
+                    <?php elseif ($verifInvitation == 'ajouter un ami') : ?>
+                        <a href="index.php?page=ajout_ami&id=<?= $user->getId() ?>"> <i class="fa fa-plus"></i> Ajouté comme ami</a>
+                    <?php endif; ?>
+
+
+
+
+
+
+
+
+
+
+
+
 
                     <div class="pseudo">
                         <h4>Pseudo</h4>
@@ -98,5 +125,10 @@
         </div>
     </div>
 </main>
+
+
+
+
+
 <?php $content =  ob_get_clean();
 require "template.php"; ?>

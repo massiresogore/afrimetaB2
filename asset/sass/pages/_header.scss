@@ -1,0 +1,16 @@
+.header {
+    color: #000000ab;
+    padding: 20px 0;
+}
+
+.header__title {}
+
+.header__paragraph {
+    font-size: 1.2rem;
+}
+
+.header__btn:link,
+.header__btn:active {
+    text-decoration: none;
+    color: inherit;
+}

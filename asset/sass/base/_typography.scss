@@ -1,13 +1,8 @@
-.nav__logo{
-    font-size: var(--font-size);
-    text-transform: uppercase;
-    color: white;
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@1,300;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+body {
+    font-family: 'Oswald', sans-serif;
+    line-height: 1.7;
+    font-weight: 400;
 }
-.nav__link:link,.nav__link:visited{
-    font-size: var(--font-size);
-    text-decoration: none;
-    text-transform: uppercase;
-    color: white;
-    cursor: pointer;
-}
-

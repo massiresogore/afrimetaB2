@@ -1,15 +1,18 @@
-// Import abstract
-@import "abstracts/variables";
-@import "abstracts/mixins";
-@import "abstracts/functions";
-// Import base
+/*Abstract*/
+
+@import "abstract/variables";
+@import "abstract/variables";
+
+/* Base*/
+
 @import "base/base";
 @import "base/typography";
 @import "base/utilities";
-//import components
-//layout
-@import "layout/nav";
-@import "layout/header";
-@import "layout/main";
-@import "layout/profile";
-//import pages
+@import "composant/bg-video";
+
+/* page*/
+
+@import "pages/header";
+@import "pages/nav";
+@import "pages/home";
+@import "pages/main";

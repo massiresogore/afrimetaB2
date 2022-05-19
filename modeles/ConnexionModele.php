@@ -5,8 +5,6 @@ class ConnexionModele extends AbstractModele
 {
     public static $message;
 
-
-
     public function setConnexion(array $data)
     {
 

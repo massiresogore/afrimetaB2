@@ -1,29 +1,25 @@
 *,
 *::after,
-*::before{
+*::before {
     margin: 0;
     padding: 0;
     box-sizing: inherit;
 }
-html{
-    font-size: 10px;
-}
 
-body{
-   box-sizing: border-box;
-}
-:root{
-    --font-size:14px;
-}
-h1{
-    font-size: 24px;
-}
-h2{
-    font-size: 22px;
-}
-h3{
-    font-size: 20px;
-}
-h4{
-    font-size: 18px;
+// html{
+//       /* valeur de de 10px en % :  10 / 16(varleur de root) * 100= 62.5%*/
+//       font-size: 62.5%;
+//       @include respond(tab-land){ // width < 1200 ?
+//           font-size: 52.26%;   /* 1rem = 9px , 9px/16px = 56.26% */
+//       }
+//       @include respond( tab-port){  // width < 900 ?
+//           font-size: 50%;  /* 1rem = 8px , 8px/16px = 50% */
+//       }
+//     @include respond(big-desktop){  // width > 1800
+//         font-size: 75%; /* 1rem = 12px , 12px/16px = 75% */
+//     }
+// }
+body {
+    box-sizing: border-box;
+    padding: 1.1rem;
 }

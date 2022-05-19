@@ -9,6 +9,7 @@ class User
     public $password;
     public $token;
     public $active;
+    public $relation;
     public $date;
 
     public function __construct($data = [])
@@ -54,6 +55,11 @@ class User
     {
         return $this->active = $active;
     }
+    public function setRelation($relation)
+    {
+        return $this->relation = $relation;
+    }
+
     public function setDate($date)
     {
         return $this->date = $date;
@@ -87,6 +93,10 @@ class User
     public function getActive()
     {
         return $this->active;
+    }
+    public function getRelation()
+    {
+        return $this->relation;
     }
     public function getDate()
     {
