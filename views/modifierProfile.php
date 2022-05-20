@@ -85,13 +85,13 @@
                 <!-- ville field -->
                 <div class="form__group">
                     <label for="ville" class="form__label">Ville</label>
-                    <input type="text" name="ville" value="<?= (isset($profile)) ?  $profile->getVille() : "" ?>" id="ville" required>
+                    <input classe="input" type="text" name="ville" value="<?= (isset($profile)) ?  $profile->getVille() : "" ?>" id="ville" required>
                 </div>
 
                 <!-- pays field -->
                 <div class="form__group">
                     <label for="pays" class="form__label">Pays</label>
-                    <input type="text" name="pays" value="<?= (isset($profile)) ?  $profile->getPays() : "" ?>" id="pays" required>
+                    <input classe="input" type="text" name="pays" value="<?= (isset($profile)) ?  $profile->getPays() : "" ?>" id="pays" required>
                 </div>
 
                 <!-- sexe field -->
@@ -106,12 +106,12 @@
                 <!-- github Confirmation -->
                 <div class="form__group">
                     <label for="github" class="form__label">Github</label>
-                    <input type="text" name="github" value="<?= (isset($profile)) ?  $profile->getGithub() : "" ?>" id="github" required>
+                    <input classe="input" type="text" name="github" value="<?= (isset($profile)) ?  $profile->getGithub() : "" ?>" id="github" required>
                 </div>
                 <!-- facebook Confirmation -->
                 <div class="form__group">
                     <label for="facebook" class="form__label">Facebook</label>
-                    <input type="text" name="facebook" value="<?= (isset($profile)) ?  $profile->getGithub() : "" ?>" id="facebook" required>
+                    <input classe="input" type="text" name="facebook" value="<?= (isset($profile)) ?  $profile->getGithub() : "" ?>" id="facebook" required>
                 </div>
 
                 <!-- disponibilite  -->
@@ -127,7 +127,6 @@
                 <div class="form__group">
                     <label for="biographie" class="form__label">Biographie</label>
                     <textarea name="biographie" id="biographie" cols="30" rows="10" style="resize:none;"><?= (isset($profile)) ?  $profile->getBiographie() : "" ?></textarea>
-
                 </div>
 
                 <!-- submit  -->

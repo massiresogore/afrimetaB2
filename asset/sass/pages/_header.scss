@@ -7,6 +7,11 @@
 
 .header__paragraph {
     font-size: 1.2rem;
+    text-align: justify;
+    padding: 0 10px;
+    @media screen and (max-width: 400px) {
+        font-size: 1rem;
+    }
 }
 
 .header__btn:link,
