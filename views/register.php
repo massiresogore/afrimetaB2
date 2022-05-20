@@ -11,31 +11,31 @@
 
             <!-- Name field -->
             <div class="form__group">
-                <input class="input" type="text" name="name" id="name" placeholder="Nom" required>
+                <input class="input" type="text" name="name" id="name" autocomplete="off" placeholder="Nom" required>
                 <label for="name" class="form__label ">Nom</label>
             </div>
 
             <!-- pseudo field -->
             <div class="form__group">
-                <input class="input" type="text" name="pseudo" id="pseudo" placeholder="Pseudo" required>
+                <input class="input" type="text" name="pseudo" id="pseudo" autocomplete="off" placeholder="Pseudo" required>
                 <label for="pseudo" class="form__label">pseudo</label>
             </div>
 
             <!-- email field -->
             <div class="form__group">
-                <input class="input" type="email" name="email" placeholder="Email" id="email" required>
+                <input class="input" type="email" name="email" autocomplete="off" placeholder="Email" id="email" required>
                 <label for="email" class="form__label">Email</label>
             </div>
 
             <!-- password field -->
             <div class="form__group">
-                <input class="input" type="password" placeholder="mot de passe" name="password" id="password" required>
+                <input class="input" type="password" autocomplete="off" placeholder="mot de passe" name="password" id="password" required>
                 <label for="password" class="form__label">Mot de passe </label>
             </div>
 
             <!-- password Confirmation -->
             <div class="form__group">
-                <input class="input" type="password" placeholder="confirmé votre mot de passe" name="password_confirm" id="password_confirm" required>
+                <input class="input" type="password" autocomplete="off" placeholder="confirmé votre mot de passe" name="password_confirm" id="password_confirm" required>
                 <label for="password_confirm" class="form__label">Confirmer votre mot de passe </label>
             </div>
 

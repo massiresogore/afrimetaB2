@@ -1,4 +1,4 @@
-// #main-register {
+// #main-connexion {
 //     margin-top: 1.5rem;
 //     display: block;
 //     height: 100%;
@@ -9,12 +9,13 @@
 //         padding: 1rem 2rem;
 //     }
 // }
-.book {
+.book-connexion {
     padding-top: 1rem;
     margin-top: 2rem;
     padding-left: 6rem;
-    background-image: linear-gradient(105deg, rgba(white, .8) 0%, rgba(white, .8) 50%, transparent 50%), url('http://localhost/socialNetwork/asset/images/afrimetaImage/register.jpg');
+    background-image: linear-gradient(105deg, rgba(white, .8) 0%, rgba(white, .8) 50%, transparent 50%), url('http://localhost/socialNetwork/asset/images/afrimetaImage/connexion.jpg');
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     height: 30rem;
     border-radius: 3px;
@@ -37,30 +38,16 @@
     }
 }
 
-.form-register {
-    margin-top: 2rem;
+.form-connexion {
+    transform: translateY(67%);
     @media screen and (max-width: 963px) {
-        margin-top: 0;
+        transform: translateY(43%);
     }
 }
 
-.form__title {
-    margin-bottom: 1rem;
-    text-align: center;
-    @media screen and (max-width: 963px) {
-        margin-bottom: 0;
-    }
-}
-
-.form__group {
-    @media screen and (max-width: 963px) {
-        height: 3.2rem;
-    }
-}
-
-.input {
+.input-connexion {
     font-size: 1.1rem;
-    padding: .3rem .5rem;
+    padding: .7rem .5rem;
     border-radius: 2px;
     background-color: rgba(white, .5);
     box-shadow: 1px 1px 8px rgba( #000000, .6);
@@ -85,6 +72,7 @@
     }
     @media screen and (max-width: 963px) {
         margin-left: 1rem;
+        padding: .6rem .4rem;
     }
     @media screen and (max-width: 973px) {
         min-width: 305px;
@@ -102,29 +90,18 @@
     }
 }
 
-.input:focus {
+.input-connexion:placeholder-shown+.form__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-3px);
+}
+
+.input-connexion:focus {
     outline: none;
     box-shadow: 0 .5rem 1rem rgba( black, .2);
     border-bottom: 3px solid rgb(69, 169, 146);
 }
 
-.input:focus:invalid {
+.input-connexion:focus:invalid {
     border-bottom: 3px solid #ff7730;
-}
-
-.form__label {
-    margin-top: 0;
-    display: block;
-    margin-left: 24px;
-    color: #4c4c4d;
-    position: relative;
-    top: -5px;
-    transition: all .5s;
-    text-transform: uppercase;
-}
-
-.input:placeholder-shown+.form__label {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-3px);
 }

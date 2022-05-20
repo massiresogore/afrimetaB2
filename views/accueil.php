@@ -14,7 +14,7 @@
         <header class="header">
 
             <p class="header__paragraph">
-                Afrimeta Blog social pour les étudiant.
+                Blog social Afrimeta pour les étudiant !!!.
                 et qui dit etudiant, dit également parcours, informations etc.
                 grâce à cette plateforme, vous aurez la possiblilité de
                 échangés des infomations entre etudiant , recevoir de l'aide si vous rencontrez des problèmes sur l'un de vos projets et biens plus encore !
