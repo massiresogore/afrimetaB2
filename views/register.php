@@ -1,4 +1,8 @@
-<?php ob_start(); ?>
+<?php ob_start();
+
+
+
+?>
 
 <main id="main-register">
     <div class="book">

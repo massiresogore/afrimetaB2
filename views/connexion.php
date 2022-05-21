@@ -1,8 +1,5 @@
 <?php ob_start(); ?>
 <main id="main-connexion">
-
-
-
     <div class="book-connexion">
 
         <p class="erreurs">
@@ -12,13 +9,13 @@
         <form action="" method="POST" class="form-connexion" id="contactForm">
             <!-- email field -->
             <div class="form__group">
-                <input class="input-connexion" type="email" name="email" id="email" autocomplete="off" placeholder="Email" required>
+                <input class="input-connexion" type="email" value="sogoremassire.fr@gmail.com" name="email" id="email" autocomplete="off" placeholder="Email" required>
                 <label for="email" class="form__label">Email</label>
             </div>
 
             <!-- password field -->
             <div class="form__group">
-                <input class="input-connexion" type="password" name="password" id="password" autocomplete="off" placeholder="Mot de passe" required>
+                <input class="input-connexion" value="123456" type="password" name="password" id="password" autocomplete="off" placeholder="Mot de passe" required>
                 <label for="password" class="form__label">Mot de passe </label>
             </div>
 

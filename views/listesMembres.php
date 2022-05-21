@@ -1,33 +1,46 @@
 <?php ob_start(); ?>
 
-<main>
-    <h1>Listes des Membres</h1>
+<main class="main-membre">
     <?php if (isset($users) && $users != null) : ?>
-        <?php foreach ($users as  $user) : ?>
-            <div class="description">
-                <div class="img">
 
-                    <?php if ($profileModele->getProfileUser($user->getId())->getImage()) { ?>
+        <div class="book-membre">
+            <?php foreach ($users as  $user) : ?>
+
+                <div class="bac-membre">
+
+                    <div class="membre__row-1">
+
+                        <?php if ($profileModele->getProfileUser($user->getId())->getImage()) { ?>
+                            <a href="index.php?page=profile&id=<?= $user->getId() ?>">
+                                <img src="http://localhost/socialNetwork/asset/images/profile<?= $user->getId() . '/' . $profileModele->getProfileUser($user->getId())->getImage() ?>">
+                            </a>
+
+                        <?php } else { ?>
+
+                            <img src="http://localhost/socialNetwork/asset/images/noprofile/noprofile.jpg" alt="">
+                        <?php } ?>
+                    </div>
+                    <div class="membre__row-2">
                         <a href="index.php?page=profile&id=<?= $user->getId() ?>">
-                            <img src="http://localhost/socialNetwork/asset/images/profile<?= $user->getId() . '/' . $profileModele->getProfileUser($user->getId())->getImage() ?>" height="100px">
+                            <p class="pseudo"><?= $user->getName() ?></p>
                         </a>
+                        <p class="id"><?= $user->getPseudo() ?></p>
+                        <p class="email"><?= $user->getEmail() ?></p>
+                    </div>
 
-                    <?php } else { ?>
-
-                        <img src="http://localhost/socialNetwork/asset/images/noprofile/noprofile.jpg" alt="" height="100px">
-                    <?php } ?>
                 </div>
-                <a href="index.php?page=profile&id=<?= $user->getId() ?>">
-                    <p class="pseudo"><?= $user->getPseudo() ?></p>
-                </a>
-                <p class="id"><?= $user->getId() ?></p>
-                <p class="email"><?= $user->getEmail() ?></p>
-            </div>
-        <?php endforeach; ?>
+            <?php endforeach; ?>
+        </div>
     <?php endif ?>
-
 </main>
 
+<?php
+
+// echo "<pre>";
+// var_dump($users);
+// echo "<pre>";
+
+?>
 
 <?php $content =  ob_get_clean();
 require "template.php"; ?>

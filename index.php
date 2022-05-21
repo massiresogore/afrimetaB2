@@ -6,7 +6,7 @@ require "classes/User.php";
 session_start();
 require "classes/Profile.php";
 require "classes/Publication.php";
-require "classes/User_relation.php";
+require "classes/relation.php";
 
 
 

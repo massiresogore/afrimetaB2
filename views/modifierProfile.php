@@ -1,74 +1,56 @@
 <?php ob_start(); ?>
+<h3>Completez votre profile <span class="titre-profile"><?= (isset($user)) ? $user->getName() : "" ?></span> </h3>
+<main id="main-profile">
 
-<main id="main">
+    <div class="profile__row-1">
+        <div class="profile__info">
+            <div class="profile_infi-modif">
+                <?php if ($profileModele->getProfileUser($user->getId())->getImage()) { ?>
+                    <a href="index.php?page=profile&id=<?= $user->getId() ?>">
 
+                        <div class="profile_info-img"><img src="http://localhost/socialNetwork/asset/images/profile<?= $user->getId() . '/' . $profileModele->getProfileUser($user->getId())->getImage() ?>"></div>
 
-    <h1><?php  ?></h1>
-
-    <div class="profile">
-
-        <div class="profile__row-1">
-            <div class="profile__row-1-block">
-                <h3>Bienvenu sur votre profile <span><?= (isset($user)) ? $user->getName() : "" ?></span></h3>
-            </div>
-            <div class="profile__row-1-block">
-                <div class="profile__info">
-                    <div class="img">
-
-                        <?php if ($profile->getId()) { ?>
-
-                            <img src="http://localhost/socialNetwork/asset/images/profile<?= $user->getId() . '/' . $profile->getImage() ?>">
-                        <?php } else { ?>
-
-                            <img src="http://localhost/socialNetwork/asset/images/noprofile/noprofile.jpg" alt="">
-                        <?php } ?>
-
-                    </div>
-
-                    <div class="pseudo">
-                        <h4>Pseudo</h4>
-                        <p class="pseudo"><?= (isset($user)) ?  $user->getPseudo() : "" ?></p>
-                    </div>
-
-                    <div class="email">
-                        <h4>Email</h4>
-                        <p><a href="mailto:<?= (isset($user)) ?  $user->getEmail() : "" ?>" class="email"><?= (isset($user)) ?  $user->getEmail() : "" ?></a></p>
-                    </div>
-
-                    <div class="ville">
-                        <h4>Ville</h4>
-                        <p><a href="https://maps.google.com/maps?q=<?= (isset($profile)) ?  $profile->getVille() : "" ?>" target="_blank"><?= (isset($profile)) ?  $profile->getVille() : "" ?></a></p>
-                    </div>
-
-                    <div class="sexe">
-                        <h4>Sexe</h4>
-                        <p class="sexe"><?= (isset($profile)) ?  $profile->getSexe() : "" ?></p>
-                    </div>
-
-                    <div class="dispo">
-                        <h5>Disponibilite</h5>
-                        <p class="dispo"><?= (isset($profile) && $profile->getDisponibilite() == false) ?  "non disponible" : " disponible" ?></p>
-                    </div>
-                    <p class="pseudo"></p>
-                    <a href="mailto:" class="email"></a>
-
+                    </a>
+                <?php } else { ?>
+                    <img src="http://localhost/socialNetwork/asset/images/noprofile/noprofile.jpg" alt="">
+                <?php } ?>
+                <div class="pseudo">
+                    <p class="pseudo"><span class="titre-profile">Pseudo :</span> <?= (isset($user)) ?  $user->getPseudo() : "" ?></p>
                 </div>
-
+                <div class="email">
+                    <p><span class="titre-profile">Email :</span> <a href="mailto:<?= (isset($user)) ?  $user->getEmail() : "" ?>" class="email"><?= (isset($user)) ?  $user->getEmail() : "" ?></a></p>
+                </div>
+                <div class="sexe">
+                    <p class="sexe"><span class="titre-profile">Sexe :</span> <?= (isset($profile)) ?  $profile->getSexe() : "" ?></p>
+                </div>
             </div>
-            <div class="profile__row-1-block"><i class="fa-brands fa-github"></i><a href="<?= (isset($profile)) ?  $profile->getGithub() : "" ?>" target="_blank"><?= (isset($profile)) ?  $profile->getGithub() : "" ?></a></div>
-            <div class="profile__row-1-block"><i class="fa-brands fa-facebook"></i><a href="<?= (isset($profile)) ?  $profile->getFacebook() : "" ?>" target="_blank"><?= (isset($profile)) ?  $profile->getFacebook() : "" ?></a></div>
-            <div class="profile__row-1-block">
-                <h3>Qui est <?= (isset($user)) ?  $user->getPseudo() : "" ?></h3>
-                <div class="biogragphie"><?= (isset($profile)) ?  $profile->getBiographie() : "" ?></div>
+
+            <div class="profile__info-modif">
+                <div class="ville">
+                    <p><span class="titre-profile">Ville :</span> <a href="https://maps.google.com/maps?q=<?= (isset($profile)) ?  $profile->getVille() : "" ?>" target="_blank"><?= (isset($profile)) ?  $profile->getVille() : "" ?></a></p>
+                </div>
+                <div class="dispo">
+                    <p class="dispo"><span class="titre-profile">Disponibilite :</span> <?= (isset($profile) && $profile->getDisponibilite() == false) ?  "non disponible" : " disponible" ?></p>
+                </div>
+                <p class="pseudo"></p>
+                <a href="mailto:" class="email"></a>
+
+
+
+                <div class="profile__row-1-block"><i class="fa-brands fa-github"></i><span class="titre-profile">Github :</span> <a href="<?= (isset($profile)) ?  $profile->getGithub() : "" ?>" target="_blank"><?= (isset($profile)) ?  $profile->getGithub() : "" ?></a></div>
+
+                <div class="profile__row-1-block"><i class="fa-brands fa-facebook"></i><span>Facebook :</span> <a href="<?= (isset($profile)) ?  $profile->getFacebook() : "" ?>" target="_blank"><?= (isset($profile)) ?  $profile->getFacebook() : "" ?></a></div>
+                <div class="profile__row-1-block">
+                    <div class="biogragphie"><span class="titre-profile">Description : </span><?= (isset($profile)) ?  $profile->getBiographie() : "" ?></div>
+                </div>
             </div>
-
-
-
-            <a href="index.php?page=modifierProfile&id=<//?= $_SESSION['user']->getId() ?>">Completer Mon profile</a>
         </div>
+    </div>
 
-        <div class="profile__row-2">
-            <h3>Completez mon profile </h3>
+    <div class="profile__row-2">
+
+        <div class="profile__row-2-modif">
+
             <form action="" method="post" class="form" id="contactForm" enctype="multipart/form-data">
                 <p class="erreurs">
                     <?= isset(ProfileModele::$errorProfile) ? ProfileModele::$errorProfile : "" ?>
@@ -76,67 +58,70 @@
                 <p class="erreurs">
                     <?= isset(ProfileModele::$errorProfil2) ? ProfileModele::$errorProfil2 : "" ?>
                 </p>
-                <!-- Image field -->
-                <div class="form__group">
-                    <label for="image">Modifier votre image de profil, 300Ko max</label>
-                    <input type="file" name="image">
-                </div>
 
                 <!-- ville field -->
                 <div class="form__group">
-                    <label for="ville" class="form__label">Ville</label>
+                    <label for="ville" class="titre-profile ville">Ville</label>
                     <input classe="input" type="text" name="ville" value="<?= (isset($profile)) ?  $profile->getVille() : "" ?>" id="ville" required>
                 </div>
 
                 <!-- pays field -->
                 <div class="form__group">
-                    <label for="pays" class="form__label">Pays</label>
+                    <label for="pays" class="titre-profile">Pays</label>
                     <input classe="input" type="text" name="pays" value="<?= (isset($profile)) ?  $profile->getPays() : "" ?>" id="pays" required>
                 </div>
 
-                <!-- sexe field -->
-                <div class="form__group">
-                    <label for="">Sexe</label>
-                    <select name="sexe" id="sexe">
-                        <option value="homme" <?= ($profile->getSexe() == "homme") ?  "selected" : "" ?>>Homme</option>
-                        <option value="femme" <?= ($profile->getSexe() == "femme") ?  "selected" : "" ?>>Femme</option>
-                    </select>
-                </div>
+
 
                 <!-- github Confirmation -->
                 <div class="form__group">
-                    <label for="github" class="form__label">Github</label>
+                    <label for="github" class="titre-profile">Github</label>
                     <input classe="input" type="text" name="github" value="<?= (isset($profile)) ?  $profile->getGithub() : "" ?>" id="github" required>
                 </div>
                 <!-- facebook Confirmation -->
                 <div class="form__group">
-                    <label for="facebook" class="form__label">Facebook</label>
-                    <input classe="input" type="text" name="facebook" value="<?= (isset($profile)) ?  $profile->getGithub() : "" ?>" id="facebook" required>
+                    <label for="facebook" class="titre-profile">Facebook</label>
+                    <input classe="input" type="text" name="facebook" value="<?= (isset($profile)) ?  $profile->getFacebook() : "" ?>" id="facebook" required>
                 </div>
-
-                <!-- disponibilite  -->
-                <div class="form__group">
-                    <label for="disponibilite" class="form__label">disponibilite</label>
-                    <div class="radio">
-                        <span class="ouidisponible">oui<input type="radio" value="1" name="disponibilite" <?= ($profile->getDisponibilite() == "1") ?  "checked" : "" ?>></span>
-                        <span class="disponible">non<input type="radio" value="0" name="disponibilite" <?= isset($rofile) ? "" : "checked" ?>></span>
-                    </div>
-                </div>
-
-                <!-- biographie Confirmation -->
-                <div class="form__group">
-                    <label for="biographie" class="form__label">Biographie</label>
-                    <textarea name="biographie" id="biographie" cols="30" rows="10" style="resize:none;"><?= (isset($profile)) ?  $profile->getBiographie() : "" ?></textarea>
-                </div>
-
-                <!-- submit  -->
-                <div class="form__group">
-                    <input type="submit" value="completez mon profile" name="enregistrer" class="fom__submit">
-                </div>
-
-            </form>
-
         </div>
+
+        <div class="profile__row-2-modif-2">
+            <!-- Image field -->
+            <div>
+                <label for="image" class=""><span class="label-off">Modifier votre image de profil,</span> 300Ko max</label>
+                <input type="file" name="image">
+            </div>
+
+
+            <!-- disponibilite  -->
+            <div>
+                <label for="disponibilite" class="titre-profile">disponibilite</label>
+                <span class="ouidisponible">oui<input type="radio" value="1" name="disponibilite" <?= ($profile->getDisponibilite() == "1") ?  "checked" : "" ?>></span>
+                <span class="disponible">non<input type="radio" value="0" name="disponibilite" <?= isset($rofile) ? "" : "checked" ?>></span>
+            </div>
+
+            <!-- sexe field -->
+            <div>
+                <label for="" class="titre-profile">Sexe</label>
+                <select name="sexe" id="sexe">
+                    <option value="homme" <?= ($profile->getSexe() == "homme") ?  "selected" : "" ?>>Homme</option>
+                    <option value="femme" <?= ($profile->getSexe() == "femme") ?  "selected" : "" ?>>Femme</option>
+                </select>
+            </div>
+
+            <!-- biographie Confirmation -->
+            <div class="form__group ">
+                <label for="biographie" class="titre-biographie">Biographie</label>
+                <textarea name="biographie" id="biographie"><?= (isset($profile)) ?  $profile->getBiographie() : "" ?></textarea>
+            </div>
+
+            <!-- submit  -->
+            <div class="form__group submit">
+                <input type="submit" value="completez mon profile" name="enregistrer" class="fom__submit">
+            </div>
+        </div>
+
+        </form>
     </div>
 </main>
 

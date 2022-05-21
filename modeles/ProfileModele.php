@@ -27,6 +27,7 @@ class ProfileModele extends AbstractModele
         $req = $this->executeRequete("SELECT * FROM profile");
         $stm = $req->fetchAll();
         $profiles = new Profile($stm);
+
         return $profiles;
     }
 
@@ -42,7 +43,7 @@ class ProfileModele extends AbstractModele
                 if ($_FILES["image"]["size"] == 0) {
 
                     // image n'esxiste => on insert les données
-                    $requete = $this->executeRequete("INSERT INTO `profile`(`id_user`,`ville`, `pays`, `sexe`, `github`, `facebook`, `biographie`, `disponibilite`) VALUES (?,?,?,?,?,?,?,?,?);", [$id_user, $profile->getVille(), $profile->getPays(), $profile->getSexe(), $profile->getGithub(), $profile->getFacebook(), $profile->getBiographie(), $profile->getDisponibilite()]);
+                    $requete = $this->executeRequete("INSERT INTO `profile`(`id_user`,`ville`, `pays`, `sexe`, `github`, `facebook`, `biographie`, `disponibilite`) VALUES (?,?,?,?,?,?,?,?);", [$id_user, $profile->getVille(), $profile->getPays(), $profile->getSexe(), $profile->getGithub(), $profile->getFacebook(), $profile->getBiographie(), $profile->getDisponibilite()]);
                     $requete->closeCursor();
                     //on rafraichi la page
                     Parent::redirect('modifierProfile');
@@ -53,10 +54,14 @@ class ProfileModele extends AbstractModele
                     if ($ajout != null) {
                         throw new Exception("Image non enregistrer");
                     } else {
+
                         $photo = $_FILES["image"]["name"];
                         //on envoi des données dans la base de donnée
                         $requete = $this->executeRequete("INSERT INTO `profile`(`id_user`, `image`, `ville`, `pays`, `sexe`, `github`, `facebook`, `biographie`, `disponibilite`) VALUES (?,?,?,?,?,?,?,?,?);", [$id_user, $photo, $profile->getVille(), $profile->getPays(), $profile->getSexe(), $profile->getGithub(), $profile->getFacebook(), $profile->getBiographie(), $profile->getDisponibilite()]);
                         $requete->closeCursor();
+
+
+
 
                         //on rafraichi la page
                         Parent::redirect('modifierProfile');
@@ -77,7 +82,6 @@ class ProfileModele extends AbstractModele
             if (isset($_FILES["image"])) {
 
                 if ($_FILES["image"]["size"] == 0) {
-
                     // image n'esxiste => on met à jour
                     $requete = $this->executeRequete("UPDATE `profile` SET `id_user`= ?,`ville`=?, `pays`=?, `sexe`=?, `github`=?, `facebook`=?, `biographie`=?, `disponibilite`=?", [$id_user, $profile->getVille(), $profile->getPays(), $profile->getSexe(), $profile->getGithub(), $profile->getFacebook(), $profile->getBiographie(), $profile->getDisponibilite()]);
                     $requete->closeCursor();
@@ -92,7 +96,14 @@ class ProfileModele extends AbstractModele
                     } else {
                         $photo = $_FILES["image"]["name"];
                         //on envoi des données dans la base de donnée
-                        $requete = $this->executeRequete("UPDATE  `profile` SET `id_user`=?, `image`=?, `ville`?, `pays`?, `sexe`=?, `github`=?, `facebook`=?, `biographie`=?, `disponibilite`=?", [$id_user, $photo, $profile->getVille(), $profile->getPays(), $profile->getSexe(), $profile->getGithub(), $profile->getFacebook(), $profile->getBiographie(), $profile->getDisponibilite()]);
+
+
+
+                        //var_dump($_POST);
+
+
+
+                        $requete = $this->executeRequete("UPDATE  `profile` SET `id_user`=?, `image`=?, `ville`=?, `pays`=?, `sexe`=?, `github`=?, `facebook`=?, `biographie`=?, `disponibilite`=?", [$id_user, $photo, $profile->getVille(), $profile->getPays(), $profile->getSexe(), $profile->getGithub(), $profile->getFacebook(), $profile->getBiographie(), $profile->getDisponibilite()]);
                         $requete->closeCursor();
                         //on rafraichi la page
                         Parent::redirect('modifierProfile');

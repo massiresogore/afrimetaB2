@@ -15,7 +15,8 @@ class ConnexionModele extends AbstractModele
             //get user Email
             $req = $this->executeRequete("SELECT * FROM users WHERE email =?", [$email]);
             $stm = $req->fetch();
-            $id = $stm["id"];
+
+            // $id = $stm["id"];
 
 
 
@@ -36,8 +37,9 @@ class ConnexionModele extends AbstractModele
                     $passwordVerif = password_verify($password, $stm["password"]);
                     //on active une auto relation des quon est connecté
                     if ($passwordVerif) {
+
                         if ($stm["relation"] == '0') {
-                            $req = $this->executeRequete("INSERT INTO `user_relations`(`user_id1`, `user_id2`, `status`) VALUES (?,?,?) ", [$id, $id, '2']);
+                            $req = $this->executeRequete("INSERT INTO `relation`(`id_demandeur`, `id_receveur`, `statut`) VALUES (?,?,?) ", [$stm['id'], $stm['id'], '2']);
 
                             $req = $this->getBd()->prepare("UPDATE users SET relation = '1' WHERE email= ?");
                             $req->execute([$email]);

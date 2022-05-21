@@ -47,34 +47,6 @@ abstract class AbstractModele
         return $token;
     }
 
-    public function VerifInvitation($user_id1_connecte,  $user_id2_get)
-    {
-        $req = $this->executeRequete("SELECT user_id1, user_id2 status FROM user_relations WHERE (user_id1 =:user_id1 AND user_id2 =:user_id2) OR  (user_id1 =:user_id2 AND user_id2 =:user_id1)", [
-            "user_id1" => $user_id1_connecte,
-            "user_id2" => $user_id2_get
-        ]);
-
-        $stm = $req->fetch();
-        if ($stm) {
-            //si lutulistateur a reçu une demande d'amitier
-            if ($stm["user_id1"] == $user_id2_get && $stm["status"] == '0') {
-                //lien pour accepter poue refuser la demande d'amitier
-                return "ajouter ou rejeter une demande";
-            } elseif ($stm["user_id1"] == $user_id1_connecte && $stm["status"] == '0') {
-                //msg pour dire que la demande a deja ete envoyer : lien pour anuler la demande
-                return "annuler ou rejeter une demande";
-            } elseif (($stm["user_id1"] == $user_id1_connecte) or ($stm["user_id1"] == $user_id2_get) and ($stm["status"] == '1')) {
-                //lien pour supprimer lamitier
-                return "supprimer demande";
-            } else {
-                //lien pour ajouter un ami
-                return "ajouter un ami ";
-            }
-        } else {
-            return false;
-        }
-    }
-
 
 
 

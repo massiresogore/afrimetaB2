@@ -1,85 +1,66 @@
 <?php ob_start(); ?>
 
+<main id="main-profile">
 
-
-
-<main id="main">
-
-
-    <h1><?php  ?></h1>
 
     <div class="profile">
         <div class="profile__row-1">
             <div class="profile__row-1-block">
-                <h3>Bienvenu sur votre profile <span><?= (isset($user)) ? $user->getName() : "" ?></span></h3>
+                <h3>Profile de <span><?= (isset($user)) ? $user->getName() : "" ?></span></h3>
             </div>
             <div class="profile__row-1-block">
                 <div class="profile__info">
                     <div class="img">
 
-                        <?php if ($profile->getId()) { ?>
+                        <?php if (isset($user)) { ?>
+                            <?php if ($profile->getImage() != null) { ?>
 
-                            <img src="http://localhost/socialNetwork/asset/images/profile<?= $user->getId() . '/' . $profile->getImage() ?>">
-                        <?php } else { ?>
-
-                            <img src="http://localhost/socialNetwork/asset/images/noprofile/noprofile.jpg" alt="">
-                        <?php } ?>
+                                <img src="http://localhost/socialNetwork/asset/images/profile<?= $user->getId() . '/' . $profile->getImage() ?>">
+                            <?php } else { ?>
+                                <img src="http://localhost/socialNetwork/asset/images/noprofile/noprofile.jpg" alt="">
+                            <?php } ?>
                     </div>
+                    <?php if ($_SESSION["user"]->getId() != $_GET["id"]) { ?>
+                        <div class="demande_amitier">
 
+                            <?php if ($AfficherlienAdequatPourLaRelation) { ?>
+                                demande d'amitier déjà envoyé
+                                <a href="index.php?page=annuler_la_demande&id=<?= $user->getId() ?>"> Annuler la demande</a>
+                            <?php } else { ?>
+                                <a href="index.php?page=ajout_ami&id=<?= $user->getId() ?>"> <i class="fa fa-plus"></i> Ajouté comme ami</a>
 
-
-
-                    <?php if ($verifInvitation == 'annuler ou rejeter une demande') : ?>
-                        <div class="relation">
-                            <p>Une demande d'amitier à été envoyé <a href="index.php?page=annuler_ami&id=<//?= $user->getId() ?>">Annuler la demande ?</a></p>
+                            <?php } ?>
                         </div>
-                    <?php elseif ($verifInvitation == 'ajouter ou rejeter une demande') : ?>
-                        ajouter ou rejeter une demande
-                    <?php elseif ($verifInvitation == 'supprimer demande') : ?>
-                        vous etes deja ami
-                        supprimer demande
-                    <?php elseif ($verifInvitation == 'ajouter un ami') : ?>
-                        <a href="index.php?page=ajout_ami&id=<?= $user->getId() ?>"> <i class="fa fa-plus"></i> Ajouté comme ami</a>
-                    <?php endif; ?>
+                    <?php } ?>
 
+                <?php } ?>
 
+                <div class="pseudo">
+                    <h4>Pseudo</h4>
+                    <p class="pseudo"><?= (isset($user)) ?  $user->getPseudo() : "" ?></p>
+                </div>
 
+                <div class="email">
+                    <h4>Email</h4>
+                    <p><a href="mailto:<?= (isset($user)) ?  $user->getEmail() : "" ?>" class="email"><?= (isset($user)) ?  $user->getEmail() : "" ?></a></p>
+                </div>
 
+                <div class="ville">
+                    <h4>Ville</h4>
+                    <p><a href="https://maps.google.com/maps?q=<?= (isset($profile)) ?  $profile->getVille() : "" ?>" target="_blank"><?= (isset($profile)) ?  $profile->getVille() : "" ?></a></p>
+                </div>
 
+                <div class="sexe">
+                    <h4>Sexe</h4>
+                    <p class="sexe"><?= (isset($profile)) ?  $profile->getSexe() : "" ?></p>
+                </div>
 
-
-
-
-
-
-
-
-                    <div class="pseudo">
-                        <h4>Pseudo</h4>
-                        <p class="pseudo"><?= (isset($user)) ?  $user->getPseudo() : "" ?></p>
-                    </div>
-
-                    <div class="email">
-                        <h4>Email</h4>
-                        <p><a href="mailto:<?= (isset($user)) ?  $user->getEmail() : "" ?>" class="email"><?= (isset($user)) ?  $user->getEmail() : "" ?></a></p>
-                    </div>
-
-                    <div class="ville">
-                        <h4>Ville</h4>
-                        <p><a href="https://maps.google.com/maps?q=<?= (isset($profile)) ?  $profile->getVille() : "" ?>" target="_blank"><?= (isset($profile)) ?  $profile->getVille() : "" ?></a></p>
-                    </div>
-
-                    <div class="sexe">
-                        <h4>Sexe</h4>
-                        <p class="sexe"><?= (isset($profile)) ?  $profile->getSexe() : "" ?></p>
-                    </div>
-
-                    <div class="dispo">
-                        <h5>Disponibilite</h5>
-                        <p class="dispo"><?= (isset($profile) && $profile->getDisponibilite() == false) ?  "non disponible" : " disponible" ?></p>
-                    </div>
-                    <p class="pseudo"></p>
-                    <a href="mailto:" class="email"></a>
+                <div class="dispo">
+                    <h5>Disponibilite</h5>
+                    <p class="dispo"><?= (isset($profile) && $profile->getDisponibilite() == false) ?  "non disponible" : " disponible" ?></p>
+                </div>
+                <p class="pseudo"></p>
+                <a href="mailto:" class="email"></a>
 
                 </div>
 
@@ -91,6 +72,8 @@
                 <div class="biogragphie"><?= (isset($profile)) ?  $profile->getFacebook() : "" ?></div>
             </div>
         </div>
+
+
         <div class="profile__row-2">
 
             <form action="" method="post" class="form" id="contactForm" novalidate>
@@ -120,7 +103,7 @@
                     </div>
                 <?php endforeach; ?>
             <?php else : ?>
-                <p>Cet utilisateur n'apa encore publié </p>
+                <p>Cet utilisateur n'a pa encore publié </p>
             <?php endif ?>
         </div>
     </div>

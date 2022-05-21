@@ -2,8 +2,8 @@
 
 class User_relation
 {
-    public $user_id1;
-    public $user_id2;
+    public $id_demandeur;
+    public $id_receveur;
     public $status;
     public $create_at;
 
@@ -20,13 +20,13 @@ class User_relation
     }
 
     //setters
-    public function setUser_id1($user_id1)
+    public function setId_demandeur($id_demandeur)
     {
-        $this->user_id1 = $user_id1;
+        $this->id_demandeur = $id_demandeur;
     }
-    public function setUser_id2($user_id2)
+    public function setId_receveur($id_receveur)
     {
-        $this->user_id2 = $user_id2;
+        $this->id_receveur = $id_receveur;
     }
     public function setStatus($status)
     {
@@ -38,13 +38,13 @@ class User_relation
     }
 
     //getters
-    public function getUser_id1()
+    public function getId_demandeur()
     {
-        return $this->user_id1;
+        return $this->id_demandeur;
     }
-    public function getUser_id2()
+    public function id_receveur()
     {
-        return $this->user_id2;
+        return $this->id_receveur;
     }
     public function getStatus()
     {

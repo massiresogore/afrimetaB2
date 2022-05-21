@@ -48,10 +48,6 @@ class UrlProfile
 
                     if ($_GET["id"] || $_SESSION["user"]->getId()) {
                         $id_user = $_GET["id"];
-
-
-
-
                         $user = $profileModele->getUserCon($id_user);
                         $profile = $profileModele->getProfileUser($id_user);
 
@@ -67,15 +63,11 @@ class UrlProfile
                         }
 
                         $posts = $profileModele->getPosts($id_user);
-
-
-                        //on verifi si linvitation à été envoyé
-                        $GestionAmitierModele = new GestionAmitierModele;
-                        $user_id1_connecte = $_SESSION["user"]->getId();
-                        $user_id2_get = $_GET["id"];
-                        $verifInvitation = $GestionAmitierModele->VerifInvitation($user_id1_connecte,  $user_id2_get);
-
-
+                        $id_demandeur = $_SESSION["user"]->getId();
+                        $id_receveur = $_GET["id"];
+                        $gestionamitier = new GestionAmitierModele;
+                        $verif = $gestionamitier->VerifInvitation($id_demandeur, $id_receveur);
+                        $AfficherlienAdequatPourLaRelation = $gestionamitier->verifstatut($id_demandeur, $id_receveur);
 
 
                         require "views/profile.php";
