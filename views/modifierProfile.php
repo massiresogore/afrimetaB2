@@ -2,17 +2,20 @@
 <h3>Completez votre profile <span class="titre-profile"><?= (isset($user)) ? $user->getName() : "" ?></span> </h3>
 <main id="main-profile">
 
-    <div class="profile__row-1">
+    <div class="profile__row-1" id="input">
         <div class="profile__info">
             <div class="profile_infi-modif">
-                <?php if ($profileModele->getProfileUser($user->getId())->getImage()) { ?>
+
+
+                <?php if ($profileModele->getProfileUser($user->getId())->getImage() != null) { ?>
                     <a href="index.php?page=profile&id=<?= $user->getId() ?>">
-
                         <div class="profile_info-img"><img src="http://localhost/socialNetwork/asset/images/profile<?= $user->getId() . '/' . $profileModele->getProfileUser($user->getId())->getImage() ?>"></div>
-
                     </a>
                 <?php } else { ?>
-                    <img src="http://localhost/socialNetwork/asset/images/noprofile/noprofile.jpg" alt="">
+                    <div class="profile_info-img">
+                        <img src="http://localhost/socialNetwork/asset/images/noprofile/noprofile.jpg" alt="">
+                    </div>
+
                 <?php } ?>
                 <div class="pseudo">
                     <p class="pseudo"><span class="titre-profile">Pseudo :</span> <?= (isset($user)) ?  $user->getPseudo() : "" ?></p>

@@ -1,8 +1,70 @@
-#main-profile {
-    background-color: #fff;
+img {
+    object-fit: cover;
 }
 
-.profile {
+body {}
+
+#main-profile-V {
+    position: relative;
+    font-size: 1.2rem;
+    // background
+    padding: 1rem;
+    background-image: linear-gradient(105deg, rgba(white, .8) 0%, rgba(white, .9) 100%, transparent 50%), url('http://localhost/socialNetwork/asset/images/afrimetaImage/register.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    box-shadow: 0 1.5rem 4rem rgb(black, .6);
+    height: 100vh;
+    @media screen and(max-width: 990px) {
+        font-size: 1rem;
+        flex-direction: column;
+    }
+    @media screen and(max-width: 400px) {
+        padding: 0;
+    }
+}
+
+.profile-bloc-m {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    @media screen and(max-width: 970px) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.img {
+    height: 100px;
+}
+
+.img img {
+    height: 100%;
+}
+
+.profile__1 {
+    //flex-grow: 3;
+    justify-content: flex-start;
+}
+
+.profile__2 {
+    display: flex;
+    gap: 20px;
+    @media screen and(max-width: 990px) {
+        flex-direction: column;
+        //align-items: flex-start;
+    }
+}
+
+@media screen and(max-width: 990px) {
+    #main-profile-V input[type="submit"] {
+        margin-top: 9rem;
+    }
+    #main-profile-V .post-pb {
+        margin-top: 7rem;
+    }
+}
+
+#post {
+    width: 100%;
 }

@@ -1,6 +1,6 @@
 <?php ob_start(); ?>
 
-<main id="main">
+<main id="main-rei">
     <h1>Réinisialisation de Mot de passe</h1>
     <h6>merci d'entrer votre adresse email , nous vous enverons un mail pour réinitialiser votre mot de passe</h6>
 
