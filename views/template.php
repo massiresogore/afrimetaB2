@@ -22,10 +22,12 @@
             <img class="nav_logo" src="http://localhost/socialNetwork/asset/images/logo/logo.svg" alt="logo">
         </div>
 
+        <button id="navBar">
+            <span class="bar_1"></span>
+            <span class="bar_2"></span>
+            <span class="bar_3"></span>
+        </button>
         <div class="nav__block">
-            <button id="navBar">
-                <span class="hamburger"></span>
-            </button>
 
             <ul class="nav__list">
                 <li class="nav__item"><a class="nav__link" href="index.php" class="nav__link">Accueil </a></li>

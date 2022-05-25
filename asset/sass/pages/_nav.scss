@@ -7,8 +7,15 @@
 
 .nav__block {
     position: fixed;
-    right: 0;
+    right: -400px;
     top: 0;
+    z-index: 3;
+    //background-color: #FFFFFF;
+    //background-image: linear-gradient(to left bottom, #F3B61F, #A29F15); //1er essaie
+    background-image: linear-gradient(to left, #F5E9E2, #0B0014); //2er essaie
+    border-radius: 0 0 0 10px;
+    box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.778);
+    transition: all .4s ease;
 }
 
 #nav .nav_logo {
@@ -18,11 +25,7 @@
 .nav__list {
     list-style: none;
     position: relative;
-    padding: 1rem .5rem .5rem;
-    background-color: #FFFFFF;
-    border-radius: 10px 0 0 10px;
-    box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.778);
-    transition: all .7s ease;
+    padding: 3.3rem 3.5rem .5rem;
 }
 
 .nav__item:not(:last-child) {
@@ -35,5 +38,62 @@
     text-transform: uppercase;
     font-weight: bold;
     font-family: 'Bebas Neue', cursive;
-    color: rgba(0, 0, 0, 0.778);
+    color: $color-white;
+}
+
+//navBar
+#navBar {
+    border: none;
+    background: transparent;
+    position: absolute;
+    z-index: 1500;
+    right: 0;
+    margin-inline-end: 2rem;
+    cursor: pointer;
+}
+
+.bar_1,
+.bar_2,
+.bar_3 {
+    display: block;
+    height: 3.9px;
+    width: 2em;
+    background: #000;
+}
+
+.bar_2 {
+    margin: 3px 0;
+    opacity: 1;
+    transition: all .1s ease .1s;
+}
+
+.rightNegatif {
+    right: 0;
+}
+
+.opacity0 {
+    opacity: 0;
+}
+
+.bar_1,
+.bar_3 {
+    transition: all .2s;
+}
+
+.positionAbTop0 {
+    position: absolute;
+    top: 0;
+}
+
+.rotate45 {
+    transform: rotate(45deg);
+}
+
+.rotateNegatif45 {
+    transform: rotate(-45deg);
+}
+
+.bgColorWhite {
+    background: #9d4d4d;
+    ;
 }
