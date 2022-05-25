@@ -11,22 +11,21 @@
         Afrimeta
     </title>
 
-    <script src=" http://localhost/socialNetwork/asset/js/validateForm.js" defer></script>
+    <script src="../../socialNetwork/asset/js/showMenuBar.js" defer></script>
     <link rel="stylesheet" href="http://localhost/socialNetwork/asset/css/main.css">
     <script src="https://kit.fontawesome.com/a5cf1be0cd.js" crossorigin="anonymous" defer></script>
 </head>
 
 <body>
-
-
-
-    <nav class="nav">
+    <nav id="nav">
         <div class="logo-block">
             <img class="nav_logo" src="http://localhost/socialNetwork/asset/images/logo/logo.svg" alt="logo">
         </div>
-        <button id="open"><i class="fas fa-bars"></i></button>
+
         <div class="nav__block">
-            <button id="close" class="opacity "><i class="fas fa-times"></i></button>
+            <button id="navBar">
+                <span class="hamburger"></span>
+            </button>
 
             <ul class="nav__list">
                 <li class="nav__item"><a class="nav__link" href="index.php" class="nav__link">Accueil </a></li>
@@ -58,26 +57,6 @@
             </ul>
         </div>
     </nav>
-    <script>
-        let open = document.getElementById("open");
-        let close = document.getElementById('close');
-        let contener = document.getElementsByClassName("nav__block")[0];
-        open.addEventListener('click', show, false);
-
-        function show() {
-
-            contener.classList.toggle("show");
-            open.classList.toggle('hidden');
-            close.classList.toggle('opacity');
-        }
-
-        close.addEventListener('click', () => {
-            close.classList.toggle('opacity');
-            open.classList.toggle('hidden');
-            contener.classList.toggle("show");
-
-        })
-    </script>
 
     <div id="block-main">
         <?= $content ?>
