@@ -11,7 +11,6 @@
 }
 
 .main-acueil {
-    background: #ffffff4f;
     transform: translateY(20%);
     // @media screen and (max-width: 700px) {
     //     max-width: 100%;
@@ -21,6 +20,10 @@
 .header {
     color: #000000ab;
     padding: 20px 0;
+    @media screen and (max-width: 850px) {
+        position: relative;
+        top: 100px;
+    }
 }
 
 .header__title {}
@@ -31,13 +34,13 @@
     padding: 0 10px;
     width: 50%;
     font-family: 'Abril Fatface', cursive;
+    @media screen and (max-width: 911px) {
+        font-size: 1.3rem;
+    }
+    @media screen and (max-width: 850px) {
+        width: 100%;
+    }
     @media screen and (max-width: 400px) {
         font-size: 1rem;
     }
-}
-
-.header__btn:link,
-.header__btn:active {
-    text-decoration: none;
-    color: inherit;
 }

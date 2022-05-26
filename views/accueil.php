@@ -7,22 +7,21 @@
             <source src="http://localhost/socialNetwork/asset/images/video/studen.webm" type="video/webm">
             Votre navigateur ne support pas le fichier
         </video>
+
     </div>
+
 
 
     <main class="main-acueil">
         <header class="header">
 
             <p class="header__paragraph">
-                Avez besoin d'informations sur votre parcours scolaire ? Afrimeta Blog social est conçus pour vous les étudiants <i class="fa-solid fa-graduation-cap"></i>
-                <a href="index.php?page=register" class="header__btn">Crée un compte</a>
-                <i class="fa-solid fa-thumbs-up fa-2x"></i>
-                <i class="fa-solid fa-comment"></i>
+                Avez vous besoin d'informations sur votre parcours scolaire ? Afrimeta Blog social est conçus pour vous les étudiants <i class="fa-solid fa-graduation-cap"></i>
             </p>
         </header>
-
-
     </main>
+
+    <div class="btn-block"><button class="header__btn-3d"><a class="btn-3d-link" href="index.php?page=register">Crée un compte</a></button></div>
 
 </section>
 
