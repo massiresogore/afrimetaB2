@@ -36,3 +36,27 @@ function showNavList() {
     bar3.classList.toggle("bgColorWhite");
     navBlock.classList.toggle("rightNegatif");
 }
+
+
+let footer = document.getElementById("footer");
+
+
+
+function setfooter() {
+    //document.getElementById('footer').style.position = '';
+
+    //document.documentElement.clientHeight = la taille de la fenetre a afficher dans le navigateur
+
+    var yMax = document.documentElement.clientHeight || document.body.clientHeight;
+    // document.body.offsetHeight = recupère la atille reel du document
+    if (yMax > document.body.offsetHeight) {
+        //footer.classList.add = 'absolute';
+        footer.style.position = 'absolute';
+    } else {
+        footer.style.position = 'absolute';
+
+    }
+    window.onresize = setfooter;
+}
+
+window.onload = setfooter;

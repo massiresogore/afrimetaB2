@@ -1,13 +1,8 @@
 .section_accueil {
     position: relative;
     background-color: #ffffffb5;
-    height: 70vh;
-    box-shadow: 1px 1px 10px black;
-    border-radius: 10px;
-    margin-top: 3rem;
-    @media screen and (max-width: 960px) {
-        margin-top: 1rem;
-    }
+    height: 81vh;
+    padding: 10rem 0;
 }
 
 .main-acueil {
@@ -25,8 +20,6 @@
         top: 100px;
     }
 }
-
-.header__title {}
 
 .header__paragraph {
     font-size: 1.6rem;

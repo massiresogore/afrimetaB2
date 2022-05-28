@@ -2,21 +2,20 @@
     display: flex;
     justify-content: space-between;
     // background
+    //padding-top: 2rem;
     padding: 1rem;
-    background-image: linear-gradient(105deg, rgba(white, .8) 0%, rgba(white, .9) 100%, transparent 50%), url('http://localhost/socialNetwork/asset/images/afrimetaImage/register.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 10px;
-    box-shadow: 0 1.5rem 4rem rgb(black, .6);
-    height: 80vh;
+    // background-image: linear-gradient(105deg, rgba(white, .8) 0%, rgba(white, .9) 100%, transparent 50%), url('http://localhost/socialNetwork/asset/images/afrimetaImage/register.jpg');
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    // box-shadow: 0 1.5rem 4rem rgb(black, .6);
     @media screen and(max-width: 990px) {
         font-size: 1rem;
         flex-direction: column;
     }
     @media screen and(max-width: 750px) {
         // height: 50vh;
-        background: none;
-        box-shadow: none;
+        // background: none;
+        // box-shadow: none;
     }
 }
 
@@ -34,6 +33,37 @@
     }
 }
 
+// footer
+// @media screen and(max-width: 1000px) {
+//     #main-profile footer {
+//         top: 41rem;
+//         ;
+//     }
+// }
+// @media screen and(max-width: 990px) {
+//     #main-profile footer {
+//         top: 39rem;
+//         ;
+//     }
+// }
+// @media screen and(max-width: 750px) {
+//     #main-profile footer {
+//         top: 47rem;
+//         ;
+//     }
+// }
+// @media screen and(max-width: 650px) {
+//     #main-profile footer {
+//         top: 53rem;
+//         ;
+//     }
+// }
+// @media screen and(max-width: 378px) {
+//     #main-profile footer {
+//         top: 54rem;
+//         ;
+//     }
+// }
 .profile__info-modif {
     //border: 1px solid red;
     border-radius: 50%;
@@ -56,7 +86,7 @@
     border-left: 10px solid darkgray;
     display: flex;
     justify-content: center;
-    align-items: center;
+    //align-items: center;
     border-radius: 9px;
     @media screen and(max-width: 990px) {
         justify-content: space-between;
