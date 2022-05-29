@@ -58,6 +58,7 @@
     display: block;
     color: inherit;
     transition: all .3s;
+
     @media screen and (max-width: 1495px) {
         min-width: 400px;
     }
@@ -65,17 +66,17 @@
         min-width: 410px;
     }
     @media screen and (max-width: 1140px) {
-        min-width: 372px;
+        min-width: 400px;
     }
     @media screen and (max-width: 1033px) {
-        min-width: 330px;
+        min-width: 400px;
     }
     @media screen and (max-width: 963px) {
         margin-left: 1rem;
         padding: .6rem .4rem;
     }
     @media screen and (max-width: 973px) {
-        min-width: 305px;
+        min-width: 400px;
     }
     @media screen and (max-width: 811px) {
         min-width: 80%;
