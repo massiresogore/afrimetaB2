@@ -11,10 +11,16 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    @media screen and (max-width: 345px) {
+        font-size: .5rem;
+    }
 }
 
 #footer i {
     font-size: 1.3rem;
+    @media screen and (max-width: 345px) {
+        font-size: 1rem;
+    }
 }
 
 #footer .social__list {
@@ -48,5 +54,8 @@
     font-size: 14px;
     @media screen and (max-width: 451px) {
         font-size: 10px;
+    }
+    @media screen and (max-width: 345px) {
+        font-size: .5rem;
     }
 }

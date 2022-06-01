@@ -37,6 +37,12 @@
     }
 }
 
+@media screen and (max-width: 345px) {
+    .souvenir {
+        margin-left: 0;
+    }
+}
+
 .form-connexion {
     position: absolute;
     top: 50%;
@@ -84,11 +90,10 @@
         margin: 0 auto;
     }
     @media screen and (max-width: 417px) {
-        margin: 0 auto;
+        min-width: 100%;
     }
     @media screen and (max-width: 345px) {
-        min-width: 209px;
-        margin: 0 auto;
+        min-width: 100%;
     }
 }
 

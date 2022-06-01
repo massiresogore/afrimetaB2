@@ -6,6 +6,7 @@
     background-repeat: no-repeat;
     padding-bottom: 9rem;
     box-shadow: 0 1.5rem 4rem rgb(black, .6);
+    height: calc(100vh - 135px);
     //height: 90vh;
     @media screen and (max-width: 1350px) {
         padding-left: 3rem;

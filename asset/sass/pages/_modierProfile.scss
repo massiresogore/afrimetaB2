@@ -3,9 +3,13 @@
     display: flex;
     justify-content: space-between;
     padding: 1rem;
+    height: calc(100vh - 20px);
     @media screen and(max-width: 990px) {
         font-size: 1rem;
         flex-direction: column;
+    }
+    @media screen and(max-width: 750px) {
+        height: 100%;
     }
 }
 

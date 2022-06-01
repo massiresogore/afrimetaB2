@@ -26,6 +26,9 @@
 
 #nav .nav_logo {
     height: 40px;
+    @media screen and (max-width: 811px) {
+        height: 20px;
+    }
 }
 
 .nav__list {
@@ -50,6 +53,9 @@
     font-family: 'Bebas Neue', cursive;
     color: rgb(225, 224, 224);
     ;
+    @media screen and (max-width: 811px) {
+        font-size: 1rem;
+    }
 }
 
 .nav__link:hover {
@@ -101,6 +107,10 @@
     height: 5px;
     width: 2.3em;
     background: #ffffff;
+    @media screen and (max-width: 811px) {
+        height: 3px;
+        width: 1.5em;
+    }
 }
 
 .bar_2 {
