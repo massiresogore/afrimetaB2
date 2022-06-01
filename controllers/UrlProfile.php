@@ -1,5 +1,10 @@
 <?php
 
+namespace App\controllers;
+
+use App\modeles\GestionAmitierModele;
+use App\modeles\ProfileModele;
+
 class UrlProfile
 {
 

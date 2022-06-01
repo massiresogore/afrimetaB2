@@ -53,7 +53,9 @@ function setfooter() {
         //footer.classList.add = 'absolute';
         footer.style.position = 'absolute';
     } else {
-        footer.style.position = 'absolute';
+        if (footer) {
+            footer.style.position = 'absolute';
+        }
 
     }
     window.onresize = setfooter;

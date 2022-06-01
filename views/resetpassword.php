@@ -1,4 +1,7 @@
-<?php ob_start(); ?>
+<?php ob_start();
+
+use App\modeles\ResetPasswordModele;
+?>
 
 <main id="main-rei">
     <h1>Réinisialisation de Mot de passe</h1>

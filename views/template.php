@@ -22,6 +22,7 @@
             <img class="nav_logo" src="http://localhost/socialNetwork/asset/images/logo/logo.svg" alt="logo">
         </div>
 
+
         <button id="navBar">
             <span class="bar_1"></span>
             <span class="bar_2"></span>
@@ -40,11 +41,7 @@
                     <li class="nav__item">
 
                         <a class="nav__link" href="index.php?page=modifierProfile&id=<?= $_SESSION["user"]->getId() ?>" class="nav__link">Modifier mon Profile </a>
-                        <?php ?>
 
-                        <a class="nav__link" href="index.php?page=profile" class="nav__link">Profile </a>
-
-                        <?php ?>
 
                     </li>
                     <li class="nav__item">
@@ -52,7 +49,6 @@
                     </li>
                 <?php } else { ?>
                     <li class="nav__item"><a href="index.php?page=connexion" class="nav__link">Connexion </a></li>
-                    <li class="nav__item"><a href="index.php?page=register" class="nav__link">Inscription </a></li>
                 <?php } ?>
                 <li class="nav__item"><a class="nav__link" href="" class="nav__link">A propos </a></li>
                 <li class="nav__item"><a class="nav__link" href="" class="nav__link">Contact </a></li>
@@ -65,9 +61,35 @@
 
     </div>
 
-    <footer>
+    <?php if (isset($_GET["page"])) : ?>
+        <?php if ($_GET["page"] != "profile" && $_GET["page"] != "listesMembres" && $_GET["page"] != "modifierProfile") { ?>
+            <footer id="footer" class="">
+                <a class="footer__mail" href="mailto:masssire.org@gmail.com">massire.org@gmail.com</a>
+                <ul class="social__list">
+                    <li class="social__list-item"><a href="" class="social__list-link"><i class="fa-brands fa-whatsapp"></i></a></li>
+                    <li class="social__list-item">
+                        <a href="https://www.facebook.com/massiremsr/" class="social__list-link" target="_blank" class="social__list-link"> <i class="fa-brands fa-facebook"></i></a>
 
-    </footer>
+                    </li>
+                    <li class="social__list-item"><a href="https://github.com/massiresogore" class="social__list-link"><i class="fa-brands fa-github"></i></a></li>
+                </ul>
+                <p>Conçu avec curiosité et motivation par Sogore Massire &copy; copyright <?= date('Y') ?></p>
+            </footer>
+        <?php } ?>
+    <?php else : ?>
+        <footer id="footer" class="">
+            <a class="footer__mail" href="mailto:masssire.org@gmail.com">massire.org@gmail.com</a>
+            <ul class="social__list">
+                <li class="social__list-item"><a href="" class="social__list-link"><i class="fa-brands fa-whatsapp"></i></a></li>
+                <li class="social__list-item">
+                    <a href="https://www.facebook.com/massiremsr/" class="social__list-link" target="_blank" class="social__list-link"> <i class="fa-brands fa-facebook"></i></a>
+
+                </li>
+                <li class="social__list-item"><a href="https://github.com/massiresogore" class="social__list-link"><i class="fa-brands fa-github"></i></a></li>
+            </ul>
+            <p>Conçu avec curiosité et motivation par Sogore Massire &copy; copyright <?= date('Y') ?></p>
+        </footer>
+    <?php endif ?>
 </body>
 
 </html>

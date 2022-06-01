@@ -1,5 +1,8 @@
 <?php
 
+namespace App\controllers;
+
+use App\modeles\GestionAmitierModele;
 
 class UrlGestionAmitier
 {

@@ -21,7 +21,10 @@
         </header>
     </main>
 
-    <div class="btn-block"><button class="header__btn-3d"><a class="btn-3d-link" href="index.php?page=register">Crée un compte</a></button></div>
+
+    <?php if (!isset($_SESSION["user"])) : ?>
+        <div class="btn-block"><button class="header__btn-3d"><a class="btn-3d-link" href="index.php?page=register">Crée un compte</a></button></div>
+    <?php endif ?>
 
 </section>
 

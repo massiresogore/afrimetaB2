@@ -1,5 +1,7 @@
 <?php
 
+namespace App\classes;
+
 class Profile
 {
     public $id;

@@ -1,8 +1,9 @@
 <?php
+
+namespace App\controllers;
+
 class UrlMessage
 {
-
-
     public function getUrlMessage()
     {
         if (isset($_GET['page'])) {

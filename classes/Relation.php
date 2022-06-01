@@ -1,5 +1,7 @@
 <?php
 
+namespace App\classes;
+
 class User_relation
 {
     public $id_demandeur;

@@ -1,5 +1,10 @@
 <?php
 
+
+namespace App\modeles;
+
+use FFI\Exception;
+
 class ResetPasswordModele extends AbstractModele
 {
     public static $errormail;

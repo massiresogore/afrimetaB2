@@ -1,33 +1,41 @@
 <?php ob_start();
 
 
-
+use App\modeles\RegisterModele;
 ?>
+
+
+
 
 <main id="main-register">
     <div class="book">
         <h2 class="form__title">Devenir Membre !!!</h2>
 
-        <p class="erreurs">
-            <?= isset(RegisterModele::$message) ?  RegisterModele::$message : "" ?>
+
+
+        <p class="<?= isset(RegisterModele::$erreurs) ?  "erreurs" : "" ?> <?= (!isset($_SESSION["mailSent"]) ? "" : "mailSent") ?>">
+            <?= isset(RegisterModele::$erreurs) ?  RegisterModele::$erreurs : "" ?>
+
+            <?= isset($_SESSION["mailSent"]) ? $_SESSION["mailSent"] : "" ?>
         </p>
+
         <form action="" method="post" class="form-register" id="contactForm">
 
             <!-- Name field -->
             <div class="form__group">
-                <input class="input" type="text" name="name" id="name" autocomplete="off" placeholder="Nom" required>
+                <input class="input" type="text" name="name" value="<?= isset($_SESSION['notification']["name"]) ? $_SESSION['notification']["name"] : "" ?>" id="name" autocomplete="off" placeholder="Nom" required>
                 <label for="name" class="form__label ">Nom</label>
             </div>
 
             <!-- pseudo field -->
             <div class="form__group">
-                <input class="input" type="text" name="pseudo" id="pseudo" autocomplete="off" placeholder="Pseudo" required>
+                <input class="input" type="text" value="<?= isset($_SESSION['notification']["pseudo"]) ? $_SESSION['notification']["pseudo"] : "" ?>" name="pseudo" id="pseudo" autocomplete="off" placeholder="Pseudo" required>
                 <label for="pseudo" class="form__label">pseudo</label>
             </div>
 
             <!-- email field -->
             <div class="form__group">
-                <input class="input" type="email" name="email" autocomplete="off" placeholder="Email" id="email" required>
+                <input class="input" type="email" value="<?= isset($_SESSION['notification']["email"]) ? $_SESSION['notification']["email"] : "" ?>" name="email" autocomplete="off" placeholder="Email" id="email" required>
                 <label for="email" class="form__label">Email</label>
             </div>
 
@@ -50,8 +58,10 @@
 
         </form>
     </div>
-
 </main>
+<style>
+
+</style>
 
 <?php $content =  ob_get_clean();
 require "template.php"; ?>

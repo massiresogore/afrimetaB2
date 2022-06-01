@@ -1,4 +1,9 @@
 <?php
+
+namespace App\controllers;
+
+use App\modeles\ResetPasswordModele;
+
 class UrlResetPassword
 {
 

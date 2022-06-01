@@ -1,5 +1,7 @@
 <?php
 
+namespace App\modeles;
+
 class ValidateMailModele extends AbstractModele
 {
 

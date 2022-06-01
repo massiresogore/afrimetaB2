@@ -1,5 +1,9 @@
-
 <?php
+
+namespace App\modeles;
+
+use App\classes\User;
+use FFI\Exception;
 
 class ConnexionModele extends AbstractModele
 {
@@ -8,7 +12,6 @@ class ConnexionModele extends AbstractModele
     public function setConnexion(array $data)
     {
 
-
         try {
             extract($data);
 
@@ -16,16 +19,11 @@ class ConnexionModele extends AbstractModele
             $req = $this->executeRequete("SELECT * FROM users WHERE email =?", [$email]);
             $stm = $req->fetch();
 
-            // $id = $stm["id"];
-
-
-
             if (!$stm) {
                 throw new Exception("Veuillez inserer une adresse email valide s'il vous plait");
             } elseif (isset($stm["active"])) {
 
                 if ($stm["active"] == 0) {
-
                     $token = $this->token_random_string(20);
                     $req = $this->getBd()->prepare("UPDATE users SET token = ? WHERE email= ?");
                     $req->execute([$token, $email]);
@@ -46,6 +44,7 @@ class ConnexionModele extends AbstractModele
 
                             $user = new User($stm);
                             $_SESSION["user"] = $user;
+
                             // gestion cookies
                             if (isset($_POST["checkbox"])) {
                                 setcookie("email", $_POST["email"], time() * 3600 * 24 * 2, null, null, false, true);
@@ -65,6 +64,8 @@ class ConnexionModele extends AbstractModele
                         } else {
                             $user = new User($stm);
                             $_SESSION["user"] = $user;
+                            $_SESSION["mailSent"] = "";
+
                             // gestion cookies
                             if (isset($_POST["checkbox"])) {
                                 setcookie("email", $_POST["email"], time() * 3600 * 24 * 2, null, null, false, true);

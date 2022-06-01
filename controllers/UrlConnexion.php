@@ -1,5 +1,9 @@
 <?php
 
+namespace App\controllers;
+
+use App\modeles\ConnexionModele;
+
 class UrlConnexion
 {
 

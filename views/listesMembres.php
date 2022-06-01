@@ -1,6 +1,5 @@
 <?php ob_start(); ?>
 <div class="block-membre">
-
     <main class="main-membre">
         <?php if (isset($users) && $users != null) : ?>
 
@@ -23,9 +22,8 @@
                         </div>
                         <div class="membre__row-2">
                             <a href="index.php?page=profile&id=<?= $user->getId() ?>">
-                                <p class="pseudo"><?= $user->getName() ?></p>
+                                <p class="pseudo"><?= $user->getPseudo() ?></p>
                             </a>
-                            <p class="id"><?= $user->getPseudo() ?></p>
                             <p class="email"><?= $user->getEmail() ?></p>
                         </div>
 

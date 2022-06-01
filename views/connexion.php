@@ -1,9 +1,14 @@
-<?php ob_start(); ?>
+<?php ob_start();
+
+use App\modeles\ConnexionModele;
+use App\modeles\RegisterModele;
+
+?>
 <main id="main-connexion">
     <div class="book-connexion">
 
         <form action="" method="POST" class="form-connexion" id="contactForm">
-            <p class="erreurs">
+            <p class="<?= isset(RegisterModele::$erreurs) ?  "erreurs" : "" ?>">
                 <?= isset(ConnexionModele::$message) ? ConnexionModele::$message : "" ?>
             </p>
             <!-- email field -->

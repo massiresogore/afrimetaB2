@@ -1,5 +1,8 @@
 <?php
 
+
+namespace App\modeles;
+
 class GestionAmitierModele extends AbstractModele
 {
     public function sendInvitation(int $id_demandeur, int $id_receveur)
@@ -18,6 +21,7 @@ class GestionAmitierModele extends AbstractModele
             return false;
         }
     }
+
     public function VerifInvitation(int $id_demandeur, int $id_receveur)
     {
 
@@ -31,6 +35,7 @@ class GestionAmitierModele extends AbstractModele
         $stm = $req->fetch();
         return $stm;
     }
+
     public function annulerInvitation(int $id_demandeur, int $id_receveur)
     {
 

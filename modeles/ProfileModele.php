@@ -1,5 +1,13 @@
 <?php
 
+
+namespace App\modeles;
+
+use App\classes\Profile;
+use App\classes\Publication;
+use App\classes\User;
+use FFI\Exception;
+
 class ProfileModele extends AbstractModele
 {
     public static $errorProfile;
@@ -45,9 +53,11 @@ class ProfileModele extends AbstractModele
                     // image n'esxiste => on insert les données
                     $requete = $this->executeRequete("INSERT INTO `profile`(`id_user`,`ville`, `pays`, `sexe`, `github`, `facebook`, `biographie`, `disponibilite`) VALUES (?,?,?,?,?,?,?,?);", [$id_user, $profile->getVille(), $profile->getPays(), $profile->getSexe(), $profile->getGithub(), $profile->getFacebook(), $profile->getBiographie(), $profile->getDisponibilite()]);
                     $requete->closeCursor();
+
                     //on rafraichi la page
                     Parent::redirect('modifierProfile');
                 } else {
+
                     // image existe =>  on insert les données
                     $img = $_FILES;
                     $ajout =  $this->addImage($img, $id_user);
@@ -60,9 +70,6 @@ class ProfileModele extends AbstractModele
                         $requete = $this->executeRequete("INSERT INTO `profile`(`id_user`, `image`, `ville`, `pays`, `sexe`, `github`, `facebook`, `biographie`, `disponibilite`) VALUES (?,?,?,?,?,?,?,?,?);", [$id_user, $photo, $profile->getVille(), $profile->getPays(), $profile->getSexe(), $profile->getGithub(), $profile->getFacebook(), $profile->getBiographie(), $profile->getDisponibilite()]);
                         $requete->closeCursor();
 
-
-
-
                         //on rafraichi la page
                         Parent::redirect('modifierProfile');
                     }
@@ -72,6 +79,7 @@ class ProfileModele extends AbstractModele
             static::$errorProfile = $e->getMessage();
         }
     }
+
     public function updateProfile($data = [], $id_user)
     {
 
@@ -95,14 +103,8 @@ class ProfileModele extends AbstractModele
                         throw new Exception("Image non enregistrer");
                     } else {
                         $photo = $_FILES["image"]["name"];
+
                         //on envoi des données dans la base de donnée
-
-
-
-                        //var_dump($_POST);
-
-
-
                         $requete = $this->executeRequete("UPDATE  `profile` SET `id_user`=?, `image`=?, `ville`=?, `pays`=?, `sexe`=?, `github`=?, `facebook`=?, `biographie`=?, `disponibilite`=?", [$id_user, $photo, $profile->getVille(), $profile->getPays(), $profile->getSexe(), $profile->getGithub(), $profile->getFacebook(), $profile->getBiographie(), $profile->getDisponibilite()]);
                         $requete->closeCursor();
                         //on rafraichi la page
@@ -119,18 +121,17 @@ class ProfileModele extends AbstractModele
     public function addPost($data = [])
     {
 
-
         $publication = new Publication($data);
         $req = $this->executeRequete("INSERT INTO publications(id_user, posts) VALUES (:id_user,:posts)", [
             ":id_user" => $_SESSION["user"]->getId(),
             ":posts" => $publication->getPosts()
         ]);
     }
+
     public function getPosts($id_user)
     {
 
         $req = $this->executeRequete("SELECT * FROM publications WHERE id_user=? ORDER BY create_at DESC ", [$id_user]);
-
 
         while ($stm = $req->fetch()) {
             $objet = new Publication($stm);

@@ -1,4 +1,7 @@
-<?php ob_start(); ?>
+<?php ob_start();
+
+use App\modeles\ResetPasswordModele;
+?>
 
 
 
