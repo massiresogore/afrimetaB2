@@ -13,19 +13,21 @@ use App\modeles\RegisterModele;
             </p>
             <!-- email field -->
             <div class="form__group">
-                <input class="input-connexion" type="email" value="sogoremassire.fr@gmail.com" name="email" id="email" autocomplete="off" placeholder="Email" required>
-                <label for="email" class="form__label">Email</label>
+                <input class="input-connexion" type="email" value="sogoremassire.fr@gmail.com" name="email" id="email"
+                    autocomplete="off" placeholder="Email" required>
+                <label for="email" class="form__label-connexion">Email</label>
             </div>
 
             <!-- password field -->
             <div class="form__group">
-                <input class="input-connexion" value="123456" type="password" name="password" id="password" autocomplete="off" placeholder="Mot de passe" required>
-                <label for="password" class="form__label">Mot de passe </label>
+                <input class="input-connexion" value="123456" type="password" name="password" id="password"
+                    autocomplete="off" placeholder="Mot de passe" required>
+                <label for="password" class="form__label-connexion">Mot de passe </label>
             </div>
 
             <!-- Se souvenir de moi  -->
             <div>
-                <label for="checkbox">Se souvenir de moi
+                <label for="checkbox" class="souvenir">Se souvenir de moi
                     <input type="checkbox" name="checkbox" id="checkbox">
                     <a href="index.php?page=resetpassword">Mot de passe oublié</a>
                 </label>

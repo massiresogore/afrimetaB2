@@ -1,16 +1,20 @@
 #footer {
+    border-top: 2px solid orange;
     font-size: .8rem;
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 75px;
-    background-image: linear-gradient(#d2c1c1, #383636);
-    // background-image: linear-gradient(#FFC6AC, #f40076bc);
+    height: 79px;
+    background: #1b1b1b;
     z-index: 90000;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#footer i {
+    font-size: 1.3rem;
 }
 
 #footer .social__list {
@@ -27,7 +31,7 @@
 .footer__mail:visited,
 .social__list-link:link,
 .social__list-link:visited {
-    color: rgba(255, 255, 255, .7);
+    color: rgba(255, 255, 255, 0.801);
     text-decoration: none;
 }
 
@@ -40,5 +44,9 @@
 }
 
 #footer p {
-    color: rgba(36, 36, 36, .5);
+    color: rgba(255, 255, 255, 0.801);
+    font-size: 14px;
+    @media screen and (max-width: 451px) {
+        font-size: 10px;
+    }
 }

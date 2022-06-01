@@ -1,19 +1,16 @@
 #nav {
-    position:fixed;
+    position: fixed;
     width: 100%;
     top: 0;
     left: 0;
-
     z-index: 9999999;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-image: linear-gradient(#d2c1c1, #383636e3);
-    //background-image: linear-gradient(#FFC6AC, #f40076bc);
-    //background-image: linear-gradient(#003F91, #6D326D);
+    background: #1b1b1b;
     box-shadow: 2px 2px 5 px rgba(0, 0, 0, 0.778);
+    border-bottom: 2px solid orange;
     height: 60px;
-
 }
 
 .nav__block {
@@ -35,6 +32,7 @@
     list-style: none;
     position: relative;
     padding: 3.3rem 3.5rem .5rem;
+    border-radius: 10px;
     @media screen and (max-width: 1108) {
         padding: 3.3rem 1.5rem .5rem;
     }
@@ -102,7 +100,7 @@
     display: block;
     height: 5px;
     width: 2.3em;
-    background: #000;
+    background: #ffffff;
 }
 
 .bar_2 {

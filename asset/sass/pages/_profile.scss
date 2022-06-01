@@ -28,39 +28,26 @@ img {
     margin: 0 auto;
     position: relative;
     font-size: 1.2rem;
-    // background
+    top: 60px;
     padding: 1rem;
     background-image: linear-gradient(105deg, rgba(white, .8) 10%, rgba(white, .9) 100%, transparent 50%), url('http://localhost/socialNetwork/asset/images/afrimetaImage/register.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     box-shadow: 0 1.5rem 4rem rgb(black, .6);
     @media screen and(max-width: 990px) {
-         
         font-size: 1rem;
         flex-direction: column;
     }
     @media screen and(max-width: 400px) {
         padding: 0;
-
     }
 }
 
 #main-profile-V>div>div.profile__2>div>div:nth-child(1)>div>a {
     display: block;
     height: 100%;
-    //word-break: break-word;
-    // @media screen and (max-width: 963px) {
-    //     max-width: 300px;
-    //     font-size: 1rem;
-    // }
-    // @media screen and (max-width: 700px) {
-    //     max-width: 100px;
-    // }
 }
 
-// .profile__row-1-block {
-//     padding-right: 2rem;
-// }
 .img {
     height: 100px;
 }
@@ -72,4 +59,9 @@ img {
 textarea {
     display: block;
     resize: none;
+}
+
+.post-pb {
+    padding: 1rem 0;
+    border-bottom: 3px solid rgba(255, 166, 0, 0.716);
 }

@@ -1,5 +1,4 @@
 .book-membre {
-    
     padding: 0 1rem;
     margin-top: 4.6rem;
     display: grid;
@@ -13,7 +12,9 @@
     }
     @media screen and(max-width: 600px) {
         grid-template-columns: 1fr;
-        padding: 0 2rem;
+    }
+    @media screen and(max-width: 347px) {
+        padding: 0;
     }
 }
 

@@ -1,8 +1,10 @@
 .section_accueil {
+    top: 60px;
     position: relative;
     background-color: #ffffffb5;
     //height: 81vh;
-   padding: 18rem 0;
+    height: calc(100vh - 135px);
+    //padding: 18rem 0;
 }
 
 .main-acueil {
@@ -14,7 +16,7 @@
 
 .header {
     color: #000000ab;
-    padding: 20px 0;
+    padding-top: 12%;
     @media screen and (max-width: 850px) {
         position: relative;
         top: 100px;
@@ -22,8 +24,6 @@
 }
 
 .header__paragraph {
-    position: relative;
-    top: -7rem;
     font-size: 1.6rem;
     text-align: justify;
     padding: 0 10px;

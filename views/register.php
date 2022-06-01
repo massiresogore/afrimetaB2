@@ -13,7 +13,8 @@ use App\modeles\RegisterModele;
 
 
 
-        <p class="<?= isset(RegisterModele::$erreurs) ?  "erreurs" : "" ?> <?= (!isset($_SESSION["mailSent"]) ? "" : "mailSent") ?>">
+        <p
+            class="<?= isset(RegisterModele::$erreurs) ?  "erreurs" : "" ?> <?= (!isset($_SESSION["mailSent"]) ? "" : "mailSent") ?>">
             <?= isset(RegisterModele::$erreurs) ?  RegisterModele::$erreurs : "" ?>
 
             <?= isset($_SESSION["mailSent"]) ? $_SESSION["mailSent"] : "" ?>
@@ -23,32 +24,40 @@ use App\modeles\RegisterModele;
 
             <!-- Name field -->
             <div class="form__group">
-                <input class="input" type="text" name="name" value="<?= isset($_SESSION['notification']["name"]) ? $_SESSION['notification']["name"] : "" ?>" id="name" autocomplete="off" placeholder="Nom" required>
-                <label for="name" class="form__label ">Nom</label>
+                <input class="input" type="text" name="name"
+                    value="<?= isset($_SESSION['notification']["name"]) ? $_SESSION['notification']["name"] : "" ?>"
+                    id="name" autocomplete="off" placeholder="Nom" required>
+                <label for="name" class="form__label-register">Nom</label>
             </div>
 
             <!-- pseudo field -->
             <div class="form__group">
-                <input class="input" type="text" value="<?= isset($_SESSION['notification']["pseudo"]) ? $_SESSION['notification']["pseudo"] : "" ?>" name="pseudo" id="pseudo" autocomplete="off" placeholder="Pseudo" required>
-                <label for="pseudo" class="form__label">pseudo</label>
+                <input class="input" type="text"
+                    value="<?= isset($_SESSION['notification']["pseudo"]) ? $_SESSION['notification']["pseudo"] : "" ?>"
+                    name="pseudo" id="pseudo" autocomplete="off" placeholder="Pseudo" required>
+                <label for="pseudo" class="form__label-register">pseudo</label>
             </div>
 
             <!-- email field -->
             <div class="form__group">
-                <input class="input" type="email" value="<?= isset($_SESSION['notification']["email"]) ? $_SESSION['notification']["email"] : "" ?>" name="email" autocomplete="off" placeholder="Email" id="email" required>
-                <label for="email" class="form__label">Email</label>
+                <input class="input" type="email"
+                    value="<?= isset($_SESSION['notification']["email"]) ? $_SESSION['notification']["email"] : "" ?>"
+                    name="email" autocomplete="off" placeholder="Email" id="email" required>
+                <label for="email" class="form__label-register">Email</label>
             </div>
 
             <!-- password field -->
             <div class="form__group">
-                <input class="input" type="password" autocomplete="off" placeholder="mot de passe" name="password" id="password" required>
-                <label for="password" class="form__label">Mot de passe </label>
+                <input class="input" type="password" autocomplete="off" placeholder="mot de passe" name="password"
+                    id="password" required>
+                <label for="password" class="form__label-register">Mot de passe </label>
             </div>
 
             <!-- password Confirmation -->
             <div class="form__group">
-                <input class="input" type="password" autocomplete="off" placeholder="confirmé votre mot de passe" name="password_confirm" id="password_confirm" required>
-                <label for="password_confirm" class="form__label">Confirmer votre mot de passe </label>
+                <input class="input" type="password" autocomplete="off" placeholder="confirmé votre mot de passe"
+                    name="password_confirm" id="password_confirm" required>
+                <label for="password_confirm" class="form__label-register">Confirmer votre mot de passe </label>
             </div>
 
             <!-- submit  -->
