@@ -5,6 +5,8 @@ namespace App\controllers;
 use App\modeles\ProfileModele;
 use App\modeles\RegisterModele;
 
+
+
 class UrlRegister
 {
 

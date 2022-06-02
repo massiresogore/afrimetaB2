@@ -3,10 +3,13 @@
 namespace App\modeles;
 
 use App\classes\User;
-use FFI\Exception;
+use PHPMailer\PHPMailer\Exception;
+//use FFI\Exception;
+
 
 class RegisterModele extends AbstractModele
 {
+
 
     public static $erreurs;
 
@@ -14,6 +17,7 @@ class RegisterModele extends AbstractModele
     public function Register($dataRegistred)
 
     {
+
         try {
 
             if (isset($_POST["register"])) {

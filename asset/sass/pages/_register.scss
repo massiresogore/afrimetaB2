@@ -10,7 +10,7 @@
     //height: 90vh;
     @media screen and (max-width: 1350px) {
         padding-left: 3rem;
-        padding-top: 1rem;
+        //padding-top: 1rem;
     }
     @media screen and (max-width: 963px) {
         background-image: linear-gradient(105deg, rgba(white, .8) 0%, rgba(white, .8) 50%, transparent 50%), url('http://localhost/socialNetwork/asset/images/afrimetaImage/register.jpg');
@@ -21,8 +21,22 @@
     }
 }
 
-#contactForm {
+#main-register #contactForm {
     position: relative;
+    top: 18%;
+}
+
+#main-register .form__group {
+    margin-bottom: 1rem;
+}
+
+#main-register .form__label-register {
+    position: relative;
+    margin-left: 6px;
+    top: 2px;
+    @media screen and (max-width: 811px) {
+        margin-left: 11%;
+    }
 }
 
 .form-register {
@@ -63,11 +77,10 @@
         margin: 0 auto;
     }
     @media screen and (max-width: 417px) {
-        margin: 0 auto;
+        min-width: 100%;
     }
     @media screen and (max-width: 345px) {
-        min-width: 209px;
-        margin: 0 auto;
+        min-width: 100%;
     }
 }
 

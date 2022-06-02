@@ -22,6 +22,7 @@ class Autoloader
         // on remplace \ par /
         $class = str_replace('\\', '/', $class);
 
+
         // on require le repertoire courant de la classe concerne
         require_once __DIR__ . '/' . $class . '.php';
         //echo __DIR__ . '/' . $class . '.php';

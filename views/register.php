@@ -2,6 +2,7 @@
 
 
 use App\modeles\RegisterModele;
+
 ?>
 
 
@@ -10,8 +11,6 @@ use App\modeles\RegisterModele;
 <main id="main-register">
     <div class="book">
         <h2 class="form__title">Devenir Membre !!!</h2>
-
-
 
         <p
             class="<?= isset(RegisterModele::$erreurs) ?  "erreurs" : "" ?> <?= (!isset($_SESSION["mailSent"]) ? "" : "mailSent") ?>">
@@ -68,9 +67,6 @@ use App\modeles\RegisterModele;
         </form>
     </div>
 </main>
-<style>
-
-</style>
 
 <?php $content =  ob_get_clean();
 require "template.php"; ?>
