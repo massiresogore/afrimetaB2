@@ -3,8 +3,8 @@
 <section class="section_accueil">
     <div class="bg-video">
         <video class="bg-video__content" autoplay muted loop>
-            <source src="http://localhost/socialNetwork/asset/images/video/studen.mp4" type="video/mp4">
-            <source src="http://localhost/socialNetwork/asset/images/video/studen.webm" type="video/webm">
+            <source src="http://localhost/afrimeta/asset/images/video/studen.mp4" type="video/mp4">
+            <source src="http://localhost/afrimeta/asset/images/video/studen.webm" type="video/webm">
             Votre navigateur ne support pas le fichier
         </video>
     </div>
@@ -13,20 +13,32 @@
 
     <main class="main-acueil">
         <header class="header">
-
             <p class="header__paragraph">
-                Avez vous besoin d'informations sur votre parcours scolaire ? Afrimeta Blog social est conçus pour vous
-                les étudiants <i class="fa-solid fa-graduation-cap"></i>
+                Vous êtes étudiant, et vous avez besoin d'informations sur votre parcours, ou <a class="link-campus"
+                    href="https://www.campusfrance.org/fr" target="_blanc">sur <img class="campusFrance"
+                        src="http://localhost/afrimeta/asset/images/logo/campusFrance.png" alt="logo">Campus
+                    France</a> ? Afrimeta est spécialement conçus
+                pour vous
+                <i class="fa-solid fa-graduation-cap"></i>
             </p>
+            <figure id="cite-antaDiop">
+                <blockquote cite="cheick Anta Diop">
+                    <p>
+                        Formez vous, armez vous de sciences jusqu'au dents (...) et arrachez votre patrimoine culturel.
+                    </p>
+                </blockquote>
+                <figcaption>-Cheickh Anta Diop, <cite>historien, anthropologue, homme politique et révolutionnaire
+                        afrocentriste.</cite></figcaption>
+            </figure>
         </header>
+
+        <?php if (!isset($_SESSION["user"])) : ?>
+        <div class="btn-block"><button class="header__btn-3d"><a class="btn-3d-link" href="index.php?page=register">Crée
+                    un
+                    compte</a></button></div>
+        <?php endif ?>
+
     </main>
-
-
-    <?php if (!isset($_SESSION["user"])) : ?>
-    <div class="btn-block"><button class="header__btn-3d"><a class="btn-3d-link" href="index.php?page=register">Crée un
-                compte</a></button></div>
-    <?php endif ?>
-
 </section>
 
 <?php $content =  ob_get_clean();

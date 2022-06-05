@@ -13,12 +13,12 @@
                     <?php if ($profileModele->getProfileUser($user->getId())->getImage()) { ?>
                     <a href="index.php?page=profile&id=<?= $user->getId() ?>">
                         <img
-                            src="http://localhost/socialNetwork/asset/images/profile<?= $user->getId() . '/' . $profileModele->getProfileUser($user->getId())->getImage() ?>">
+                            src="http://localhost/afrimeta/asset/images/profile<?= $user->getId() . '/' . $profileModele->getProfileUser($user->getId())->getImage() ?>">
                     </a>
 
                     <?php } else { ?>
 
-                    <img src="http://localhost/socialNetwork/asset/images/noprofile/noprofile.jpg" alt="">
+                    <img src="http://localhost/afrimeta/asset/images/noprofile/noprofile.jpg" alt="">
                     <?php } ?>
                 </div>
                 <div class="membre__row-2">

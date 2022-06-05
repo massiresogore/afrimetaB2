@@ -2,40 +2,96 @@
     top: 60px;
     position: relative;
     background-color: #ffffffb5;
-    //height: 81vh;
     height: calc(100vh - 135px);
-    //padding: 18rem 0;
 }
 
 .main-acueil {
-    transform: translateY(20%);
-    // @media screen and (max-width: 700px) {
-    //     max-width: 100%;
-    // }
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    gap: 2.9rem;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .header {
     color: #000000ab;
-    padding-top: 12%;
-    @media screen and (max-width: 850px) {
-        position: relative;
-        top: 100px;
-    }
+    background-color: #ffffffb5;
+    padding: 1.9rem 0;
+    width: 80%;
+    box-shadow: 2px 2px 5px black;
+    border-radius: 10px;
+}
+
+.header .campusFrance {
+    height: 20px;
+}
+
+.header .link-campus:link,
+.header .link-campus:visited {
+    color: inherit;
 }
 
 .header__paragraph {
+    padding: 0 1rem;
     font-size: 1.6rem;
     text-align: justify;
-    padding: 0 10px;
-    width: 50%;
     font-family: 'Abril Fatface', cursive;
     @media screen and (max-width: 911px) {
+        //padding: 10px 19px;
         font-size: 1.3rem;
     }
-    @media screen and (max-width: 850px) {
-        width: 100%;
+    @media screen and (max-width: 650px) {
+        padding: 0;
+        font-size: .6rem;
     }
-    @media screen and (max-width: 400px) {
+}
+
+#cite-antaDiop {
+    margin-top: 1rem;
+    display: block;
+}
+
+#cite-antaDiop p {
+    padding: 0 1rem;
+    color: rgba(205, 147, 40, 0.83);
+    width: 100%;
+    background-color: #eee;
+    font-size: 1.6rem;
+    text-align: justify;
+    font-family: 'Abril Fatface', cursive;
+    @media screen and (max-width: 911px) {
+        //padding: 10px 19px;
+        font-size: 1.3rem;
+    }
+    @media screen and (max-width: 650px) {
+        padding: 0;
+        font-size: .6rem;
+    }
+}
+
+#cite-antaDiop figcaption {
+    padding: 1rem 1rem 0;
+    @media screen and (max-width: 911px) {
+        //padding: 10px 19px;
+        font-size: 1.3rem;
+    }
+    @media screen and (max-width: 650px) {
+        padding: 0;
         font-size: 1rem;
     }
+    @media screen and (max-width: 650px) {
+        //padding: 10px 19px;
+        font-size: .6rem;
+    }
+}
+
+#cite-antaDiop p::after {
+    content: '\201C';
+}
+
+#cite-antaDiop p::before {
+    content: '\201D';
 }

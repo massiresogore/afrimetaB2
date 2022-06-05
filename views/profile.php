@@ -9,9 +9,9 @@
                         <?php if (isset($user)) { ?>
                         <?php if ($profile->getImage() != null) { ?>
                         <img
-                            src="http://localhost/socialNetwork/asset/images/profile<?= $user->getId() . '/' . $profile->getImage() ?>">
+                            src="http://localhost/afrimeta/asset/images/profile<?= $user->getId() . '/' . $profile->getImage() ?>">
                         <?php } else { ?>
-                        <img src="http://localhost/socialNetwork/asset/images/noprofile/noprofile.jpg" alt="">
+                        <img src="http://localhost/afrimeta/asset/images/noprofile/noprofile.jpg" alt="">
                         <?php } ?>
                     </div>
                     <?php if ($_SESSION["user"]->getId() != $_GET["id"]) { ?>

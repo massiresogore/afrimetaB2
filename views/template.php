@@ -11,15 +11,16 @@
         Afrimeta
     </title>
 
-    <script src="../../socialNetwork/asset/js/showMenuBar.js" defer></script>
-    <link rel="stylesheet" href="http://localhost/socialNetwork/asset/css/main.css">
+    <script src="../../afrimeta/asset/js/showMenuBar.js" defer></script>
+    <link rel="stylesheet" href="http://localhost/afrimeta/asset/css/main.css">
     <script src="https://kit.fontawesome.com/a5cf1be0cd.js" crossorigin="anonymous" defer></script>
 </head>
 
 <body>
     <nav id="nav">
         <div class="logo-block">
-            <img class="nav_logo" src="http://localhost/socialNetwork/asset/images/logo/logWhite.svg" alt="logo">
+            <a href="index.php"><img class="nav_logo" src="http://localhost/afrimeta/asset/images/logo/logWhite.svg"
+                    alt="logo"></a>
         </div>
 
 

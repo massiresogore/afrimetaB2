@@ -1,20 +1,15 @@
 .book-connexion {
     margin-top: 3.5rem;
     padding-left: 7.5rem;
-    // background-image: linear-gradient(105deg, rgba(white, .8) 0%, rgba(white, .8) 50%, transparent 50%), url('http://localhost/socialNetwork/asset/images/afrimetaImage/studen1.jpg');
-    background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 60%, transparent 40%), url(http://localhost/socialNetwork/asset/images/afrimetaImage/studen1.jpg);
+    background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 60%, transparent 40%), url(http://localhost/afrimeta/asset/images/afrimetaImage/studen1.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: calc(100vh - 135px);
     box-shadow: 0 1.5rem 4rem rgb(black, .6);
-    // @media screen and (max-width: 963px) {
-    //     margin-top: 3.5rem;
-    //     background-image: linear-gradient(105deg, rgba(white, .8) 0%, rgba(white, .8) 50%, transparent 50%), url('http://localhost/socialNetwork/asset/images/afrimetaImage/studen1.jpg');
-    // }
     @media screen and (max-width: 811px) {
         padding-left: 0;
-        background-image: linear-gradient(105deg, rgba(white, .8) 0%, rgba(white, .8) 100%, transparent 50%), url('http://localhost/socialNetwork/asset/images/afrimetaImage/studen1.jpg');
+        background-image: linear-gradient(105deg, rgba(white, .8) 0%, rgba(white, .8) 100%, transparent 50%), url('http://localhost/afrimeta/asset/images/afrimetaImage/studen1.jpg');
     }
 }
 
@@ -48,9 +43,9 @@
     top: 50%;
     transform: translateY(-50%);
     transform: translateY();
-    // @media screen and (max-width: 963px) {
-    //     transform: translateY(43%);
-    // }
+    @media screen and (max-width: 811px) {
+        width: 100%;
+    }
 }
 
 .input-connexion {
@@ -66,25 +61,6 @@
     display: block;
     color: inherit;
     transition: all .3s;
-    // @media screen and (max-width: 1495px) {
-    //     min-width: 400px;
-    // }
-    // @media screen and (max-width: 1200px) {
-    //     min-width: 410px;
-    // }
-    // @media screen and (max-width: 1140px) {
-    //     min-width: 400px;
-    // }
-    // @media screen and (max-width: 1033px) {
-    //     min-width: 400px;
-    // }
-    // @media screen and (max-width: 963px) {
-    //     margin-left: 1rem;
-    //     padding: .6rem .4rem;
-    // }
-    // @media screen and (max-width: 973px) {
-    //     min-width: 400px;
-    // }
     @media screen and (max-width: 811px) {
         min-width: 80%;
         margin: 0 auto;

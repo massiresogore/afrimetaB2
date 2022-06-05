@@ -2,8 +2,8 @@
 
 namespace App\modeles;
 
-use App\classes\User;
 use FFI\Exception;
+use App\classes\User;
 
 class ConnexionModele extends AbstractModele
 {

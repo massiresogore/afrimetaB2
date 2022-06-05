@@ -29,11 +29,6 @@ class ResetPasswordModele extends AbstractModele
                     throw new Exception("Votre adresse email ne correspond a aucun utilisateur de notre reseau blog");
                 } else {
 
-                    // if ($result["token"] == "valide") {
-                    //     var_dump($result["id"]);
-                    //     die;
-                    // }
-
                     //verif si email n'est pas active
                     if ($result["active"] != "1") {
 

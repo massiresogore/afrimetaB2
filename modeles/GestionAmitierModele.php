@@ -7,7 +7,6 @@ class GestionAmitierModele extends AbstractModele
 {
     public function sendInvitation(int $id_demandeur, int $id_receveur)
     {
-
         //$_session["id] demande amitier a id reçu
         $req = $this->executeRequete("INSERT INTO relation (id_demandeur, id_receveur) VALUE(?,?)", [
             $id_demandeur,

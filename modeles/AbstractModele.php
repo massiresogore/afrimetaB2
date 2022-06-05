@@ -33,8 +33,6 @@ class AbstractModele
     {
         $req = $this->getBd()->prepare("SELECT * FROM $table WHERE $name_where=?");
         $req->execute([$value]);
-
-
         return $req;
     }
 
@@ -78,7 +76,7 @@ class AbstractModele
             $mail->Subject = 'Confirmation';
             $mail->Body = 'Afin de valider votre adresse email, merci de cliquer sur le lien suivant:
 
-            <a href="http://localhost/socialNetwork/index.php?page=validation&token=' . $token . '&email=' . $email . ' ">Cliquez ici pour confirmer votre compte</a>';
+            <a href="http://localhost/afrimeta/index.php?page=validation&token=' . $token . '&email=' . $email . ' ">Cliquez ici pour confirmer votre compte</a>';
 
                 // $mail->send(); faire vard_dump de ça si email not send   
             ;
@@ -103,6 +101,7 @@ class AbstractModele
         $requet->execute($data);
         return $requet;
     }
+
     public function textToMail($text)
     {
         $regex_url = "/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\:[0-9]+)?(\/\S*)?/";
@@ -136,7 +135,7 @@ class AbstractModele
         $mail->Subject = $objet;
         $mail->Body = 'Afin de ' . $objet . ', merci de cliquer sur le lien suivant:
 
-            <a href="http://localhost/socialNetwork/index.php?page=' . $lien . '&message=' . $objet . '&token=' . $token . '&email=' . $email . ' ">Cliquez ici pour ' . $objet . ' votre compte</a>';
+            <a href="http://localhost/afrimeta/index.php?page=' . $lien . '&message=' . $objet . '&token=' . $token . '&email=' . $email . ' ">Cliquez ici pour ' . $objet . ' votre compte</a>';
 
         // $mail->send(); faire vard_dump de ça si email not send   
         $mail->send();

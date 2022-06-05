@@ -12,7 +12,6 @@ class ProfileModele extends AbstractModele
 {
     public static $errorProfile;
 
-
     public function getUserCon($id_user)
     {
         $req = $this->executeRequete("SELECT * FROM users WHERE id = ?", [$id_user]);

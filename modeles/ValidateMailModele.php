@@ -4,11 +4,9 @@ namespace App\modeles;
 
 class ValidateMailModele extends AbstractModele
 {
-
     public function getValidateMail($email, $token)
     {
         if (!empty($email) && !empty($token)) {
-
             $requette = $this->getBd()->prepare('SELECT * FROM users WHERE email=:email and token=:token');
             $requette->bindValue(":email", $email);
             $requette->bindValue(":token", $token);
@@ -30,7 +28,7 @@ class ValidateMailModele extends AbstractModele
         $resultatUpadate = $requette->execute();
 
         if ($resultatUpadate) {
-            header('location:http://localhost/socialNetwork/index.php?page=connexion');
+            header('location:http://localhost/afrimeta/index.php?page=connexion');
             exit;
         }
     }
