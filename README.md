@@ -1,7 +1,7 @@
 
 
  ```diff
- + **Afrimeta**
+  Afrimeta
 
 ```
 ***
