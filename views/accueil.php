@@ -1,5 +1,3 @@
-<?php ob_start(); ?>
-
 <section class="section_accueil">
     <div class="bg-video">
         <video class="bg-video__content" autoplay muted loop>
@@ -32,14 +30,11 @@
             </figure>
         </header>
 
-        <?php if (!isset($_SESSION["user"])) : ?>
+
         <div class="btn-block"><button class="header__btn-3d"><a class="btn-3d-link" href="index.php?page=register">Crée
                     un
                     compte</a></button></div>
-        <?php endif ?>
+
 
     </main>
 </section>
-
-<?php $content =  ob_get_clean();
-require "template.php"; ?>

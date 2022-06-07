@@ -1,16 +1,8 @@
-<?php ob_start();
-
-use App\modeles\ConnexionModele;
-use App\modeles\RegisterModele;
-
-?>
 <main id="main-connexion">
     <div class="book-connexion">
 
         <form action="" method="POST" class="form-connexion" id="contactForm">
-            <p class="<?= isset(RegisterModele::$erreurs) ?  "erreurs" : "" ?>">
-                <?= isset(ConnexionModele::$message) ? ConnexionModele::$message : "" ?>
-            </p>
+
             <!-- email field -->
             <div class="form__group">
                 <input class="input-connexion" type="email" value="sogoremassire.fr@gmail.com" name="email" id="email"
@@ -41,7 +33,3 @@ use App\modeles\RegisterModele;
         </form>
     </div>
 </main>
-
-
-<?php $content =  ob_get_clean();
-require "template.php"; ?>
