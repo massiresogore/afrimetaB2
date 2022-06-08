@@ -33,11 +33,12 @@ class Db extends PDO
         }
     }
 
-    protected static function getInstance()
+    public static function getInstance()
     {
-        if (self::$instance == null) {
+        if (self::$instance === null) {
             self::$instance = new self();
         }
-        return self::getInstance();
+
+        return self::$instance;
     }
 }

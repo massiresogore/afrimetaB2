@@ -4,7 +4,7 @@ namespace App\Models;
 
 class passwordResetModel extends Model
 {
-    private $id_reinitialisePsw;
+    private $id;
     private $id_utilisateur;
     private $email;
     private $token;
@@ -13,25 +13,24 @@ class passwordResetModel extends Model
     public function __construct()
     {
         $this->table = "reinitialisePsw";
-    } 
-
+    }
 
     /**
      * @return mixed
      */
-    public function getIdReinitialisePsw()
+    public function getId()
     {
-        return $this->id_reinitialisePsw;
+        return $this->id;
     }
 
     /**
-     * @param mixed $id_reinitialisePsw
+     * @param mixed $id
      *
      * @return self
      */
-    public function setIdReinitialisePsw($id_reinitialisePsw)
+    public function setId($id)
     {
-        $this->id_reinitialisePsw = $id_reinitialisePsw;
+        $this->id = $id;
 
         return $this;
     }
@@ -96,4 +95,3 @@ class passwordResetModel extends Model
         return $this;
     }
 }
-

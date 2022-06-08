@@ -5,7 +5,7 @@ namespace App\Models;
 
 class PublicationModel extends Model
 {
-    public $id_publication;
+    public $id;
     public $id_utilisateur;
     public $posts;
     public $create_at;
@@ -22,19 +22,19 @@ class PublicationModel extends Model
     /**
      * @return mixed
      */
-    public function getIdPublication()
+    public function getId()
     {
-        return $this->id_publication;
+        return $this->id;
     }
 
     /**
-     * @param mixed $id_publication
+     * @param mixed $id
      *
      * @return self
      */
-    public function setIdPublication($id_publication)
+    public function setId($id)
     {
-        $this->id_publication = $id_publication;
+        $this->id = $id;
 
         return $this;
     }

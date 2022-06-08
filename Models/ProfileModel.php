@@ -4,12 +4,12 @@ namespace App\Models;
 
 class ProfileModel extends Model
 {
-    public $id_profile;
+    public $id;
     public $id_utilisateur;
     public $image;
     public $ville;
     public $pays;
-    public $sexe;
+    public $genre;
     public $github;
     public $facebook;
     public $biographie;
@@ -23,19 +23,19 @@ class ProfileModel extends Model
     /**
      * @return mixed
      */
-    public function getIdProfile()
+    public function getId()
     {
-        return $this->id_profile;
+        return $this->id;
     }
 
     /**
-     * @param mixed $id_profile
+     * @param mixed $id
      *
      * @return self
      */
-    public function setIdProfile($id_profile)
+    public function setId($id)
     {
-        $this->id_profile = $id_profile;
+        $this->id = $id;
 
         return $this;
     }
@@ -123,19 +123,19 @@ class ProfileModel extends Model
     /**
      * @return mixed
      */
-    public function getSexe()
+    public function getGenre()
     {
-        return $this->sexe;
+        return $this->genre;
     }
 
     /**
-     * @param mixed $sexe
+     * @param mixed $genre
      *
      * @return self
      */
-    public function setSexe($sexe)
+    public function setGenre($genre)
     {
-        $this->sexe = $sexe;
+        $this->genre = $genre;
 
         return $this;
     }

@@ -5,14 +5,12 @@ namespace App\Models;
 
 class UtilisateurModel extends Model
 {
-    public $id_utilisateur;
+    public $id;
     public $nom;
-    public $pseudo;
     public $email;
     public $password;
     public $token;
     public $active;
-    public $relation;
     public $date;
 
     public function __construct()
@@ -20,23 +18,22 @@ class UtilisateurModel extends Model
         $this->table = "utilisateur";
     }
 
-
     /**
      * @return mixed
      */
-    public function getIdUtilisateur()
+    public function getId()
     {
-        return $this->id_utilisateur;
+        return $this->id;
     }
 
     /**
-     * @param mixed $id_utilisateur
+     * @param mixed $id
      *
      * @return self
      */
-    public function setIdUtilisateur($id_utilisateur)
+    public function setId($id)
     {
-        $this->id_utilisateur = $id_utilisateur;
+        $this->id = $id;
 
         return $this;
     }
@@ -57,26 +54,6 @@ class UtilisateurModel extends Model
     public function setNom($nom)
     {
         $this->nom = $nom;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPseudo()
-    {
-        return $this->pseudo;
-    }
-
-    /**
-     * @param mixed $pseudo
-     *
-     * @return self
-     */
-    public function setPseudo($pseudo)
-    {
-        $this->pseudo = $pseudo;
 
         return $this;
     }
@@ -157,26 +134,6 @@ class UtilisateurModel extends Model
     public function setActive($active)
     {
         $this->active = $active;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getRelation()
-    {
-        return $this->relation;
-    }
-
-    /**
-     * @param mixed $relation
-     *
-     * @return self
-     */
-    public function setRelation($relation)
-    {
-        $this->relation = $relation;
 
         return $this;
     }
