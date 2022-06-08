@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-class Profile
+class ProfileModel extends Model
 {
     public $id_profile;
     public $id_utilisateur;
@@ -19,8 +19,6 @@ class Profile
     {
         $this->table = "profile";
     }
-
-
 
     /**
      * @return mixed

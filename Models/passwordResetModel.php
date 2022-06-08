@@ -2,39 +2,36 @@
 
 namespace App\Models;
 
-
-class Publication
+class passwordResetModel extends Model
 {
-    public $id_publication;
-    public $id_utilisateur;
-    public $posts;
-    public $create_at;
+    private $id_reinitialisePsw;
+    private $id_utilisateur;
+    private $email;
+    private $token;
 
 
     public function __construct()
     {
-        $this->table = "publication";
-    }
-
-
+        $this->table = "reinitialisePsw";
+    } 
 
 
     /**
      * @return mixed
      */
-    public function getIdPublication()
+    public function getIdReinitialisePsw()
     {
-        return $this->id_publication;
+        return $this->id_reinitialisePsw;
     }
 
     /**
-     * @param mixed $id_publication
+     * @param mixed $id_reinitialisePsw
      *
      * @return self
      */
-    public function setIdPublication($id_publication)
+    public function setIdReinitialisePsw($id_reinitialisePsw)
     {
-        $this->id_publication = $id_publication;
+        $this->id_reinitialisePsw = $id_reinitialisePsw;
 
         return $this;
     }
@@ -62,19 +59,19 @@ class Publication
     /**
      * @return mixed
      */
-    public function getPosts()
+    public function getEmail()
     {
-        return $this->posts;
+        return $this->email;
     }
 
     /**
-     * @param mixed $posts
+     * @param mixed $email
      *
      * @return self
      */
-    public function setPosts($posts)
+    public function setEmail($email)
     {
-        $this->posts = $posts;
+        $this->email = $email;
 
         return $this;
     }
@@ -82,20 +79,21 @@ class Publication
     /**
      * @return mixed
      */
-    public function getCreateAt()
+    public function getToken()
     {
-        return $this->create_at;
+        return $this->token;
     }
 
     /**
-     * @param mixed $create_at
+     * @param mixed $token
      *
      * @return self
      */
-    public function setCreateAt($create_at)
+    public function setToken($token)
     {
-        $this->create_at = $create_at;
+        $this->token = $token;
 
         return $this;
     }
 }
+

@@ -3,7 +3,7 @@
 namespace App\Models;
 
 
-class Utilisateur
+class UtilisateurModel extends Model
 {
     public $id_utilisateur;
     public $nom;
@@ -19,7 +19,6 @@ class Utilisateur
     {
         $this->table = "utilisateur";
     }
-
 
 
     /**
