@@ -1,0 +1,75 @@
+.btn-block {}
+
+.header__btn-3d {
+    position: relative;
+    background-color: #3e3241;
+    border: none;
+    color: white;
+    padding: 15px 24px;
+    font-size: 1.6rem;
+    box-shadow: -6px 6px 0 #140a1c;
+    outline: none;
+    cursor: pointer;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 2px;
+    @media screen and (max-width: 911px) {
+        padding: 10px 19px;
+        font-size: 1.3rem;
+    }
+}
+
+.btn-3d-link {
+    color: white;
+}
+
+.header__btn-3d:hover {
+    background-color: #524954;
+    color: rgb(198, 194, 194);
+}
+
+.header__btn-3d:active {
+    background-color: #4b434d;
+    top: 3px;
+    left: -3px;
+    box-shadow: -3px 3px 0 #3c363e;
+}
+
+.header__btn-3d::before {
+    position: absolute;
+    display: block;
+    content: '';
+    height: 0;
+    width: 0;
+    border: solid 6px transparent;
+    border-right: solid 6px #140a1c;
+    border-left-width: 0;
+    top: 0;
+    left: -6px;
+}
+
+.header__btn-3d::after {
+    position: absolute;
+    display: block;
+    content: '';
+    height: 0;
+    width: 0;
+    border: solid 6px transparent;
+    border-top: solid 6px #140a1c;
+    border-bottom-width: 0;
+    right: 0;
+    bottom: -6px;
+}
+
+.header__btn-3d:active::before {
+    border: solid 3px transparent;
+    border-right: solid 3px #3c363e;
+    border-left-width: 0;
+    left: -3px;
+}
+
+.header__btn-3d:active::after {
+    border: solid 3px transparent;
+    border-top: solid 3px #3c363e;
+    border-bottom-width: 0;
+    bottom: -3px;
+}

@@ -72,7 +72,7 @@ class Model extends Db
         return $req;
     }
 
-    public function update()
+    public function update(int $id, Model $model)
     {
         // ce qu'on veut faire : UPDATE utilisateur SET pseudo = ?, email = ? WHERE id = ?
         // on cree deux tableau pour stocker le champ et valeur reçu des donnees
@@ -87,7 +87,7 @@ class Model extends Db
                 $valeurs[] = $valeur;
             }
         }
-        $valeurs[] = $this->id;
+        $valeurs[] = $id;
 
         // convertir les tableaus en string
         $listChamps = implode(" , ", $champs);
