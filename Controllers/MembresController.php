@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Models\ProfileModel;
 use App\Models\UtilisateurModel;
 
-class UtilisateurController extends Controller
+class MembresController extends Controller
 {
 
     /**
@@ -13,16 +13,14 @@ class UtilisateurController extends Controller
      */
     public function index()
     {
-
         // On instancie le model correspondant à la table
-        $utilisateurModel = new UtilisateurModel;
+        $UtilisateurModel = new UtilisateurModel;
         // On va chercher les utilisateur
-        $utilisateurs = $utilisateurModel->findAll();
+        $utilisateurs = $UtilisateurModel->findAll();
 
         if ($utilisateurs) {
-
             // On genere la vue
-            $this->render("utilisateur/index", compact('utilisateurs'));
+            $this->render("membres/index", compact('utilisateurs'));
         }
     }
 
@@ -32,12 +30,12 @@ class UtilisateurController extends Controller
     public function lire(int $id)
     {
 
+
         //On instancie le profil model profile
         $profilModel = new ProfileModel;
         $profile = $profilModel->find($id);
-        if ($profile) {
-            // On genere la vue
-            $this->render('utilisateur/profile', compact('profile'));
-        }
+
+
+        $this->render('membres/profile', compact('profile'));
     }
 }

@@ -5,7 +5,6 @@
                 <div class="profile__inf">
                     <h3>Profile de <span></span></h3>
                     <div class="img">
-
                         <img src="http://localhost/afrimeta/public/images/noprofile/noprofile.jpg" alt="">
                     </div>
                     <div class="pseudo">
@@ -20,14 +19,14 @@
             </div>
 
             <div class="profile__row-2-block">
-
                 <div class="b1">
                     <div class="ville">
-                        <p><span class="titre-profile">Ville:<?= $profile->ville ?> </span><a
-                                href="https://maps.google.com/maps?q=" target="_blank"></a></p>
+                        <p><span class="titre-profile">Ville:<?= (isset($profile->ville) ? $profile->ville : "")  ?>
+                            </span><a href="https://maps.google.com/maps?q=" target="_blank"></a></p>
                     </div>
                     <div class="sexe">
-                        <p class="sexe"><span class="titre-profile">Sexe:<?= $profile->genre ?>
+                        <p class="sexe"><span
+                                class="titre-profile">Sexe:<?= (isset($profile->genre) ? $profile->genre : "")  ?>
                             </span></p>
                     </div>
                     <div class="dispo">
@@ -36,10 +35,12 @@
                     </div>
 
                     <div class="profile__row-1-block"><i class="fa-brands fa-github"></i><a
-                            href="<?= $profile->ville ?>" target="_blank"><?= $profile->github ?></a>
+                            href="<?= (isset($profile->github) ?  $profile->github : "") ?>"
+                            target="_blank"><?= (isset($profile->github) ?  $profile->github : "") ?></a>
                     </div>
                     <div class="profile__row-1-block"><i class="fa-brands fa-facebook"></i><a
-                            href="<?= $profile->facebook ?>" target="_blank"><?= $profile->facebook ?></a></div>
+                            href="<?= (isset($profile->facebook) ?  $profile->facebook : "")   ?>"
+                            target="_blank"><?= (isset($profile->facebook) ? $profile->facebook : "") ?></a></div>
                     <div class="profile__row-1-block">
                         <h3>Qui est </h3>
                         <div class="biogragphie"></div>
@@ -60,18 +61,16 @@
                     </form>
                 </div>
             </div>
-
-
         </div>
         <div class="profile__2">
             <div class="post-pb">
                 <h5 id="post"></h5>
-                <p style="display:block;overflow-y:scroll"><?= $profile->biographie ?></p>
+                <p style="display:block;overflow-y:scroll">
+                    <?= (isset($profile->biographie) ?  $profile->biographie : "") ?></p>
             </div>
 
             <p>Cet utilisateur n'a pa encore publié </p>
         </div>
-
     </div>
     </div>
 </main>

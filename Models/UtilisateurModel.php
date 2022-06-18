@@ -18,6 +18,19 @@ class UtilisateurModel extends Model
         $this->table = "utilisateur";
     }
 
+    public function findOneByEmail(string $email)
+    {
+        return $req = $this->requette("SELECT * from " . $this->table . " WHERE email = ? ", [$email])->fetch();
+    }
+
+    public function setSession()
+    {
+        $_SESSION["user"] = [
+            'id' => $this->id,
+            'email' => $this->email
+        ];
+    }
+
     /**
      * @return mixed
      */

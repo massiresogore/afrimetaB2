@@ -11,6 +11,8 @@ class Main
 {
     public function start()
     {
+        // on demarre la session
+        session_start();
         //http://localhost/afrimeta/public/controller/method/parametre 
         // exemple: http://localhost/afrimeta/public/utilisateur/index/$id
         /**
@@ -31,7 +33,9 @@ class Main
             $uri = substr($uri, 0, -1);
             // On envoie un code de redirection permanent
             http_response_code(301);
+            header('loction:' . $uri);
         }
+
 
 
 

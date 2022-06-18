@@ -25,7 +25,6 @@
                 </label>
             </div>
 
-
             <!-- Submit -->
             <div class="form__group">
                 <input class="input-connexion" type="submit" value="connexion" name="connexion" class="form__submit">

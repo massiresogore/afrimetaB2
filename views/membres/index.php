@@ -8,13 +8,13 @@
                     <img src="http://localhost/afrimeta/public/images/noprofile/noprofile.jpg" alt="">
                 </div>
                 <div class="membre__row-2">
-                    <a href="utilisateur/lire/<?= $utilisateur->id ?>">
+                    <a href="membres/lire/<?= ($utilisateurs ? $utilisateur->id : "") ?>">
                         <p class=" nom">
-                            <?= $utilisateur->nom ?>
+                            <?= ($utilisateurs ? $utilisateur->nom : "") ?>
                         </p>
                     </a>
                     <p class="email">
-                        <?= $utilisateur->email ?>
+                        <?= ($utilisateurs ? $utilisateur->email : "") ?>
                     </p>
                 </div>
             </div>

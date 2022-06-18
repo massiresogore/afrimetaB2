@@ -6,17 +6,10 @@
 
             <!-- Name field -->
             <div class="form__group">
-                <input class="input" type="text" name="name" value="" id="name" autocomplete="off" placeholder="Nom"
-                    required>
+                <input class="input" type="text" name="nom" value="" id="name" autocomplete="off" placeholder="Nom">
                 <label for="name" class="form__label-register">Nom</label>
             </div>
 
-            <!-- pseudo field -->
-            <div class="form__group">
-                <input class="input" type="text" value="" name="pseudo" id="pseudo" autocomplete="off"
-                    placeholder="Pseudo" required>
-                <label for="pseudo" class="form__label-register">pseudo</label>
-            </div>
 
             <!-- email field -->
             <div class="form__group">
@@ -27,15 +20,13 @@
 
             <!-- password field -->
             <div class="form__group">
-                <input class="input" type="password" autocomplete="off" placeholder="mot de passe" name="password"
-                    id="password" required>
+                <input class="input" type="password" autocomplete="off" placeholder="mot de passe" name="password" id="password" required>
                 <label for="password" class="form__label-register">Mot de passe </label>
             </div>
 
             <!-- password Confirmation -->
             <div class="form__group">
-                <input class="input" type="password" autocomplete="off" placeholder="confirmé votre mot de passe"
-                    name="password_confirm" id="password_confirm" required>
+                <input class="input" type="password" autocomplete="off" placeholder="confirmé votre mot de passe" name="password_confirm" id="password_confirm" required>
                 <label for="password_confirm" class="form__label-register">Confirmer votre mot de passe </label>
             </div>
 

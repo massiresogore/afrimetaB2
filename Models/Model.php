@@ -41,7 +41,12 @@ class Model extends Db
 
     public function find(int $id)
     {
+
         return $req = $this->requette('SELECT * FROM ' . $this->table . " WHERE id = ?", [$id])->fetch();
+
+        if ($req) {
+            return $req;
+        }
     }
 
     public function create()
@@ -55,7 +60,7 @@ class Model extends Db
         // on fait la boucle pour sauvegarder champ et valeur
         foreach ($this as $champ => $valeur) {
 
-            if ($champ != "db" && $champ != "table" && $champ != null && $valeur != null) {
+            if ($champ != "db" && $champ != "table" && $champ != null && $valeur !== null) {
 
                 $champs[] = " $champ ";
                 $inter[] = " ? ";
@@ -72,7 +77,7 @@ class Model extends Db
         return $req;
     }
 
-    public function update(int $id, Model $model)
+    public function update()
     {
         // ce qu'on veut faire : UPDATE utilisateur SET pseudo = ?, email = ? WHERE id = ?
         // on cree deux tableau pour stocker le champ et valeur reçu des donnees
@@ -87,7 +92,7 @@ class Model extends Db
                 $valeurs[] = $valeur;
             }
         }
-        $valeurs[] = $id;
+        $valeurs[] = $this->id;
 
         // convertir les tableaus en string
         $listChamps = implode(" , ", $champs);
@@ -102,7 +107,7 @@ class Model extends Db
         foreach ($data as $key => $value) {
             $metod = "set" . ucfirst($key);
             if (method_exists($this, $metod)) {
-                $this->$metod($value);
+                $this->$metod(strip_tags($value));
             }
         }
         return $this;
