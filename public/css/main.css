@@ -19,10 +19,6 @@ body {
   overflow-wrap: anywhere;
 }
 
-.positionAb {
-  position: absolute;
-}
-
 a {
   text-decoration: none;
 }
@@ -489,7 +485,6 @@ p.erreurs {
 }
 
 .book {
-  margin-top: 3.7rem;
   padding-left: 6rem;
   background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 50%, transparent 50%), url("http://localhost:8000/images/afrimetaImage/register.jpg");
   background-size: cover;
@@ -804,10 +799,10 @@ textarea {
 
 .book-membre {
   padding: 0 1rem;
-  margin-top: 4.6rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
+  overflow-y: auto;
 }
 @media screen and (max-width: 1232px) {
   .book-membre {

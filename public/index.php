@@ -21,6 +21,13 @@ $app->get('/',  MainController::class . '::homePage');
 //Page Non Trouvée
 $app->notFoundHandler(MainController::class . '::notFoundHandler');
 
+//Page inscription
+$app->get('/inscription', function (array $param = []) {
+    $controller = new MainController;
+
+    $controller->render('users/inscription', compact('param'));
+});
+
 //Liste des membres
 $app->get('/listeDesMembres', MainController::class . '::listeDesMembres');
 

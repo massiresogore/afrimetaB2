@@ -28,7 +28,7 @@
         </header>
 
 
-        <div class="btn-block"><button class="header__btn-3d"><a class="btn-3d-link" href="index.php?page=register">Crée
+        <div class="btn-block"><button class="header__btn-3d"><a class="btn-3d-link" href="/inscription">Crée
                     un
                     compte</a></button></div>
     </main>

@@ -34,7 +34,7 @@
                         des Membres </a></li>
 
                 <li class="nav__item">
-                    <a class="nav__link" href="/profile" class="nav__link">Profile </a>
+                    <a class="nav__link" href="" class="nav__link">Profile </a>
                 </li>
 
                 <li class="nav__item">
@@ -62,7 +62,7 @@
         <?= $contenu ?>
     </div>
 
-    <!-- <footer id="footer" class="">
+    <footer id="footer" class="">
         <a class="footer__mail" href="mailto:masssire.org@gmail.com">massire.org@gmail.com</a>
         <ul class="social__list">
             <li class="social__list-item"><a href="" class="social__list-link"><i class="fa-brands fa-whatsapp"></i></a>
@@ -76,8 +76,22 @@
                         class="fa-brands fa-github"></i></a></li>
         </ul>
         <p>Conçu avec curiosité et motivation par Sogore Massire &copy; copyright </p>
-    </footer> -->
+    </footer>
 
+    <style>
+    footer {
+        position: absolute;
+    }
+    </style>
+    <?php if (isset($_GET)) {
+        if ($_GET === '/publication') { ?>
+    <style>
+    #footer {
+        display: none;
+    }
+    </style>
+    <?php } ?>
+    <?php } ?>
 </body>
 
 </html>
