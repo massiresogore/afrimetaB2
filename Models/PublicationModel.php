@@ -7,7 +7,7 @@ class PublicationModel extends Model
 {
     public $id;
     public $id_utilisateur;
-    public $posts;
+    public $post;
     public $create_at;
 
 
@@ -42,7 +42,7 @@ class PublicationModel extends Model
     /**
      * @return mixed
      */
-    public function getIdUtilisateur()
+    public function getId_utilisateur()
     {
         return $this->id_utilisateur;
     }
@@ -52,7 +52,7 @@ class PublicationModel extends Model
      *
      * @return self
      */
-    public function setIdUtilisateur($id_utilisateur)
+    public function setId_utilisateur($id_utilisateur)
     {
         $this->id_utilisateur = $id_utilisateur;
 
@@ -62,19 +62,19 @@ class PublicationModel extends Model
     /**
      * @return mixed
      */
-    public function getPosts()
+    public function getPost()
     {
-        return $this->posts;
+        return $this->post;
     }
 
     /**
-     * @param mixed $posts
+     * @param mixed $post
      *
      * @return self
      */
-    public function setPosts($posts)
+    public function setPost($post)
     {
-        $this->posts = $posts;
+        $this->post = $post;
 
         return $this;
     }

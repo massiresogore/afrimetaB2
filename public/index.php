@@ -24,6 +24,9 @@ $app->notFoundHandler(MainController::class . '::notFoundHandler');
 //Liste des membres
 $app->get('/listeDesMembres', MainController::class . '::listeDesMembres');
 
+//publications
+$app->get('/publication', MainController::class . '::publication');
+
 //Profile
 $app->get('/profile', function (array $param = []) {
     $controller = new MainController;

@@ -43,7 +43,7 @@ class ProfileModel extends Model
     /**
      * @return mixed
      */
-    public function getIdUtilisateur()
+    public function getid_utilisateur()
     {
         return $this->id_utilisateur;
     }
@@ -53,7 +53,7 @@ class ProfileModel extends Model
      *
      * @return self
      */
-    public function setIdUtilisateur($id_utilisateur)
+    public function setid_utilisateur($id_utilisateur)
     {
         $this->id_utilisateur = $id_utilisateur;
 

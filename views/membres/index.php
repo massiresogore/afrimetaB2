@@ -41,6 +41,20 @@
 
 
         <style>
+        .book-membre {
+            position: relative;
+            height: 372px;
+        }
+
+        .bac-membre {
+            max-height: 85px;
+        }
+
+        .pagination {
+
+            padding: 2rem 0;
+        }
+
         .pagination ul li {
             display: inline-block;
         }

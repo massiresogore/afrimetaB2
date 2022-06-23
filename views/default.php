@@ -36,6 +36,11 @@
                 <li class="nav__item">
                     <a class="nav__link" href="/profile" class="nav__link">Profile </a>
                 </li>
+
+                <li class="nav__item">
+                    <a class="nav__link" href="/publication" class="nav__link">Publications </a>
+                </li>
+
                 <li class="nav__item">
 
                     <a class="nav__link" href="" class="nav__link">Modifier mon

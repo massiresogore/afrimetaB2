@@ -3,18 +3,16 @@
         <div class="profile__1">
             <div class="profile__row-1-block">
                 <div class="profile__inf">
-                    <h3>Profile de <span></span></h3>
+                    <h3>Profile de : <span><?= (isset($profile["0"]->pseudo) ?  $profile["0"]->pseudo : "") ?></span>
+                    </h3>
                     <div class="img">
                         <img src="http://localhost:8000/images/noprofile/noprofile.jpg" alt="">
                     </div>
-                    <div class="pseudo">
-                        <p class="pseudo"><span class="titre-profile">Pseudo:
-                            </span></p>
-                    </div>
-                    <div class="email">
-                        <p><span class="titre-profile">Email: </span><a href="mailto:" class="email"></a></p>
-                    </div>
-
+                </div>
+                <div class="post-pb">
+                    <h5 id="post">Biograpie:</h5>
+                    <p style="display:block;overflow-y:scroll">
+                        <?= (isset($profile["0"]->biographie) ?  $profile["0"]->biographie : "") ?></p>
                 </div>
             </div>
 
@@ -49,31 +47,10 @@
                         <div class="biogragphie"></div>
                     </div>
                 </div>
-
-                <div class="b2">
-                    <form action="" method="post" class="form" id="contactForm" novalidate>
-                        <div class="form__group">
-                            <label for="status" class="form__label">Publication:</label>
-                            <textarea name="posts" id="" cols="30" rows="10" placeholder="Alors quoi de neuf ?"
-                                required></textarea>
-                        </div>
-                        <!-- submit  -->
-                        <div class="form__group">
-                            <input type="submit" value="publier" name="publication" class="fom__submit">
-                        </div>
-                    </form>
-                </div>
             </div>
         </div>
-        <div class="profile__2">
-            <div class="post-pb">
-                <h5 id="post"></h5>
-                <p style="display:block;overflow-y:scroll">
-                    <?= (isset($profile->biographie) ?  $profile->biographie : "") ?></p>
-            </div>
 
-            <p>Cet utilisateur n'a pa encore publié </p>
-        </div>
+    </div>
     </div>
     </div>
 </main>

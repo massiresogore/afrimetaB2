@@ -1,0 +1,18 @@
+.publication .titre {
+    text-align: center;
+}
+
+.post {
+    width: 80%;
+    text-align: justify;
+    margin: 0 auto;
+    padding: 0 0 .5rem;
+}
+
+.post:not(:last-child) {
+    border-bottom: 2px solid orange;
+}
+
+.post p:nth-child(3) {
+    text-indent: 3rem;
+}

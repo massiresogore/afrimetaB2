@@ -46,14 +46,13 @@ class Model extends Db
 
     public function find(int $id)
     {
-
-
         $req = $this->requette('SELECT * FROM ' . $this->table . " WHERE id = ?", [$id])->fetch();
 
         if ($req) {
             return $req;
         }
     }
+
 
     public function tableCount()
     {

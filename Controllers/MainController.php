@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\PublicationModel;
 use App\Models\UtilisateurModel;
 
 class MainController extends Controller
@@ -52,5 +53,17 @@ class MainController extends Controller
 
 
         $this->render('membres/index', compact('utilisateurs', 'pages', 'currentPage'));
+    }
+
+    public function publication()
+    {
+        $publicationModel = new PublicationModel;
+
+        $posts = $publicationModel->findAll();
+        $utilisateurModel = new UtilisateurModel;
+        $nom = $utilisateurModel->find($posts[0]->id_utilisateur);
+
+
+        $this->render('membres/publication', compact('posts', 'nom'));
     }
 }
