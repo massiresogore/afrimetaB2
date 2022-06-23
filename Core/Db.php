@@ -10,7 +10,7 @@ class Db extends PDO
     private static $instance;
 
     // Informations de la connexion 
-    private  const DBHOST = "localhost";
+    private  const DBHOST = "localhost:8000";
     private  const DBUSER = "root";
     private  const DBNAME = "afrimeta";
     private  const DBPASSWORD = "";

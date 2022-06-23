@@ -14,7 +14,12 @@ class Model extends Db
 
     public function findAll()
     {
+
         return $req = $this->requette("SELECT * FROM " . $this->table)->fetchAll();
+    }
+    public function findLimit($premier, $parPage)
+    {
+        return $req = $this->requette("SELECT * FROM " . $this->table . ' limit ' . $premier . ',' . $parPage)->fetchAll();
     }
 
     public function findBy(array $donnees)
@@ -42,11 +47,17 @@ class Model extends Db
     public function find(int $id)
     {
 
-        return $req = $this->requette('SELECT * FROM ' . $this->table . " WHERE id = ?", [$id])->fetch();
+
+        $req = $this->requette('SELECT * FROM ' . $this->table . " WHERE id = ?", [$id])->fetch();
 
         if ($req) {
             return $req;
         }
+    }
+
+    public function tableCount()
+    {
+        return $req = $this->requette('SELECT COUNT(*) as nb FROM ' . $this->table . ' limit 0, 10;')->fetch();
     }
 
     public function create()

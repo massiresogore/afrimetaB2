@@ -1,8 +1,8 @@
 <section class="section_accueil">
     <div class="bg-video">
         <video class="bg-video__content" autoplay muted loop>
-            <source src="http://localhost/afrimeta/public/images/video/studen.mp4" type="video/mp4">
-            <source src="http://localhost/afrimeta/public/images/video/studen.webm" type="video/webm">
+            <source src="http://localhost:8000/images/video/studen.mp4" type="video/mp4">
+            <source src="http://localhost:8000/images/video/studen.webm" type="video/webm">
             Votre navigateur ne support pas le fichier
         </video>
     </div>
@@ -11,7 +11,7 @@
             <p class="header__paragraph">
                 Vous êtes étudiant, et vous avez besoin d'informations sur votre parcours, ou <a class="link-campus"
                     href="https://www.campusfrance.org/fr" target="_blanc">sur <img class="campusFrance"
-                        src="http://localhost/afrimeta/public/images/logo/campusFrance.png" alt="logo">Campus
+                        src="http://localhost:8000/images/logo/campusFrance.png" alt="logo">Campus
                     France</a> ? Afrimeta est spécialement conçus
                 pour vous
                 <i class="fa-solid fa-graduation-cap"></i>

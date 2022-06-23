@@ -5,12 +5,12 @@
             <div class="profile_infi-modif">
 
                 <a href="index.php?page=profile&id=">
-                    <div class="profile_info-img"><img src="http://localhost/afrimeta/public/images/profile">
+                    <div class="profile_info-img"><img src="http://localhost:8000/images/profile">
                     </div>
                 </a>
 
                 <div class="profile_info-img">
-                    <img src="http://localhost/afrimeta/public/images/noprofile/noprofile.jpg" alt="">
+                    <img src="http://localhost:8000/images/noprofile/noprofile.jpg" alt="">
                 </div>
 
                 <div class="pseudo">

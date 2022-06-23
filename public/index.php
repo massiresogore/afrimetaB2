@@ -2,7 +2,9 @@
 // On definit une constante contenant le dossier racine du projet
 
 use App\Autoloader;
-use App\Core\Main;
+use App\Controllers\MainController;
+use App\Core\Root;
+use App\Models\ProfileModel;
 
 define('ROOT', dirname(__DIR__));
 
@@ -11,7 +13,24 @@ require_once ROOT . "/Autoloader.php";
 Autoloader::register();
 
 // on instancie Main (Notre Routeur)
-$app = new Main();
+$app = new Root();
 
-// on demarre l application
-$app->start();
+// Page dAccueil
+$app->get('/',  MainController::class . '::homePage');
+
+//Page Non Trouvée
+$app->notFoundHandler(MainController::class . '::notFoundHandler');
+
+//Liste des membres
+$app->get('/listeDesMembres', MainController::class . '::listeDesMembres');
+
+//Profile
+$app->get('/profile', function (array $param = []) {
+    $controller = new MainController;
+    $profileModel = new ProfileModel;
+    $profile = $profileModel->findBy($param);
+    $controller->render('membres/profile', compact('param', 'profile'));
+});
+
+// on demarre lapplication
+$app->run();

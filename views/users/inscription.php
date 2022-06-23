@@ -10,7 +10,6 @@
                 <label for="name" class="form__label-register">Nom</label>
             </div>
 
-
             <!-- email field -->
             <div class="form__group">
                 <input class="input" type="email" value="
@@ -20,13 +19,15 @@
 
             <!-- password field -->
             <div class="form__group">
-                <input class="input" type="password" autocomplete="off" placeholder="mot de passe" name="password" id="password" required>
+                <input class="input" type="password" autocomplete="off" placeholder="mot de passe" name="password"
+                    id="password" required>
                 <label for="password" class="form__label-register">Mot de passe </label>
             </div>
 
             <!-- password Confirmation -->
             <div class="form__group">
-                <input class="input" type="password" autocomplete="off" placeholder="confirmé votre mot de passe" name="password_confirm" id="password_confirm" required>
+                <input class="input" type="password" autocomplete="off" placeholder="confirmé votre mot de passe"
+                    name="password_confirm" id="password_confirm" required>
                 <label for="password_confirm" class="form__label-register">Confirmer votre mot de passe </label>
             </div>
 
