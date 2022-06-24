@@ -61,7 +61,7 @@
     <div id="block-main">
         <?= $contenu ?>
     </div>
-
+    <!-- 
     <footer id="footer" class="">
         <a class="footer__mail" href="mailto:masssire.org@gmail.com">massire.org@gmail.com</a>
         <ul class="social__list">
@@ -76,11 +76,11 @@
                         class="fa-brands fa-github"></i></a></li>
         </ul>
         <p>Conçu avec curiosité et motivation par Sogore Massire &copy; copyright </p>
-    </footer>
+    </footer> -->
 
     <style>
     footer {
-        position: absolute;
+        /* position: absolute; */
     }
     </style>
     <?php if (isset($_GET)) {

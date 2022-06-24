@@ -14,13 +14,14 @@ class Root
     private const METHOD_GET = "GET";
     private $notFoundHandler;
 
-    public function get(string $path, $handler)
+    public function get(string $path, $handler): void
     {
         $this->addHandler(self::METHOD_GET, $path, $handler);
     }
 
-    public function post(string $path, $handler)
+    public function post(string $path, $handler): void
     {
+
         $this->addHandler(self::METHOD_POST, $path, $handler);
     }
 
@@ -29,7 +30,7 @@ class Root
         $this->notFoundHandler = $handler;
     }
 
-    public function addHandler(string $method, $path, $handler)
+    public function addHandler(string $method, $path, $handler): void
     {
         $this->handler[$method . $path] = [
             "method" => $method,
@@ -43,7 +44,7 @@ class Root
         $uriParse = parse_url($_SERVER['REQUEST_URI']);
         $uriPath = $uriParse["path"];
         $method = $_SERVER["REQUEST_METHOD"];
-
+        var_dump($method);
         $callBack = null;
 
         if (!$callBack) {
@@ -60,6 +61,7 @@ class Root
             }
         }
 
+
         if (is_string($callBack)) {
             $part = explode("::", $callBack);
 
@@ -67,11 +69,10 @@ class Root
                 $className = array_shift($part);
                 $exc = new $className;
                 $method = array_shift($part);
-
                 $callBack = [$exc, $method];
             }
         }
 
-        call_user_func_array($callBack, [$_GET, $_POST]);
+        call_user_func_array($callBack, [array_merge($_GET, $_POST)]);
     }
 }

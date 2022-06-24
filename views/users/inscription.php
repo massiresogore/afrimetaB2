@@ -2,27 +2,27 @@
     <div class="book">
         <h2 class="form__title">Devenir Membre !!!</h2>
 
-        <form action="" method="post" class="form-register" id="contactForm">
+        <form action="/inscription" method="POST" class="form-register" id="contactForm">
 
             <!-- Name field -->
-            <div class="form__group">
+            <!-- <div class="form__group">
                 <input class="input" type="text" name="nom" value="" id="name" autocomplete="off" placeholder="Nom">
                 <label for="name" class="form__label-register">Nom</label>
-            </div>
+            </div> -->
 
             <!-- email field -->
-            <div class="form__group">
+            <!-- <div class="form__group">
                 <input class="input" type="email" value="
                     " name="email" autocomplete="off" placeholder="Email" id="email" required>
                 <label for="email" class="form__label-register">Email</label>
-            </div>
+            </div> -->
 
             <!-- password field -->
-            <div class="form__group">
+            <!-- <div class="form__group">
                 <input class="input" type="password" autocomplete="off" placeholder="mot de passe" name="password"
                     id="password" required>
                 <label for="password" class="form__label-register">Mot de passe </label>
-            </div>
+            </div> -->
 
             <!-- password Confirmation -->
             <div class="form__group">
