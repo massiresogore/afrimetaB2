@@ -59,39 +59,46 @@
     </nav>
 
     <div id="block-main">
-        <?= $contenu ?>
+        <section class="section_accueil">
+            <div class="bg-video">
+                <video class="bg-video__content" autoplay muted loop>
+                    <source src="http://localhost:8000/images/video/studen.mp4" type="video/mp4">
+                    <source src="http://localhost:8000/images/video/studen.webm" type="video/webm">
+                    Votre navigateur ne support pas le fichier
+                </video>
+            </div>
+            <main class="main-acueil">
+                <header class="header">
+                    <p class="header__paragraph">
+                        Vous êtes étudiant, et vous avez besoin d'informations sur votre parcours, ou <a
+                            class="link-campus" href="https://www.campusfrance.org/fr" target="_blanc">sur <img
+                                class="campusFrance" src="http://localhost:8000/images/logo/campusFrance.png"
+                                alt="logo">Campus
+                            France</a> ? Afrimeta est spécialement conçus
+                        pour vous
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </p>
+                    <figure id="cite-antaDiop">
+                        <blockquote cite="cheick Anta Diop">
+                            <p>
+                                Formez vous, armez vous de sciences jusqu'au dents (...) et arrachez votre patrimoine
+                                culturel.
+                            </p>
+                        </blockquote>
+                        <figcaption>-Cheickh Anta Diop, <cite>historien, anthropologue, homme politique et
+                                révolutionnaire
+                                afrocentriste.</cite></figcaption>
+                    </figure>
+                </header>
+
+
+                <div class="btn-block"><button class="header__btn-3d"><a class="btn-3d-link" href="/inscription">Crée
+                            un
+                            compte</a></button></div>
+            </main>
+        </section>
     </div>
-    <!-- 
-    <footer id="footer" class="">
-        <a class="footer__mail" href="mailto:masssire.org@gmail.com">massire.org@gmail.com</a>
-        <ul class="social__list">
-            <li class="social__list-item"><a href="" class="social__list-link"><i class="fa-brands fa-whatsapp"></i></a>
-            </li>
-            <li class="social__list-item">
-                <a href="https://www.facebook.com/massiremsr/" class="social__list-link" target="_blank"
-                    class="social__list-link"> <i class="fa-brands fa-facebook"></i></a>
 
-            </li>
-            <li class="social__list-item"><a href="https://github.com/massiresogore" class="social__list-link"><i
-                        class="fa-brands fa-github"></i></a></li>
-        </ul>
-        <p>Conçu avec curiosité et motivation par Sogore Massire &copy; copyright </p>
-    </footer> -->
-
-    <style>
-    footer {
-        /* position: absolute; */
-    }
-    </style>
-    <?php if (isset($_GET)) {
-        if ($_GET === '/publication') { ?>
-    <style>
-    #footer {
-        display: none;
-    }
-    </style>
-    <?php } ?>
-    <?php } ?>
 </body>
 
 </html>
