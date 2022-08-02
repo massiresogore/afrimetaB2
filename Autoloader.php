@@ -16,7 +16,6 @@ class Autoloader
     {
         // on retire le namespace et meme temps on remplace \ par /
         $class = str_replace(array(__NAMESPACE__ . "\\", "\\"), "/", $class);
-
         $class = __DIR__ . $class . ".php";
 
         if (file_exists($class)) {
