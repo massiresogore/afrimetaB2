@@ -14,7 +14,7 @@ class Autoloader
 
     public static function autoload($class)
     {
-        // on retire le namespace et meme temps on remplace \ par /
+
         $class = str_replace(array(__NAMESPACE__ . "\\", "\\"), "/", $class);
         $class = __DIR__ . $class . ".php";
 
