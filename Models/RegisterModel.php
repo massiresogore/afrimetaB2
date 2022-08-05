@@ -3,7 +3,7 @@
 namespace App\Models;
 
 
-class UtilisateurModel extends Model
+class RegisterModel extends Model
 {
     public $id;
     public $nom;
@@ -18,10 +18,7 @@ class UtilisateurModel extends Model
         $this->table = "utilisateur";
     }
 
-    public function findOneByEmail(string $email)
-    {
-        return $req = $this->requette("SELECT * from " . $this->table . " WHERE email = ? ", [$email])->fetch();
-    }
+
 
     public function setSession()
     {

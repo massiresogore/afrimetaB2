@@ -2,19 +2,28 @@
 
 namespace App\core;
 
+use App\Models\View;
+
 class Router
 {
     public array $routes = [];
     public Request $request;
+    public View $view;
 
-    public function __construct(Request $request)
+    public function __construct(Request $request, View $view)
     {
         $this->request = $request;
+        $this->view = $view;
     }
 
     public function get($path, $callBack)
     {
         $this->routes["get"][$path] = $callBack;
+    }
+
+    public function post($path, $callBack)
+    {
+        $this->routes["post"][$path] = $callBack;
     }
 
     public function resolve()
@@ -23,10 +32,18 @@ class Router
         $path = $this->request->getPath();
         $callBack = $this->routes[$method][$path] ?? false;
 
-        if ($callBack == false) {
+        if ($callBack === false) {
             return "Not Found";
         }
 
-        return call_user_func($callBack);
+        if (is_string($callBack)) {
+            return Application::$app->view->render($callBack);
+        }
+
+        if (!is_string($callBack)) {
+            $callBack[0] = new $callBack[0];
+        }
+
+        return call_user_func($callBack, $this->request, $this->view);
     }
 }
