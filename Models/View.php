@@ -7,10 +7,10 @@ use App\core\Application;
 class View
 {
 
-    public function render($view)
+    public function render($view, $params = [])
     {
         $layoutContent = $this->layout();
-        $viewContent = $this->renderViewOnly($view);
+        $viewContent = $this->renderViewOnly($view, $params);
         return str_replace("{{content}}", $viewContent, $layoutContent);
     }
 

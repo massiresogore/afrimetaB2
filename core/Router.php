@@ -33,7 +33,7 @@ class Router
         $callBack = $this->routes[$method][$path] ?? false;
 
         if ($callBack === false) {
-            return "Not Found";
+            return Application::$app->notFound->notFound();
         }
 
         if (is_string($callBack)) {

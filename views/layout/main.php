@@ -30,13 +30,14 @@
 
             <ul class="nav__list">
                 <li class="nav__item"><a class="nav__link" href="/" class="nav__link">Accueil </a></li>
+                <li class="nav__item"><a href="/login" class="nav__link">Connexion </a></li>
                 <li class="nav__item"><a class="nav__link" href="/ListUsers" class="nav__link">Listes
                         des Membres </a></li>
-                <!-- 
+
                 <li class="nav__item">
                     <a class="nav__link" href="/profile" class="nav__link">Profile </a>
                 </li>
-
+                <!-- 
                 <li class="nav__item">
                     <a class="nav__link" href="/publication" class="nav__link">Publications </a>
                 </li>
@@ -46,11 +47,11 @@
                     <a class="nav__link" href="/editProfile" class="nav__link">Modifier mon
                         Profile </a>
                 </li> -->
+
                 <li class="nav__item">
                     <a class="nav__link" href="/logout" class="nav__link">Deconnexion </a>
                 </li>
 
-                <li class="nav__item"><a href="/login" class="nav__link">Connexion </a></li>
 
                 <li class="nav__item"><a class="nav__link" href="" class="nav__link">A propos </a></li>
                 <li class="nav__item"><a class="nav__link" href="" class="nav__link">Contact </a></li>

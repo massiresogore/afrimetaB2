@@ -2,6 +2,7 @@
 
 namespace App\core;
 
+use App\controllers\NotFoundController;
 use App\Models\View;
 
 class Application
@@ -11,6 +12,7 @@ class Application
     public Request $request;
     public static $app;
     public View $view;
+    public NotFoundController $notFound;
 
     public function __construct($rootDir)
     {
@@ -18,6 +20,7 @@ class Application
         self::$app = $this;
         $this->request = new Request;
         $this->view = new View;
+        $this->notFound = new NotFoundController;
         $this->router = new Router($this->request,  $this->view);
     }
 

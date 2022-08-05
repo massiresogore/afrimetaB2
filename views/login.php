@@ -21,7 +21,7 @@
             <div>
                 <label for="checkbox" class="souvenir">Se souvenir de moi
                     <input type="checkbox" name="checkbox" id="checkbox">
-                    <a href="index.php?page=resetpassword">Mot de passe oublié</a>
+                    <a href="/resetPassword">Mot de passe oublié</a>
                 </label>
             </div>
 
